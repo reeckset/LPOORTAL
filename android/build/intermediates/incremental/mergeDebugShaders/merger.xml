@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/reeckset/Desktop/Faculdade/LPOORTAL/android/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/reeckset/Desktop/Faculdade/LPOORTAL/android/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/src/debug/shaders"/></dataSet></merger>
