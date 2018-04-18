@@ -7,7 +7,7 @@ import java.util.HashMap;
 public class TextureManager {
 
     public enum PlayerColor {ORANGE, BLUE};
-    public enum ObjectTexture {LOGO, JOYSTICK_KNOB, JOYSTICK_BG, JUMP_BTN_UP, JUMP_BTN_DOWN};
+    public enum ObjectTexture {LOGO, JOYSTICK_KNOB, JOYSTICK_BG, JUMP_BTN_UP, JUMP_BTN_DOWN, MOVEMENT_TUTORIAL};
 
     private HashMap<ObjectTexture, Texture> textures;
 
@@ -35,6 +35,7 @@ public class TextureManager {
     private void populateGeneralTextures(){
         textures.put(ObjectTexture.JOYSTICK_BG, getTextureFromSource("background_joystick.png"));
         textures.put(ObjectTexture.LOGO, getTextureFromSource("logo.png"));
+        textures.put(ObjectTexture.MOVEMENT_TUTORIAL, getTextureFromSource("movement_tutorial.png"));
     }
 
     private void populateBlueColoredTextures(){
