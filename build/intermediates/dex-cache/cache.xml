@@ -3,21 +3,21 @@
 
     <item
         is-multidex="false"
-        jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="6f0497b7958216464101adfb7bdc3a0f7b88d6d3">
-        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-box2d-1.9.8_71691733324eaf9c6991b3541ceb9b36d460dc04.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.box2dlights/box2dlights/1.4/3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd/box2dlights-1.4.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd">
         <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/box2dlights-1.4_11ef8e12f76798664a4697c12b6a32ef41e6cb26.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="6f0497b7958216464101adfb7bdc3a0f7b88d6d3">
+        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-box2d-1.9.8_71691733324eaf9c6991b3541ceb9b36d460dc04.jar" />
     </item>
     <item
         is-multidex="false"
@@ -34,7 +34,7 @@
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
-        sha1="3f2e902318da4b9b1229d15bb38c8af82b19ecfc">
+        sha1="539e6dd13f67e3f2eabecb76f8b2bd26bd452f9b">
         <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" />
     </item>
     <item
