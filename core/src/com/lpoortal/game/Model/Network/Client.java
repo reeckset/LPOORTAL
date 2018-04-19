@@ -11,14 +11,21 @@ import java.net.Socket;
 
 public class Client implements Disposable {
     private Socket socket;
-    private PrintWriter output;
-    private BufferedReader input;
+
+    PrintWriter output;
+    BufferedReader input;
 
     public Client(){
         try {
-            socket = new Socket("192.168.2.163", 8765);
-            input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            socket = new Socket("192.168.1.4", 8765);
+            socket.setSoTimeout(0);
             output = new PrintWriter(socket.getOutputStream(), true);
+            input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            output.println("Hi, I'm the client");
+            String line;
+            while((line = input.readLine()) != null) {
+                System.out.println(line);
+            }
 
         }
         catch (IOException e) {
