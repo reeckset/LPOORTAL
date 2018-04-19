@@ -9,11 +9,11 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.lpoortal.game.LPOORTAL_Game;
 
-public class MovementView extends ScreenView{
+public class DrawingView extends ScreenView{
 
     private ButtonView jumpBtn;
 
-    public MovementView(LPOORTAL_Game g, TextureManager textureManager){
+    public DrawingView(LPOORTAL_Game g, TextureManager textureManager){
 
         super(g, textureManager);
 
