@@ -1,0 +1,4 @@
+Idle = 4 frames each image
+Lift Off = 2
+Landing = 2
+Walking = 3

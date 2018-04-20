@@ -15,7 +15,7 @@ public class Client implements Disposable {
 
     public Client() {
         try {
-            socket = new Socket("172.30.18.75", 8765);
+            socket = new Socket("192.168.1.141", 8765);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
         } catch (IOException e) {
