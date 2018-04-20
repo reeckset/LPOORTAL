@@ -10,7 +10,7 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import networking.MultiThreadedServer;
+import networking.NetworkManager;
 import networking.Server;
 
 public class LpoortalGame extends ApplicationAdapter {
@@ -21,10 +21,8 @@ public class LpoortalGame extends ApplicationAdapter {
 	public void create () {
 		batch = new SpriteBatch();
 		img = new Texture("badlogic.jpg");
-		//Server server = new Server();
-		MultiThreadedServer server = new MultiThreadedServer(8765);
+		NetworkManager server = new NetworkManager(8765);
 
-		
 	}
 
 	@Override

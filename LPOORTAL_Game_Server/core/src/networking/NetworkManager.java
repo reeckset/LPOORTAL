@@ -1,16 +1,31 @@
 package networking;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Net.Protocol;
-import com.badlogic.gdx.net.ServerSocket;
-import com.badlogic.gdx.net.ServerSocketHints;
+import java.io.IOException;
+import java.net.ServerSocket;
 
-public class NetworkManager {
 
+public class NetworkManager{
+   
+	ServerSocket socket;
 	
+	public NetworkManager(int port) {
+		try {
+			socket = new ServerSocket(port);
+			
+			//Creates a server in an alternate thread
+			Server server = new Server(socket);
+			
+			new Thread(server).start();
+			   
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	   
+	}
 	
-	public NetworkManager() {
+	public void updateGameWithRequest(ClientToServerMsg msg) {
+		System.out.println("State: " + msg.controllerState);
 		
 	}
-
+   
 }
