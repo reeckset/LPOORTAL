@@ -17,7 +17,7 @@ public class Client implements Disposable {
 
     public Client(){
         try {
-            socket = new Socket("172.30.16.106", 8765);
+            socket = new Socket("192.168.1.4", 8765);
             socket.setSoTimeout(0);
             output = new PrintWriter(socket.getOutputStream(), true);
             input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
