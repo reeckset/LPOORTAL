@@ -27,11 +27,11 @@ public class ControlsView extends ScreenView{
     private void createControls(){
         jumpBtn = new ButtonView(new Point(420, 20),
                                 new Point(200, 200),
-                                textureManager.getTexture(TextureManager.ObjectTexture.JUMP_BTN_UP),
-                                textureManager.getTexture(TextureManager.ObjectTexture.JUMP_BTN_DOWN));
+                                textureManager.getTexture(TextureManager.Object_Texture.JUMP_BTN_UP),
+                                textureManager.getTexture(TextureManager.Object_Texture.JUMP_BTN_DOWN));
         stage.addActor(jumpBtn);
 
-        Image logo = new Image(new TextureRegion(textureManager.getTexture(TextureManager.ObjectTexture.LOGO)));
+        Image logo = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.LOGO)));
 
         logo.setSize(256, 144);
         logo.setPosition(192, 200);

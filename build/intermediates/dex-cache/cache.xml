@@ -3,6 +3,24 @@
 
     <item
         is-multidex="false"
+        jar="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/core/build/libs/core-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="75c061cd6e3f6727c04de488ed611d9102b40d78">
+        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.8/84024cd60ad6f26370891fbcd17de9f0167e662/gdx-backend-android-1.9.8.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="084024cd60ad6f26370891fbcd17de9f0167e662">
+        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.8_7ecc707372319444efe104e2d855d83b6e980e0d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.box2dlights/box2dlights/1.4/3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd/box2dlights-1.4.jar"
         jumboMode="false"
         optimize="true"
@@ -27,24 +45,6 @@
         revision="25.0.3"
         sha1="a35a0076fbce873f9c2d5a1a1c8066244231bb3c">
         <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-1.9.8_f012506ef737f7daec33536ac86de380f57d1b18.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/core/build/libs/core-1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="7342933b0d268da831d69c79e7ed91e5ad6289f3">
-        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.8/84024cd60ad6f26370891fbcd17de9f0167e662/gdx-backend-android-1.9.8.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="084024cd60ad6f26370891fbcd17de9f0167e662">
-        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.8_7ecc707372319444efe104e2d855d83b6e980e0d.jar" />
     </item>
 
 </items>

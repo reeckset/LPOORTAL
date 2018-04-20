@@ -15,8 +15,8 @@ public class JoyStick extends Touchpad {
 
     private static TouchpadStyle getTouchpadStyle(TextureManager textureManager){
         Skin skin = new Skin();
-        skin.add("background", textureManager.getTexture(TextureManager.ObjectTexture.JOYSTICK_BG));
-        skin.add("knob", textureManager.getTexture(TextureManager.ObjectTexture.JOYSTICK_KNOB));
+        skin.add("background", textureManager.getTexture(TextureManager.Object_Texture.JOYSTICK_BG));
+        skin.add("knob", textureManager.getTexture(TextureManager.Object_Texture.JOYSTICK_KNOB));
 
         TouchpadStyle ts = new TouchpadStyle();
         ts.background = skin.getDrawable("background");

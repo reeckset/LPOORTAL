@@ -13,7 +13,7 @@ public class LPOORTAL_Game extends Game {
 
 	@Override
 	public void create() {
-		textureManager = new TextureManager(TextureManager.PlayerColor.ORANGE);
+		textureManager = new TextureManager(TextureManager.Player_Color.ORANGE);
 		Client client = new Client();
 		client.sendMessage();
 		client.readMessage();

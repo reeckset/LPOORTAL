@@ -23,12 +23,12 @@ public class DrawingView extends ScreenView{
     private void createUI(){
         portraitMode();
 
-        Image logo = new Image(new TextureRegion(textureManager.getTexture(TextureManager.ObjectTexture.LOGO)));
+        Image logo = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.LOGO)));
         logo.setSize(256, 144);
         logo.setPosition(192, 300);
         stage.addActor(logo);
 
-        Image tutorial = new Image(new TextureRegion(textureManager.getTexture(TextureManager.ObjectTexture.MOVEMENT_TUTORIAL)));
+        Image tutorial = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.MOVEMENT_TUTORIAL)));
         tutorial.setSize(144, 256);
         tutorial.setPosition(248, 0);
         stage.addActor(tutorial);
