@@ -1,14 +1,10 @@
-package com.lpoortal.game.Model.Network;
+package com.lpoortal.game.Network;
 
 import com.badlogic.gdx.utils.Disposable;
 
-import java.io.BufferedReader;
-import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.net.Socket;
 
 public class Client implements Disposable {
@@ -19,20 +15,22 @@ public class Client implements Disposable {
 
     public Client() {
         try {
-            socket = new Socket("192.168.2.163", 8765);
+            socket = new Socket("10.0.2.2", 8765);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
         } catch (IOException e) {
             System.out.println(e);
-            dispose();
         }
     }
 
     @Override
     public void dispose() {
         try {
+            System.out.println("DISPOSING socket");
             output.close();
+            input.close();
             socket.close();
+            System.out.println("DISPOSed socket");
         } catch (IOException e) {
             System.out.println(e);
         }
@@ -53,9 +51,7 @@ public class Client implements Disposable {
             while(true) {
                 try {
                     return (ServerToClientMsg) input.readObject();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }

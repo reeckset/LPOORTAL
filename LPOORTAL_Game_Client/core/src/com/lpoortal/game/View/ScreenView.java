@@ -12,12 +12,10 @@ import com.lpoortal.game.LPOORTAL_Game;
 public abstract class ScreenView extends ScreenAdapter {
     protected Stage stage = new Stage(new ExtendViewport(640, 360));
     protected TextureManager textureManager;
-    protected LPOORTAL_Game game;
     protected Color backgroundColor = new Color( 1, 1, 1, 1 );
 
-    public ScreenView(LPOORTAL_Game g, TextureManager textureManager){
+    public ScreenView(TextureManager textureManager){
         this.textureManager = textureManager;
-        game = g;
         Gdx.input.setInputProcessor(stage);
     }
 

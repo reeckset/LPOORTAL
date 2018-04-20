@@ -1,6 +1,8 @@
-package com.lpoortal.game.Model.Network;
+package com.lpoortal.game.Network;
 
-public class ClientToServerMsg {
+import java.io.Serializable;
+
+public class ClientToServerMsg implements Serializable {
     public final float dx;
     public final float dy;
     public final boolean actionBtn;

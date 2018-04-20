@@ -1,4 +1,4 @@
-package networking;
+package com.lpoortal.game.Network;
 
 import java.io.IOException;
 import java.net.ServerSocket;

@@ -13,9 +13,9 @@ public class DrawingView extends ScreenView{
 
     private ButtonView jumpBtn;
 
-    public DrawingView(LPOORTAL_Game g, TextureManager textureManager){
+    public DrawingView(TextureManager textureManager){
 
-        super(g, textureManager);
+        super(textureManager);
 
         createUI();
     }

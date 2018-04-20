@@ -1,6 +1,8 @@
-package networking;
+package com.lpoortal.game.Network;
 
-public class ServerToClientMsg {
+import java.io.Serializable;
+
+public class ServerToClientMsg  implements Serializable{
     public final String controllerState;
 
     ServerToClientMsg(String controllerState){

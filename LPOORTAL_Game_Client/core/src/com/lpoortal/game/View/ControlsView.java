@@ -1,14 +1,10 @@
 package com.lpoortal.game.View;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.lpoortal.game.Controller.HandleGyro;
 import com.lpoortal.game.LPOORTAL_Game;
+import com.lpoortal.game.Network.ClientToServerMsg;
 
 public class ControlsView extends ScreenView{
 
@@ -17,9 +13,9 @@ public class ControlsView extends ScreenView{
     private double buttonX = 300;
     private double buttonY = 100;
 
-    public ControlsView(LPOORTAL_Game g, TextureManager textureManager){
+    public ControlsView(TextureManager textureManager){
 
-        super(g, textureManager);
+        super(textureManager);
 
         createControls();
     }
@@ -53,6 +49,10 @@ public class ControlsView extends ScreenView{
 
         jumpBtn.setX((float)buttonX);
         jumpBtn.setY((float)buttonY);
+
+        LPOORTAL_Game.getInstance().getClient().sendMessage(
+                new ClientToServerMsg(LPOORTAL_Game.getInstance().getState().toString(), (float)buttonX, (float)buttonY, false)
+        );
     }
 
 }

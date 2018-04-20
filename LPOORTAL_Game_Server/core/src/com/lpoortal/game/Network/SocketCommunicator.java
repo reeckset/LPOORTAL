@@ -1,4 +1,4 @@
-package networking;
+package com.lpoortal.game.Network;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -27,23 +27,26 @@ public class SocketCommunicator implements Runnable {
 	@Override
 	public void run() {
 
-		System.out.println(readMsg().controllerState);
+		while(!clientSocket.isClosed()) {
+			readMsg();
+		}
 
 
 	}
 	
-	public ClientToServerMsg readMsg() {
+	public void readMsg() {
 		if(reader != null) {
 			while(true) {
 				try {
-					return (ClientToServerMsg) reader.readObject();
+					ClientToServerMsg msg;
+					if((msg = (ClientToServerMsg) reader.readObject()) != null) {
+						NetworkManager.getInstance().updateGameWithRequest(msg);
+					}
 				} catch (Exception e) {
 					e.printStackTrace();
 				} 
 			}
-		}
-		
-		return null;		
+		}		
 	}
 	
 	public void writeMsg(ServerToClientMsg msg) {
