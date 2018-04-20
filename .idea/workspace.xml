@@ -15,31 +15,23 @@
       <change beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_android_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_android_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/android/assets/logo.png" afterPath="$PROJECT_DIR$/android/assets/logo.png" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/assets/debug/logo.png" afterPath="$PROJECT_DIR$/android/build/intermediates/assets/debug/logo.png" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" afterPath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/android-debug.apk" afterPath="$PROJECT_DIR$/android/build/outputs/apk/android-debug.apk" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/Controller/HandleGyro.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/Controller/HandleGyro.class" />
       <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game$1.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game$1.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game$State.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game$State.class" />
       <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game.class" />
       <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/Model/Network/Client.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/Model/Network/Client.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/View/ControlsView.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/View/ControlsView.class" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Controller/HandleGyro.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Controller/HandleGyro.class" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game$1.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game$1.class" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game$State.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game$State.class" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game.class" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Model/Network/Client.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Model/Network/Client.class" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/View/ControlsView.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/View/ControlsView.class" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/View/MovementView.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Model/Network/MultiThreadedServer.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Model/Network/Server.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Model/Network/SocketCommunicator.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java" afterPath="$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java" />
       <change beforePath="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java" afterPath="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/lpoortal/game/View/MovementView.java" afterPath="$PROJECT_DIR$/core/src/com/lpoortal/game/View/DrawingView.java" />
+      <change beforePath="$PROJECT_DIR$/core/src/com/lpoortal/game/View/TextureManager.java" afterPath="$PROJECT_DIR$/core/src/com/lpoortal/game/View/TextureManager.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,7 +57,7 @@
       <file leaf-file-name="LPOORTAL_Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
+            <state relative-caret-position="340">
               <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
               <folding />
             </state>
@@ -92,11 +84,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+            <state relative-caret-position="755">
+              <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TextureManager.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/TextureManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="986">
+              <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/GameModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -2557,7 +2569,6 @@
       <list>
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/GameModel.java" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/View/ControlsUI.java" />
-        <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/View/TextureManager.java" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/View/MovementView.java" />
         <option value="$PROJECT_DIR$/android/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/ClientThread.java" />
@@ -2567,12 +2578,13 @@
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Controller/HandleGyro.java" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/View/ControlsView.java" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/SocketCommunicator.java" />
-        <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java" />
+        <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java" />
+        <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/View/TextureManager.java" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="y" value="35" />
     <option name="width" value="1920" />
     <option name="height" value="1053" />
@@ -2592,6 +2604,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2643,10 +2659,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2830,9 +2842,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="35" width="3840" height="2105" extended-state="6" />
+    <frame x="0" y="82" width="3840" height="2078" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2842,15 +2855,15 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979912" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33809787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44255084" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19105038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19105038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979912" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33091518" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33537945" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -2868,7 +2881,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="5" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -3129,14 +3142,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/TextureManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1190">
-          <caret line="37" column="97" lean-forward="false" selection-start-line="37" selection-start-column="97" selection-end-line="37" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/bac17f395be5010619b31280fe84e9f53118d0b9/gdx-1.9.8-sources.jar!/com/badlogic/gdx/Net.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9282">
@@ -3146,14 +3151,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/ClientThread.java" />
     <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.8/fa6c464c1a911ce39f252cb2b86e9d05eecb6a1d/gdx-backend-android-1.9.8-sources.jar!/com/badlogic/gdx/backends/android/AndroidNet.java">
@@ -3179,14 +3184,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/GameModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/JoyStick.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -3200,18 +3197,6 @@
         <state relative-caret-position="136">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/ScreenView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1212#1213#0" expanded="true" />
-            <element signature="e#1270#1271#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3234,42 +3219,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/MultiThreadedServer.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/MultiThreadedServer.java" />
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/SocketCommunicator.java" />
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Server.java" />
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/GameModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="102">
+          <caret line="3" column="38" lean-forward="false" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/SocketCommunicator.java">
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/ScreenView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="38" column="13" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="38" selection-end-column="13" />
-          <folding />
+        <state relative-caret-position="680">
+          <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1212#1213#0" expanded="true" />
+            <element signature="e#1270#1271#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
+        <state relative-caret-position="340">
           <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        <state relative-caret-position="755">
+          <caret line="52" column="29" lean-forward="false" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/TextureManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="31" column="7" lean-forward="true" selection-start-line="31" selection-start-column="7" selection-end-line="31" selection-end-column="7" />
           <folding />
         </state>
       </provider>

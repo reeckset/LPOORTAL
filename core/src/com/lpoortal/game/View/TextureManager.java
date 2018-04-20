@@ -6,23 +6,23 @@ import java.util.HashMap;
 
 public class TextureManager {
 
-    public enum PlayerColor {ORANGE, BLUE};
-    public enum ObjectTexture {LOGO, JOYSTICK_KNOB, JOYSTICK_BG, JUMP_BTN_UP, JUMP_BTN_DOWN, MOVEMENT_TUTORIAL};
+    public enum Player_Color {ORANGE, BLUE};
+    public enum Object_Texture {LOGO, JOYSTICK_KNOB, JOYSTICK_BG, JUMP_BTN_UP, JUMP_BTN_DOWN, MOVEMENT_TUTORIAL};
 
-    private HashMap<ObjectTexture, Texture> textures;
+    private HashMap<Object_Texture, Texture> textures;
 
-    private PlayerColor playerColor;
+    private Player_Color playerColor;
 
-    public TextureManager(PlayerColor color) throws IllegalArgumentException {
+    public TextureManager(Player_Color color) throws IllegalArgumentException {
         if (color == null) {
             throw new IllegalArgumentException("Null player color given to Texture Manager");
         }
         this.playerColor = color;
 
-        textures = new HashMap<ObjectTexture, Texture>();
+        textures = new HashMap<Object_Texture, Texture>();
 
         populateGeneralTextures();
-        if(color == PlayerColor.BLUE) {
+        if(color == Player_Color.BLUE) {
             populateBlueColoredTextures();
         }else{
             populateOrangeColoredTextures();
@@ -33,22 +33,22 @@ public class TextureManager {
      * Loads textures that are equal in both color versions
      */
     private void populateGeneralTextures(){
-        textures.put(ObjectTexture.JOYSTICK_BG, getTextureFromSource("background_joystick.png"));
-        textures.put(ObjectTexture.LOGO, getTextureFromSource("logo.png"));
-        textures.put(ObjectTexture.MOVEMENT_TUTORIAL, getTextureFromSource("movement_tutorial.png"));
+        textures.put(Object_Texture.JOYSTICK_BG, getTextureFromSource("background_joystick.png"));
+        textures.put(Object_Texture.LOGO, getTextureFromSource("logo.png"));
+        textures.put(Object_Texture.MOVEMENT_TUTORIAL, getTextureFromSource("movement_tutorial.png"));
     }
 
     private void populateBlueColoredTextures(){
-        textures.put(ObjectTexture.JOYSTICK_KNOB, getTextureFromSource("knob_joystick_blue.png"));
-        textures.put(ObjectTexture.JUMP_BTN_DOWN, getTextureFromSource("jump_btn_blue_down.png"));
-        textures.put(ObjectTexture.JUMP_BTN_UP, getTextureFromSource("jump_btn_blue_up.png"));
+        textures.put(Object_Texture.JOYSTICK_KNOB, getTextureFromSource("knob_joystick_blue.png"));
+        textures.put(Object_Texture.JUMP_BTN_DOWN, getTextureFromSource("jump_btn_blue_down.png"));
+        textures.put(Object_Texture.JUMP_BTN_UP, getTextureFromSource("jump_btn_blue_up.png"));
 
     }
 
     private void populateOrangeColoredTextures(){
-        textures.put(ObjectTexture.JOYSTICK_KNOB, getTextureFromSource("knob_joystick_orange.png"));
-        textures.put(ObjectTexture.JUMP_BTN_DOWN, getTextureFromSource("jump_btn_orange_down.png"));
-        textures.put(ObjectTexture.JUMP_BTN_UP, getTextureFromSource("jump_btn_orange_up.png"));
+        textures.put(Object_Texture.JOYSTICK_KNOB, getTextureFromSource("knob_joystick_orange.png"));
+        textures.put(Object_Texture.JUMP_BTN_DOWN, getTextureFromSource("jump_btn_orange_down.png"));
+        textures.put(Object_Texture.JUMP_BTN_UP, getTextureFromSource("jump_btn_orange_up.png"));
     }
 
     //TODO Use asset manager
@@ -56,7 +56,7 @@ public class TextureManager {
         return new Texture(source);
     }
 
-    public Texture getTexture(ObjectTexture obj){
+    public Texture getTexture(Object_Texture obj){
         return textures.get(obj);
     }
 

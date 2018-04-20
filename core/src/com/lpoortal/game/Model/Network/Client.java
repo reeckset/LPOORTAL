@@ -15,20 +15,12 @@ public class Client implements Disposable {
     PrintWriter output;
     BufferedReader input;
 
-    public Client(){
+    public Client() {
         try {
-            socket = new Socket("192.168.1.4", 8765);
-            socket.setSoTimeout(0);
+            socket = new Socket("192.168.2.163", 8765);
             output = new PrintWriter(socket.getOutputStream(), true);
             input = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            output.println("Hi, I'm the client");
-            String line;
-            while((line = input.readLine()) != null) {
-                System.out.println(line);
-            }
-
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e);
             dispose();
         }
@@ -39,29 +31,37 @@ public class Client implements Disposable {
         try {
             output.close();
             socket.close();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             System.out.println(e);
         }
     }
 
-    public void sendMessage(){
-        if(output != null) {
-                output.println("Mensagem de teste");
+    public void sendMessage() {
+        System.out.println("Gonna try to send");
+        if (output != null) {
+            System.out.println("sending...");
+            output.println("Mensagem de teste");
+            output.println("Over and Out");
+            System.out.println("sent!");
         }
     }
 
-    public void readMessage(){
-        if(input != null) {
-            try {
-                String line;
-                while ((line = input.readLine()) != null) {
-                    System.out.println(line);
+    public String readMessage() {
+        if (input != null) {
+            while(true) {
+                try {
+                    String line;
+                    line = input.readLine();
+                    if(line != null) {
+                        System.out.println(line);
+                        return line;
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
                 }
-            } catch (IOException e) {
-                System.out.println(e);
             }
         }
+        return null;
     }
 
 
