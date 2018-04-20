@@ -13,33 +13,41 @@
       <change beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_android_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_android_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_android_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_android_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_android_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/2.14.1/tasks/_android_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/android/assets/logo.png" afterPath="$PROJECT_DIR$/android/assets/logo.png" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/assets/debug/logo.png" afterPath="$PROJECT_DIR$/android/build/intermediates/assets/debug/logo.png" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi/values.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/multi/values.json" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-hdpi.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-hdpi.json" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-mdpi.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-mdpi.json" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xhdpi.json" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xxhdpi.json" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xxxhdpi.json" afterPath="$PROJECT_DIR$/android/build/intermediates/blame/res/debug/single/drawable-xxxhdpi.json" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugAssets/merger.xml" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugJniLibFolders/merger.xml" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugResources/merger.xml" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugShaders/merger.xml" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/mergeDebugShaders/merger.xml" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
-      <change beforePath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" afterPath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/file-input-save-data.txt" afterPath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/file-input-save-data.txt" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/zip-cache/IzseywPXjTV_+obFKcV5ZnIlI2U=" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/incremental/packageDebug/zip-cache/JnLfVS38jSwG0XJiOFyQgiLiEFc=" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/box2dlights-1.4_11ef8e12f76798664a4697c12b6a32ef41e6cb26.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/debug_114e3eb4bb23abe11d17bf4d33d3ff7ef3615d44.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/gdx-1.9.8_f012506ef737f7daec33536ac86de380f57d1b18.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.8_7ecc707372319444efe104e2d855d83b6e980e0d.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/pre-dexed/debug/gdx-box2d-1.9.8_71691733324eaf9c6991b3541ceb9b36d460dc04.jar" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/android/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/android/build/intermediates/res/resources-debug.ap_" />
       <change beforePath="$PROJECT_DIR$/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
       <change beforePath="$PROJECT_DIR$/android/build/outputs/apk/android-debug.apk" afterPath="$PROJECT_DIR$/android/build/outputs/apk/android-debug.apk" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/Controller/HandleGyro.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/Controller/HandleGyro.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game$1.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game$1.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game$State.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game$State.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/LPOORTAL_Game.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/Model/Network/Client.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/Model/Network/Client.class" />
-      <change beforePath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/View/ControlsView.class" afterPath="$PROJECT_DIR$/android/build/tmp/expandedArchives/core-1.0.jar_1zx0x0bdnhpsnoy2iamgdkcma/com/lpoortal/game/View/ControlsView.class" />
+      <change beforePath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" afterPath="$PROJECT_DIR$/android/build/outputs/logs/manifest-merger-debug-report.txt" />
       <change beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Controller/HandleGyro.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Controller/HandleGyro.class" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game$1.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game$1.class" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game$State.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game$State.class" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/LPOORTAL_Game.class" />
       <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Model/Network/Client.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/Model/Network/Client.class" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/View/ControlsView.class" afterPath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/View/ControlsView.class" />
-      <change beforePath="$PROJECT_DIR$/core/build/classes/main/com/lpoortal/game/View/MovementView.class" afterPath="" />
       <change beforePath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" afterPath="$PROJECT_DIR$/core/build/libs/core-1.0.jar" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java" afterPath="$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java" />
       <change beforePath="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java" afterPath="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java" />
-      <change beforePath="$PROJECT_DIR$/core/src/com/lpoortal/game/View/MovementView.java" afterPath="$PROJECT_DIR$/core/src/com/lpoortal/game/View/DrawingView.java" />
+      <change beforePath="$PROJECT_DIR$/local.properties" afterPath="$PROJECT_DIR$/local.properties" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -65,8 +73,8 @@
       <file leaf-file-name="LPOORTAL_Game.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="216">
+              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -75,7 +83,7 @@
       <file leaf-file-name="ControlsView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/ControlsView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="714">
+            <state relative-caret-position="378">
               <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
               <folding />
             </state>
@@ -85,7 +93,7 @@
       <file leaf-file-name="ButtonView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/ButtonView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="72">
               <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
@@ -95,8 +103,8 @@
       <file leaf-file-name="Client.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="756">
-              <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+            <state relative-caret-position="67">
+              <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -105,7 +113,7 @@
       <file leaf-file-name="ScreenView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/ScreenView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
+            <state relative-caret-position="360">
               <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -119,7 +127,7 @@
       <file leaf-file-name="JoyStick.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/JoyStick.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="72">
               <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
               <folding />
             </state>
@@ -129,7 +137,7 @@
       <file leaf-file-name="HandleGyro.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Controller/HandleGyro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
+            <state relative-caret-position="144">
               <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
               <folding>
                 <element signature="e#734#735#0" expanded="true" />
@@ -2469,71 +2477,71 @@
               <option name="name" value="core" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-open-api-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-resources-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-base-services-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-jvm-services-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-wrapper-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-model-core-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-docs-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-base-services-groovy-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-native-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-core-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-process-services-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-cli-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-messaging-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/groovy-all-2.4.4.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-launcher-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-jvm-services-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-docs-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-logging-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-base-services-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-open-api-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-model-groovy-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-base-services-groovy-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-wrapper-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-native-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-model-core-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-messaging-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-resources-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-installation-beacon-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-ui-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/ant-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-core-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-cli-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-tooling-api-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ide-play-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ide-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-scala-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-javascript-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-sonar-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-platform-jvm-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-plugins-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-plugin-use-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-resources-http-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-antlr-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-announce-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-resources-s3-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-resources-sftp-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ivy-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-osgi-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-testing-native-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-platform-native-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-maven-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-groovy-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-java-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-diagnostics-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-ui-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-process-services-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/gradle-launcher-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-jetty-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-build-init-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-code-quality-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-diagnostics-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-groovy-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-build-comparison-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-test-kit-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ide-native-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-resources-s3-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-testing-jvm-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-tooling-api-builders-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-scala-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-antlr-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-sonar-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-jvm-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-plugin-development-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-testing-native-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-reporting-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-plugin-use-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-maven-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-platform-base-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-native-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-plugin-development-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-jvm-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-dependency-management-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-testing-jvm-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-reporting-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-platform-play-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-signing-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-testing-base-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-scala-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-jacoco-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-build-init-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-publish-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-test-kit-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-tooling-api-builders-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-jetty-2.14.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ear-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ide-native-2.14.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-build-comparison-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-platform-native-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-dependency-management-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-announce-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-testing-base-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-resources-http-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-javascript-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-scala-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ide-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-signing-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-platform-play-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ivy-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-platform-jvm-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-language-java-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-publish-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-osgi-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-jacoco-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-ide-play-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/ivy-2.2.0.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-resources-sftp-2.14.1.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-2.14.1-bin/2r579t5wehc7ew5kc8vfqezww/gradle-2.14.1/lib/plugins/gradle-plugins-2.14.1.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -2567,8 +2575,8 @@
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Controller/HandleGyro.java" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/View/ControlsView.java" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/SocketCommunicator.java" />
-        <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java" />
         <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java" />
+        <option value="$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java" />
       </list>
     </option>
   </component>
@@ -2592,6 +2600,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2644,9 +2654,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
-      <pane id="ProjectPane" />
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -2654,7 +2662,7 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="2.2.0" />
-    <property name="device.picker.selection" value="e5de91c2" />
+    <property name="device.picker.selection" value="32040966c3f1814f" />
     <property name="SearchEverywhereHistoryKey" value="{&#9;null&#9;null" />
   </component>
   <component name="RecentsManager">
@@ -2830,9 +2838,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="35" width="3840" height="2105" extended-state="6" />
+    <frame x="0" y="27" width="1366" height="741" extended-state="6" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2842,12 +2850,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979912" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979912" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33809787" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29565218" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19105038" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32979912" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19072948" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32869565" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33091518" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3146,14 +3154,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/ClientThread.java" />
     <entry file="file://$PROJECT_DIR$/android/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="5" column="65" lean-forward="false" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
           <folding />
         </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.8/fa6c464c1a911ce39f252cb2b86e9d05eecb6a1d/gdx-backend-android-1.9.8-sources.jar!/com/badlogic/gdx/backends/android/AndroidNet.java">
@@ -3189,7 +3197,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/JoyStick.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="72">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
@@ -3197,7 +3205,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/ButtonView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
+        <state relative-caret-position="72">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
@@ -3205,7 +3213,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/ScreenView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
+        <state relative-caret-position="360">
           <caret line="27" column="21" lean-forward="false" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -3217,7 +3225,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/View/ControlsView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
+        <state relative-caret-position="378">
           <caret line="29" column="41" lean-forward="false" selection-start-line="29" selection-start-column="41" selection-end-line="29" selection-end-column="41" />
           <folding />
         </state>
@@ -3225,7 +3233,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Controller/HandleGyro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
+        <state relative-caret-position="144">
           <caret line="8" column="50" lean-forward="false" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
           <folding>
             <element signature="e#734#735#0" expanded="true" />
@@ -3234,42 +3242,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/MultiThreadedServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="18" column="19" lean-forward="false" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/SocketCommunicator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="38" column="13" lean-forward="false" selection-start-line="35" selection-start-column="12" selection-end-line="38" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/MultiThreadedServer.java" />
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/SocketCommunicator.java" />
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/LPOORTAL_Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="216">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="25" column="54" lean-forward="true" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Server.java" />
     <entry file="file://$PROJECT_DIR$/core/src/com/lpoortal/game/Model/Network/Client.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="49" column="16" lean-forward="false" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+        <state relative-caret-position="67">
+          <caret line="19" column="46" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="46" />
           <folding />
         </state>
       </provider>

@@ -1,4 +1,4 @@
-#Thu Apr 19 14:04:27 WEST 2018
-base.0=/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main
+#Fri Apr 20 10:36:06 WEST 2018
+base.0=/home/angelo/LPOORTAL/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main
 renamed.0=classes.dex
-file.0=/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex
+file.0=/home/angelo/LPOORTAL/android/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex

@@ -3,48 +3,48 @@
 
     <item
         is-multidex="false"
-        jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.box2dlights/box2dlights/1.4/3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd/box2dlights-1.4.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd">
-        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/box2dlights-1.4_11ef8e12f76798664a4697c12b6a32ef41e6cb26.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar"
+        jar="/home/angelo/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-box2d/1.9.8/6f0497b7958216464101adfb7bdc3a0f7b88d6d3/gdx-box2d-1.9.8.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="6f0497b7958216464101adfb7bdc3a0f7b88d6d3">
-        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-box2d-1.9.8_71691733324eaf9c6991b3541ceb9b36d460dc04.jar" />
+        <dex dex="/home/angelo/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-box2d-1.9.8_de964f982e4a5139bce6154db00eb6f17ffd5669.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar"
+        jar="/home/angelo/LPOORTAL/core/build/libs/core-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="79589099b5e10c9f5992d1f2bc69a60db0b7f23d">
+        <dex dex="/home/angelo/LPOORTAL/android/build/intermediates/pre-dexed/debug/core-1.0_23cb8ddb833075e1847e44bb7e9e77b76b89e253.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/angelo/.gradle/caches/modules-2/files-2.1/com.badlogicgames.box2dlights/box2dlights/1.4/3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd/box2dlights-1.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3d77ad5b4164fb32fc67e2446e35911bb0aaf0bd">
+        <dex dex="/home/angelo/LPOORTAL/android/build/intermediates/pre-dexed/debug/box2dlights-1.4_1f761b516cf06cf177bb809eabbf542518f15580.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/angelo/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx/1.9.8/a35a0076fbce873f9c2d5a1a1c8066244231bb3c/gdx-1.9.8.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="a35a0076fbce873f9c2d5a1a1c8066244231bb3c">
-        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-1.9.8_f012506ef737f7daec33536ac86de380f57d1b18.jar" />
+        <dex dex="/home/angelo/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-1.9.8_b1900e25340b88b4f0465aa22f0e2f47d59a9dcb.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/core/build/libs/core-1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.3"
-        sha1="8f5986adc59b23511ce5541da5502f4cfc5ef47c">
-        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/core-1.0_70c2f9183870fc45e7fa8827e66e52e67e7f1aa1.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/home/reeckset/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.8/84024cd60ad6f26370891fbcd17de9f0167e662/gdx-backend-android-1.9.8.jar"
+        jar="/home/angelo/.gradle/caches/modules-2/files-2.1/com.badlogicgames.gdx/gdx-backend-android/1.9.8/84024cd60ad6f26370891fbcd17de9f0167e662/gdx-backend-android-1.9.8.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.3"
         sha1="084024cd60ad6f26370891fbcd17de9f0167e662">
-        <dex dex="/home/reeckset/Desktop/Faculdade/LPOO/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.8_7ecc707372319444efe104e2d855d83b6e980e0d.jar" />
+        <dex dex="/home/angelo/LPOORTAL/android/build/intermediates/pre-dexed/debug/gdx-backend-android-1.9.8_00e2ed3280d34e8f08f1f5b9270fd8b128bcf566.jar" />
     </item>
 
 </items>
