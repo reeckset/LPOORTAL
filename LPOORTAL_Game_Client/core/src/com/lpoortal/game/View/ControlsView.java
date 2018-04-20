@@ -10,9 +10,6 @@ public class ControlsView extends ScreenView{
 
     private ButtonView jumpBtn;
 
-    private double buttonX = 300;
-    private double buttonY = 100;
-
     public ControlsView(TextureManager textureManager){
 
         super(textureManager);
@@ -40,19 +37,6 @@ public class ControlsView extends ScreenView{
     @Override
     public void render(float delta){
         super.render(delta);
-        jumpBtn.setSize(50,50);
-        double[] gyro =  HandleGyro.calc();
-        if(buttonX + gyro[0] > -25 && buttonX + gyro[0] < 640 - 25)
-        buttonX += gyro[0];
-        if(buttonY + gyro[1] > -25 && buttonY + gyro[1] < 360 - 25)
-        buttonY += gyro[1];
-
-        jumpBtn.setX((float)buttonX);
-        jumpBtn.setY((float)buttonY);
-
-        LPOORTAL_Game.getInstance().getClient().sendMessage(
-                new ClientToServerMsg(LPOORTAL_Game.getInstance().getState().toString(), (float)buttonX, (float)buttonY, false)
-        );
     }
 
 }

@@ -15,7 +15,7 @@ public class Client implements Disposable {
 
     public Client() {
         try {
-            socket = new Socket("10.0.2.2", 8765);
+            socket = new Socket("172.30.18.75", 8765);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
         } catch (IOException e) {
@@ -26,11 +26,9 @@ public class Client implements Disposable {
     @Override
     public void dispose() {
         try {
-            System.out.println("DISPOSING socket");
             output.close();
             input.close();
             socket.close();
-            System.out.println("DISPOSed socket");
         } catch (IOException e) {
             System.out.println(e);
         }

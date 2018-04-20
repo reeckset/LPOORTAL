@@ -14,11 +14,15 @@ public class NetworkManager{
 	public static NetworkManager instance;
 	public static final int defaultPort = 8888;
 	
-	public List<ClientToServerMsg> messages;
+	ClientToServerMsg lastMessage;
 	
+	public ClientToServerMsg getLastMessage() {
+		return lastMessage;
+	}
+
 	public NetworkManager(int port) {
 		instance = this;
-		this.messages = new ArrayList<ClientToServerMsg>();
+		lastMessage = new ClientToServerMsg("","","");
 		try {
 			socket = new ServerSocket(port);
 			
@@ -40,7 +44,7 @@ public class NetworkManager{
 	}
 	
 	public void updateGameWithRequest(ClientToServerMsg msg) {
-		messages.add(msg);
+		lastMessage = msg;
 	}
    
 }

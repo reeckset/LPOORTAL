@@ -5,8 +5,8 @@ import com.badlogic.gdx.Gdx;
 
 public class HandleGyro {
 
-    private static final double Y_SENSITIVITY = 18;
-    private static final double X_SENSITIVITY = 18;
+    private static final double Y_SENSITIVITY = 18f;
+    private static final double X_SENSITIVITY = 18f;
 
     private static double gyroX;
     private static double gyroZ;
@@ -26,11 +26,11 @@ public class HandleGyro {
     }
 
     private static double calcXTravel(){
-        return - (gyroX * (accelX / 10) + gyroZ * (accelZ / 10));
+        return - (gyroX * (accelX / 10f) + gyroZ * (accelZ / 10f));
     }
 
     private static double calcYTravel(){
-        return (gyroX * (accelZ / 10) + gyroZ * (-accelX / 10));
+        return (gyroX * (accelZ / 10f) + gyroZ * (-accelX / 10f));
     }
 
     private static void updateGyroValues(){

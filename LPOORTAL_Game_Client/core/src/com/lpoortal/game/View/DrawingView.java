@@ -1,17 +1,15 @@
 package com.lpoortal.game.View;
 
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.ScreenAdapter;
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
+import com.lpoortal.game.Controller.HandleGyro;
 import com.lpoortal.game.LPOORTAL_Game;
+import com.lpoortal.game.Network.ClientToServerMsg;
 
 public class DrawingView extends ScreenView{
 
-    private ButtonView jumpBtn;
+    private double cursorX = 300;
+    private double cursorY = 100;
 
     public DrawingView(TextureManager textureManager){
 
@@ -32,6 +30,21 @@ public class DrawingView extends ScreenView{
         tutorial.setSize(144, 256);
         tutorial.setPosition(248, 0);
         stage.addActor(tutorial);
+    }
+
+    @Override
+    public void render(float delta){
+        super.render(delta);
+        double[] gyro =  HandleGyro.calc();
+        if(cursorX + gyro[0] > -25 && cursorX + gyro[0] < 640 - 25)
+            cursorX += gyro[0];
+        if(cursorY + gyro[1] > -25 && cursorY + gyro[1] < 360 - 25)
+            cursorY += gyro[1];
+
+
+        LPOORTAL_Game.getInstance().getClient().sendMessage(
+                new ClientToServerMsg(LPOORTAL_Game.getInstance().getState().toString(), (float) cursorX, (float) cursorY, false)
+        );
     }
 
 }

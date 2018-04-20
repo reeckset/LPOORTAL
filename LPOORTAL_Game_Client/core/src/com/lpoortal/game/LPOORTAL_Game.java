@@ -25,7 +25,7 @@ public class LPOORTAL_Game extends Game {
 		this.instance = this;
 		textureManager = new TextureManager(TextureManager.Player_Color.ORANGE);
 		client = new Client();
-		changeState(State.MOVEMENT_STATE);
+		changeState(State.DRAWING_STATE);
 	}
 
 	public void changeState(State controllerState){
@@ -51,11 +51,4 @@ public class LPOORTAL_Game extends Game {
 	public State getState(){
 		return state;
 	}
-
-	public void dispose(){
-		System.out.println("DISPOSING APP");
-		this.client.dispose();
-	}
-
-
 }
