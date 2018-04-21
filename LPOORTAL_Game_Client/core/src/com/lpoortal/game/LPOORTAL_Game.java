@@ -1,10 +1,11 @@
 package com.lpoortal.game;
 
 import com.badlogic.gdx.Game;
-import com.lpoortal.game.Network.Client;
-import com.lpoortal.game.View.ControlsView;
-import com.lpoortal.game.View.DrawingView;
-import com.lpoortal.game.View.TextureManager;
+import com.lpoortal.game.network.Client;
+import com.lpoortal.game.network.MessageManager;
+import com.lpoortal.game.view.ControlsView;
+import com.lpoortal.game.view.DrawingView;
+import com.lpoortal.game.view.TextureManager;
 
 public class LPOORTAL_Game extends Game {
 
@@ -25,7 +26,8 @@ public class LPOORTAL_Game extends Game {
 		this.instance = this;
 		textureManager = new TextureManager(TextureManager.Player_Color.ORANGE);
 		client = new Client();
-		changeState(State.DRAWING_STATE);
+		MessageManager msgMngr = new MessageManager(client);
+		changeState(State.MOVEMENT_STATE);
 	}
 
 	public void changeState(State controllerState){
