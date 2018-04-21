@@ -1,37 +1,21 @@
 package com.lpoortal.game;
 
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.ArrayList;
-
-import com.badlogic.gdx.ApplicationAdapter;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.graphics.Camera;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.badlogic.gdx.utils.viewport.Viewport;
 import com.lpoortal.game.network.NetworkManager;
-import com.lpoortal.game.network.Server;
 
-import model.entities.EntityModel;
+import view.LevelScreen;
 import view.entities.TextureManager;
 
-public class LpoortalGame extends ApplicationAdapter {
+public class LpoortalGame extends Game {
 	SpriteBatch batch;
 	Sprite pencilSprite;
 	
 	float lastReceivedX = 0;
 	float lastReceivedY = 0;
 
-	float curX = 300;
-	float curY = 300;
-	
-	ArrayList<EntityModel> textures = new ArrayList<EntityModel>();
 	private TextureManager textureManager;
 	
 	@Override
@@ -39,8 +23,22 @@ public class LpoortalGame extends ApplicationAdapter {
 		batch = new SpriteBatch();
 		pencilSprite = new Sprite(new Texture("pencil.png"));
 		NetworkManager server = new NetworkManager(8765);
+		textureManager = new TextureManager();
 		
+		startGame();
 
+	}
+	
+	
+	private void startGame() {
+		
+		setScreen(new LevelScreen(this));
+	}
+
+
+	@Override
+	public void dispose() {
+		batch.dispose();
 	}
 /*
 	@Override

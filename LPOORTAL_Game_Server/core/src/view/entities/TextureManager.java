@@ -16,9 +16,10 @@ public class TextureManager {
 	
 	
 	private HashMap<Pair<Stickman_Animation, Stickman_Facing_Direction>, Animation<TextureRegion>> stickmanAnimations;
-	private Texture background;
+	private Texture background, cursor, lineTexture;
 	
 	public TextureManager(){
+		stickmanAnimations = new HashMap<Pair<Stickman_Animation,Stickman_Facing_Direction>, Animation<TextureRegion>>();
 		populateStaticTextures();
 		populateAnimations();
 	}
@@ -27,7 +28,9 @@ public class TextureManager {
 	 * Populates the static textures (non-animated)
 	 */
 	private void populateStaticTextures() {
-		this.background = new Texture("background.png");
+		this.background = new Texture("background.jpg");
+		this.cursor = new Texture("pencil.png");
+		this.lineTexture = new Texture("Cowboy_Hat.png");
 		
 	}
 
@@ -67,11 +70,19 @@ public class TextureManager {
 	}
 	
 	public Animation<TextureRegion> getStickmanAnimation(Stickman_Animation anim, Stickman_Facing_Direction direction) {
-		return stickmanAnimations.get(new Pair<Stickman_Animation, Stickman_Facing_Direction>(anim, direction));
+		Pair<Stickman_Animation, Stickman_Facing_Direction> animationProps = new Pair<Stickman_Animation, Stickman_Facing_Direction>(anim, direction);
+		return stickmanAnimations.get(animationProps);
 	}
 
 	public Texture getBackground() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.background;
+	}
+
+	public Texture getCursor() {
+		return this.cursor;
+	}
+
+	public Texture getLineTexture() {
+		return this.lineTexture;
 	}
 }

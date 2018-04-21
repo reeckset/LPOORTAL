@@ -76,7 +76,7 @@ public class GameController implements ContactListener {
     private GameController() {
         world = new World(new Vector2(0, -10), true);
         
-        GameModel gameInstance = GameModel.getInstance().getInstance();
+        GameModel gameInstance = GameModel.getInstance();
         
         this.stickmanBody = new StickmanBody(world, gameInstance.getStickman());
         this.cursorBody = new CursorBody(world, gameInstance.getCursor());

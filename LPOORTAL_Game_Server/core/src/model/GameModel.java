@@ -51,10 +51,9 @@ public class GameModel {
      * and a cursor in the middle of the screen
      */
     private GameModel() {
-    	GameController gameInstance = GameController.getInstance();
     	
-        this.cursor = new CursorModel(gameInstance.getWidth() / 2,
-        							  gameInstance.getHeight() / 2);
+        this.cursor = new CursorModel(GameController.LEVEL_WIDTH / 2,
+        							  GameController.LEVEL_HEIGHT / 2);
         this.stickman = new StickmanModel(20, 20);
         this.drawnLines = new ArrayList<DrawnLineModel>();
 

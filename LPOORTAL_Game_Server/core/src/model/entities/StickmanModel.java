@@ -13,6 +13,8 @@ public class StickmanModel extends EntityModel {
 	
 	public StickmanModel(float x, float y) {
 		super(x, y);
+		stickmanState = Stickman_Animation.IDLE;
+		stickmanFacingDirection = Stickman_Facing_Direction.RIGHT;
 	}
 
 	public boolean isJumping() {
