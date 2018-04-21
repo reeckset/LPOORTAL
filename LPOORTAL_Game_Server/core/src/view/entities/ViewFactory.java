@@ -22,7 +22,7 @@ public class ViewFactory {
                 cache.put(model.getType(), new StickmanView(game));
             if (model.getType() == ModelType.CURSOR)
                 cache.put(model.getType(), new CursorView(game));
-            if (model.getType() == LINE)
+            if (model.getType() == ModelType.LINE)
                 cache.put(model.getType(), new DrawnLineView(game));
         }
         return cache.get(model.getType());

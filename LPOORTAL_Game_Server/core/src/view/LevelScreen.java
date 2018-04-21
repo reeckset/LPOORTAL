@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.lpoortal.game.LpoortalGame;
@@ -15,7 +16,11 @@ import model.GameModel;
 import model.entities.DrawnLineModel;
 import model.entities.StickmanModel;
 import view.entities.EntityView;
+import view.entities.TextureManager;
 import view.entities.ViewFactory;
+
+import static controller.GameController.LEVEL_HEIGHT;
+import static controller.GameController.LEVEL_WIDTH;
 
 public class LevelScreen extends ScreenAdapter {
     /**
@@ -54,6 +59,11 @@ public class LevelScreen extends ScreenAdapter {
      * pixels in order to show fixtures in their correct places.
      */
     private Matrix4 debugCamera;
+
+    /**
+     * A manager for texture assets, responsible for loading the sprites/animations
+     */
+	private TextureManager textureManager;
 
     /**
      * Creates this screen.
@@ -102,7 +112,7 @@ public class LevelScreen extends ScreenAdapter {
      * Loads the assets needed by this screen.
      */
     private void loadAssets() {
-        
+        this.textureManager = new TextureManager();
     }
 
     /**
@@ -164,8 +174,10 @@ public class LevelScreen extends ScreenAdapter {
      * Draws the background
      */
     private void drawBackground() {
-        Texture background = game.getAssetManager().get("background.png", Texture.class);
+        Texture background = this.textureManager.getBackground();
         background.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        game.getBatch().draw(background, 0, 0, 0, 0, (int)(ARENA_WIDTH / PIXEL_TO_METER), (int) (ARENA_HEIGHT / PIXEL_TO_METER));
+        game.getBatch().draw(background, 0, 0, 0, 0, 
+        				(int)(LEVEL_WIDTH / PIXEL_TO_METER),
+        				(int) (LEVEL_HEIGHT / PIXEL_TO_METER));
     }
 }

@@ -9,5 +9,10 @@ public class DrawnLineModel extends EntityModel {
 		this.xf = xf;
 		this.yf = yf;
 	}
+
+	@Override
+	public ModelType getType() {
+		return ModelType.LINE;
+	}
 	
 }

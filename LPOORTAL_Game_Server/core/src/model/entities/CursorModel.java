@@ -6,4 +6,9 @@ public class CursorModel extends EntityModel {
 		super(x, y);
 	}
 
+	@Override
+	public ModelType getType() {
+		return ModelType.CURSOR;
+	}
+
 }

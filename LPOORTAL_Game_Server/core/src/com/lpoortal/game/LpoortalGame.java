@@ -19,6 +19,7 @@ import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.Server;
 
 import model.entities.EntityModel;
+import view.entities.TextureManager;
 
 public class LpoortalGame extends ApplicationAdapter {
 	SpriteBatch batch;
@@ -31,12 +32,14 @@ public class LpoortalGame extends ApplicationAdapter {
 	float curY = 300;
 	
 	ArrayList<EntityModel> textures = new ArrayList<EntityModel>();
+	private TextureManager textureManager;
 	
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
 		pencilSprite = new Sprite(new Texture("pencil.png"));
 		NetworkManager server = new NetworkManager(8765);
+		
 
 	}
 /*
@@ -81,5 +84,9 @@ public class LpoortalGame extends ApplicationAdapter {
 	
 	public SpriteBatch getBatch() {
 		return batch;
+	}
+
+	public TextureManager getTextureManager() {
+		return this.textureManager;
 	}
 }

@@ -7,16 +7,30 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+
 import utilities.Pair;
+import model.entities.StickmanModel.Stickman_Animation;
+import model.entities.StickmanModel.Stickman_Facing_Direction;
 
 public class TextureManager {
-	public enum Stickman_Animation {WALKING, IDLE, JUMPING, LIFT_OFF, LANDING};
-	public enum Stickman_Facing_Direction {RIGHT, LEFT};
+	
+	
 	private HashMap<Pair<Stickman_Animation, Stickman_Facing_Direction>, Animation<TextureRegion>> stickmanAnimations;
+	private Texture background;
+	
 	public TextureManager(){
+		populateStaticTextures();
 		populateAnimations();
 	}
 	
+	/**
+	 * Populates the static textures (non-animated)
+	 */
+	private void populateStaticTextures() {
+		this.background = new Texture("background.png");
+		
+	}
+
 	private void populateAnimations() {
 		addPlayerAnimation("Idle.png", Stickman_Animation.IDLE, (int) (4f/30f));
 		addPlayerAnimation("Lift_Off.png", Stickman_Animation.LIFT_OFF, (int) (2f/30f));
@@ -54,5 +68,10 @@ public class TextureManager {
 	
 	public Animation<TextureRegion> getStickmanAnimation(Stickman_Animation anim, Stickman_Facing_Direction direction) {
 		return stickmanAnimations.get(new Pair<Stickman_Animation, Stickman_Facing_Direction>(anim, direction));
+	}
+
+	public Texture getBackground() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
