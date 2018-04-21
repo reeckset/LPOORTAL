@@ -2,6 +2,7 @@ package com.lpoortal.game.Network;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
+import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
@@ -26,12 +27,9 @@ public class SocketCommunicator implements Runnable {
 	
 	@Override
 	public void run() {
-
 		while(!clientSocket.isClosed()) {
 			readMsg();
 		}
-
-
 	}
 	
 	public void readMsg() {
@@ -43,8 +41,8 @@ public class SocketCommunicator implements Runnable {
 						NetworkManager.getInstance().updateGameWithRequest(msg);
 					}
 				} catch (Exception e) {
-					e.printStackTrace();
-				} 
+					closeSocket();
+				}
 			}
 		}		
 	}
@@ -61,6 +59,14 @@ public class SocketCommunicator implements Runnable {
 			System.out.println("Message Sent!");
 		}
 		
+	}
+	
+	private void closeSocket() {
+		try {
+		clientSocket.close();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

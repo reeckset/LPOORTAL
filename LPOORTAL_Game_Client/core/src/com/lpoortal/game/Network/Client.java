@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class Client implements Disposable {
     private Socket socket;
@@ -15,7 +16,7 @@ public class Client implements Disposable {
 
     public Client() {
         try {
-            socket = new Socket("192.168.1.141", 8765);
+            socket = new Socket("192.168.2.87", 8765);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
         } catch (IOException e) {
@@ -38,7 +39,10 @@ public class Client implements Disposable {
         if(msg != null && output != null){
             try {
                 output.writeObject(msg);
-            } catch (IOException e) {
+            }catch (SocketException e){
+                closeSocket();
+            }
+            catch (IOException e) {
                 e.printStackTrace();
             }
         }
@@ -55,6 +59,14 @@ public class Client implements Disposable {
             }
         }
         return null;
+    }
+
+    private void closeSocket(){
+        try {
+            socket.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 
