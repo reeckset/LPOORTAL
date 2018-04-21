@@ -2,7 +2,8 @@ package com.lpoortal.game.View;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.lpoortal.game.Controller.HandleGyro;
+import com.lpoortal.game.Controller.GyroCalculator;
+import com.lpoortal.game.Controller.GyroManager;
 import com.lpoortal.game.LPOORTAL_Game;
 import com.lpoortal.game.Network.ClientToServerMsg;
 
@@ -11,9 +12,14 @@ public class DrawingView extends ScreenView{
     private double cursorX = 300;
     private double cursorY = 100;
 
+    private GyroManager gyro;
+
     public DrawingView(TextureManager textureManager){
 
         super(textureManager);
+
+        gyro = new GyroManager();
+        new Thread(gyro).start();
 
         createUI();
     }
@@ -35,15 +41,9 @@ public class DrawingView extends ScreenView{
     @Override
     public void render(float delta){
         super.render(delta);
-        double[] gyro =  HandleGyro.calc();
-        if(cursorX + gyro[0] > -25 && cursorX + gyro[0] < 640 - 25)
-            cursorX += gyro[0];
-        if(cursorY + gyro[1] > -25 && cursorY + gyro[1] < 360 - 25)
-            cursorY += gyro[1];
-
 
         LPOORTAL_Game.getInstance().getClient().sendMessage(
-                new ClientToServerMsg(LPOORTAL_Game.getInstance().getState().toString(), (float) cursorX, (float) cursorY, false)
+                new ClientToServerMsg(LPOORTAL_Game.getInstance().getState().toString(), (float) gyro.getX(), (float) gyro.getY(), false)
         );
     }
 

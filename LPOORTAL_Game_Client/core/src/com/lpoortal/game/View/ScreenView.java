@@ -6,8 +6,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
-import com.lpoortal.game.Controller.HandleGyro;
-import com.lpoortal.game.LPOORTAL_Game;
 
 public abstract class ScreenView extends ScreenAdapter {
     protected Stage stage = new Stage(new ExtendViewport(640, 360));

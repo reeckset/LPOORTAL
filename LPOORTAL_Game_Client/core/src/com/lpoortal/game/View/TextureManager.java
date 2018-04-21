@@ -1,5 +1,6 @@
 package com.lpoortal.game.View;
 
+import com.badlogic.gdx.assets.AssetManager;
 import com.badlogic.gdx.graphics.Texture;
 
 import java.util.HashMap;
@@ -10,15 +11,14 @@ public class TextureManager {
     public enum Object_Texture {LOGO, JOYSTICK_KNOB, JOYSTICK_BG, JUMP_BTN_UP, JUMP_BTN_DOWN, MOVEMENT_TUTORIAL};
 
     private HashMap<Object_Texture, Texture> textures;
-
-    private Player_Color playerColor;
+    private AssetManager assetManager;
 
     public TextureManager(Player_Color color) throws IllegalArgumentException {
         if (color == null) {
             throw new IllegalArgumentException("Null player color given to Texture Manager");
         }
-        this.playerColor = color;
 
+        assetManager = new AssetManager();
         textures = new HashMap<Object_Texture, Texture>();
 
         populateGeneralTextures();
@@ -51,9 +51,10 @@ public class TextureManager {
         textures.put(Object_Texture.JUMP_BTN_UP, getTextureFromSource("jump_btn_orange_up.png"));
     }
 
-    //TODO Use asset manager
     private Texture getTextureFromSource(String source){
-        return new Texture(source);
+        assetManager.load(source, Texture.class);
+        assetManager.finishLoading();
+        return assetManager.get(source);
     }
 
     public Texture getTexture(Object_Texture obj){

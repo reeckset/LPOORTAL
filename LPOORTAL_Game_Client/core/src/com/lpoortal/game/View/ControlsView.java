@@ -2,9 +2,6 @@ package com.lpoortal.game.View;
 
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.lpoortal.game.Controller.HandleGyro;
-import com.lpoortal.game.LPOORTAL_Game;
-import com.lpoortal.game.Network.ClientToServerMsg;
 
 public class ControlsView extends ScreenView{
 
