@@ -7,13 +7,21 @@ public class MessageManager {
 
     public static MessageManager getInstance() {
         if (instance == null)
-            instance = new MessageManager(new Client());
+            System.out.println("Network Manager not available");
         return instance;
     }
 
-    public MessageManager(Client client){
-        this.client = client;
+    public MessageManager(){
+        instance = this;
+    }
+
+    public void start(String ip){
+        this.client = new Client(ip);
         new Thread(client).start();
+    }
+
+    public Client getClient() {
+        return client;
     }
 
 }

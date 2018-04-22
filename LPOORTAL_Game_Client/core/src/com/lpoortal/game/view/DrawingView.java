@@ -6,6 +6,7 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.lpoortal.game.controller.GyroManager;
 import com.lpoortal.game.LPOORTAL_Game;
 import com.lpoortal.game.network.ClientToServerMsg;
+import com.lpoortal.game.network.MessageManager;
 
 public class DrawingView extends ScreenView{
 
@@ -42,7 +43,7 @@ public class DrawingView extends ScreenView{
     public void render(float delta){
         super.render(delta);
 
-        LPOORTAL_Game.getInstance().getClient().setNextSendingMessage(
+        MessageManager.getInstance().getClient().setNextSendingMessage(
                 new ClientToServerMsg(LPOORTAL_Game.getInstance().getState().toString(), (float) gyro.getX(), (float) gyro.getY(), Gdx.input.isTouched())
         );
     }

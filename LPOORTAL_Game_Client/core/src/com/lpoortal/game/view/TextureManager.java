@@ -8,7 +8,13 @@ import java.util.HashMap;
 public class TextureManager {
 
     public enum Player_Color {ORANGE, BLUE};
-    public enum Object_Texture {LOGO, JOYSTICK_KNOB, JOYSTICK_BG, JUMP_BTN_UP, JUMP_BTN_DOWN, MOVEMENT_TUTORIAL};
+    public enum Object_Texture {LOGO,
+        JOYSTICK_KNOB, JOYSTICK_BG,
+        JUMP_BTN_UP, JUMP_BTN_DOWN,
+        MOVEMENT_TUTORIAL,
+        KEYBOARD_KEY_DOWN, KEYBOARD_ERASE, KEYBOARD_DONE,
+        CONNECTION_INSTRUCTIONS,
+        SPLITTER};
 
     private HashMap<Object_Texture, Texture> textures;
     private AssetManager assetManager;
@@ -36,6 +42,12 @@ public class TextureManager {
         textures.put(Object_Texture.JOYSTICK_BG, getTextureFromSource("background_joystick.png"));
         textures.put(Object_Texture.LOGO, getTextureFromSource("logo.png"));
         textures.put(Object_Texture.MOVEMENT_TUTORIAL, getTextureFromSource("movement_tutorial.png"));
+        textures.put(Object_Texture.KEYBOARD_KEY_DOWN, getTextureFromSource("keyboard_down.png"));
+        textures.put(Object_Texture.KEYBOARD_DONE, getTextureFromSource("keyboard_done.png"));
+        textures.put(Object_Texture.KEYBOARD_ERASE, getTextureFromSource("keyboard_erase.png"));
+        textures.put(Object_Texture.CONNECTION_INSTRUCTIONS, getTextureFromSource("connection_instructions.png"));
+        textures.put(Object_Texture.SPLITTER, getTextureFromSource("splitter.png"));
+
     }
 
     private void populateBlueColoredTextures(){
@@ -59,6 +71,10 @@ public class TextureManager {
 
     public Texture getTexture(Object_Texture obj){
         return textures.get(obj);
+    }
+
+    public Texture getKeyboardKeyTexture(int i){
+        return new Texture("keyboard_" + Integer.toHexString(i) + ".png");
     }
 
 

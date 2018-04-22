@@ -3,6 +3,7 @@ package com.lpoortal.game;
 import com.badlogic.gdx.Game;
 import com.lpoortal.game.network.Client;
 import com.lpoortal.game.network.MessageManager;
+import com.lpoortal.game.view.ConnectView;
 import com.lpoortal.game.view.ControlsView;
 import com.lpoortal.game.view.DrawingView;
 import com.lpoortal.game.view.TextureManager;
@@ -14,20 +15,12 @@ public class LPOORTAL_Game extends Game {
 	private State state;
 	TextureManager textureManager;
 
-	public Client getClient() {
-		return client;
-	}
-
-	Client client;
-
-
 	@Override
 	public void create() {
 		this.instance = this;
 		textureManager = new TextureManager(TextureManager.Player_Color.ORANGE);
-		client = new Client();
-		MessageManager msgMngr = new MessageManager(client);
-		changeState(State.MOVEMENT_STATE);
+		MessageManager msgMngr = new MessageManager();
+		changeState(State.CONNECT_STATE);
 	}
 
 	public void changeState(State controllerState){
@@ -37,6 +30,9 @@ public class LPOORTAL_Game extends Game {
 				break;
 			case MOVEMENT_STATE:
 				this.setScreen(new ControlsView(textureManager));
+				break;
+			case CONNECT_STATE:
+				this.setScreen(new ConnectView(textureManager));
 				break;
 			//default:
 			//	this.setScreen(new MenuView(this, textureManager));
