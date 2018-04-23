@@ -2,6 +2,7 @@ package view.entities;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lpoortal.game.LpoortalGame;
 
 public class CursorView extends EntityView {
@@ -26,7 +27,12 @@ public class CursorView extends EntityView {
     public Sprite createSprite(LpoortalGame game) {
         Texture texture = game.getTextureManager().getCursor();
 
-        return new Sprite(texture, 40, 40);
+        return new Sprite(texture);
+    }
+    @Override
+    public void draw(SpriteBatch batch) {
+    	sprite.setSize(80, 80);
+    	sprite.draw(batch);
     }
 
 }

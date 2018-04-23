@@ -54,8 +54,7 @@ public class GameModel {
     private GameModel() {
     	
         
-    	this.cursor = new CursorModel((float) GameController.LEVEL_WIDTH  / 2f,
-    								  (float) GameController.LEVEL_HEIGHT / 2f);
+    	this.cursor = new CursorModel(50,35);
         
     	//this.cursor = new CursorModel(1,10);
         this.stickman = new StickmanModel(50, 35);

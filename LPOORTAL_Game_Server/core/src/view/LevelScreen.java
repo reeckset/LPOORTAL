@@ -158,18 +158,20 @@ public class LevelScreen extends ScreenAdapter {
             view.draw(game.getBatch());
         }
 
-        StickmanModel stickmanModel = GameModel.getInstance().getStickman();
-        EntityView view = ViewFactory.makeView(game, stickmanModel);
-        
-        view.update(stickmanModel);
-        view.draw(game.getBatch());
 
         CursorModel cursorModel = GameModel.getInstance().getCursor();
-        view = ViewFactory.makeView(game, cursorModel);
+        EntityView view = ViewFactory.makeView(game, cursorModel);
         
 
         view.update(cursorModel);
         view.draw(game.getBatch());
+        
+        StickmanModel stickmanModel = GameModel.getInstance().getStickman();
+        view = ViewFactory.makeView(game, stickmanModel);
+        
+        view.update(stickmanModel);
+        view.draw(game.getBatch());
+
     }
     
     /**
@@ -182,13 +184,10 @@ public class LevelScreen extends ScreenAdapter {
             GameController.getInstance().jump(delta);
         }
         
-        /*
+        
         float dx = NetworkManager.getInstance().getLastMessage().dx;
         float dy = NetworkManager.getInstance().getLastMessage().dy;
-        */
-        
-        float dx = Gdx.input.getX();
-        float dy = Gdx.input.getY();
+       
         
         GameController.getInstance().moveCursor(dx, dy);
     }

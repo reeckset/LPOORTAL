@@ -22,7 +22,7 @@ public class LPOORTAL_Game extends Game {
 		this.instance = this;
 		textureManager = new TextureManager(TextureManager.Player_Color.ORANGE);
 		MessageManager msgMngr = new MessageManager();
-		changeState(State.PLAYER_CUSTOMIZATION_STATE);
+		changeState(State.CONNECT_STATE);
 	}
 
 	public void changeState(State controllerState){

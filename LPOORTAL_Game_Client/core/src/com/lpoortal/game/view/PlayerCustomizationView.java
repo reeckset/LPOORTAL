@@ -4,6 +4,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.lpoortal.game.LPOORTAL_Game;
 
 public class PlayerCustomizationView extends ScreenView{
 
@@ -131,6 +132,7 @@ public class PlayerCustomizationView extends ScreenView{
             @Override
             public void clicked(InputEvent event, float x1, float y1) {
                 //TODO SET READY
+                LPOORTAL_Game.getInstance().changeState(LPOORTAL_Game.State.DRAWING_STATE);
             }
         });
     }
