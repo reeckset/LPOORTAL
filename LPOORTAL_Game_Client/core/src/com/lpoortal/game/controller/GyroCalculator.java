@@ -5,8 +5,8 @@ import com.badlogic.gdx.Gdx;
 
 public class GyroCalculator {
 
-    private static final double Y_SENSITIVITY = 0.4f;
-    private static final double X_SENSITIVITY = 0.4f;
+    private static final double Y_SENSITIVITY = 0.05f;
+    private static final double X_SENSITIVITY = 0.05f;
 
     private static double gyroX;
     private static double gyroZ;

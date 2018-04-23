@@ -183,13 +183,6 @@ public class LevelScreen extends ScreenAdapter {
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
             GameController.getInstance().jump(delta);
         }
-        
-        
-        float dx = NetworkManager.getInstance().getLastMessage().dx;
-        float dy = NetworkManager.getInstance().getLastMessage().dy;
-       
-        
-        GameController.getInstance().moveCursor(dx, dy);
     }
 
     /**

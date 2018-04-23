@@ -21,11 +21,10 @@ public class Server implements Runnable{
 		try {
 			while(true) {
 		        Socket clientSocket = socket.accept();
-		        
-		        socketCommunicator = new SocketCommunicator(clientSocket);
-		        
+		        PlayerClient player = new PlayerClient(clientSocket);
+		        socketCommunicator = new SocketCommunicator(player);
+		        NetworkManager.getInstance().addPlayerClient(player);
 		        new Thread(socketCommunicator).start();
-		        
 			}
 		}
 		catch (IOException e) {

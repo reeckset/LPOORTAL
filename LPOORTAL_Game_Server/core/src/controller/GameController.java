@@ -11,6 +11,9 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
+import com.lpoortal.game.network.ClientToServerMsg;
+import com.lpoortal.game.network.NetworkManager;
+import com.lpoortal.game.network.PlayerClient;
 
 import controller.entities.CursorBody;
 import controller.entities.DrawnLineBody;
@@ -113,7 +116,7 @@ public class GameController implements ContactListener {
             world.step(1/60f, 6, 2);
             accumulator -= 1/60f;
         }
-
+        
         Array<Body> bodies = new Array<Body>();
         world.getBodies(bodies);
 
@@ -121,9 +124,19 @@ public class GameController implements ContactListener {
             verifyBounds(body);
             ((EntityModel) body.getUserData()).setPosition(body.getPosition().x, body.getPosition().y);
         }
+        
+        applyClientInput();
     }
 
     /**
+     * Takes the last received messages by the Network Manager
+     * 
+     */
+    private void applyClientInput() {
+    	cursorBody.updatePosition(NetworkManager.getInstance().getPlayer1());
+	}
+
+	/**
      * Verifies if the body is inside the arena bounds and if not
      * keeps it in bounds.
      *
@@ -213,15 +226,31 @@ public class GameController implements ContactListener {
         }
     }
     
-    public void moveCursor(float dx, float dy) {
-            ((CursorModel)cursorBody.getUserData()).move(dx, dy);
-    }
-    
     public static int getWidth() {
 		return LEVEL_WIDTH;
 	}
 
 	public static int getHeight() {
 		return LEVEL_HEIGHT;
+	}
+	
+	public static float limitBoundsX(float x) {
+		if (x < 0) { 
+			return 0;
+		}
+        else if (x > LEVEL_WIDTH) {
+        	return LEVEL_WIDTH;
+        }
+		return x;
+	}
+	
+	public static float limitBoundsY(float y) {
+		if (y < 0) { 
+			return 0;
+		}
+        else if (y > LEVEL_HEIGHT) {
+        	return LEVEL_HEIGHT;
+        }
+		return y;
 	}
 }

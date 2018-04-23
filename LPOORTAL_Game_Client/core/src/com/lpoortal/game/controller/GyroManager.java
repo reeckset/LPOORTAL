@@ -5,7 +5,7 @@ public class GyroManager implements Runnable {
     private double x, y;
     private long lastRead;
     private boolean isActive = true;
-    private final int GYRO_UPDATE_FREQUENCY = 2;
+    private final int GYRO_UPDATE_FREQUENCY = 1;
 
     public GyroManager(){
         x = 0;

@@ -12,7 +12,7 @@ import java.net.Socket;
 
 public class SocketCommunicator implements Runnable {
 
-	private Socket clientSocket;
+	private PlayerClient clientSocket;
 //	private PrintWriter writer;
 	private ObjectOutputStream writer;
 	private ObjectInputStream reader;
@@ -20,7 +20,7 @@ public class SocketCommunicator implements Runnable {
 	private static final long READ_FREQUENCY_MILLIS = 100;
 	private long lastReadAttemptMillis = 0;
 	
-	public SocketCommunicator(Socket clientSocket) throws IOException {
+	public SocketCommunicator(PlayerClient clientSocket) throws IOException {
 		this.clientSocket = clientSocket;
 		this.writer = new ObjectOutputStream(clientSocket.getOutputStream());
 		this.reader = new ObjectInputStream(clientSocket.getInputStream());
@@ -43,7 +43,7 @@ public class SocketCommunicator implements Runnable {
 				try {
 					ClientToServerMsg msg;
 					if((msg = (ClientToServerMsg) reader.readObject()) != null) {
-						NetworkManager.getInstance().updateGameWithRequest(msg);
+						clientSocket.setLastReceivedMsg(msg);
 					}
 				} catch (Exception e) {
 					closeSocket();
