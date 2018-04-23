@@ -1,6 +1,7 @@
 package com.lpoortal.game.view;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.lpoortal.game.controller.GyroManager;
@@ -8,16 +9,15 @@ import com.lpoortal.game.LPOORTAL_Game;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.MessageManager;
 
-public class DrawingView extends ScreenView{
+import javax.swing.plaf.TextUI;
 
-    private double cursorX = 300;
-    private double cursorY = 100;
+public class DrawingView extends ScreenView{
 
     private GyroManager gyro;
 
-    public DrawingView(TextureManager textureManager){
+    public DrawingView(){
 
-        super(textureManager);
+        super();
 
         gyro = new GyroManager();
         new Thread(gyro).start();
@@ -26,17 +26,9 @@ public class DrawingView extends ScreenView{
     }
 
     private void createUI(){
-        portraitMode();
+        centerImage(TextureManager.Object_Texture.LOGO, 80, VP_HEIGHT - 170);
 
-        Image logo = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.LOGO)));
-        logo.setSize(256, 144);
-        logo.setPosition(192, 300);
-        stage.addActor(logo);
-
-        Image tutorial = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.MOVEMENT_TUTORIAL)));
-        tutorial.setSize(144, 256);
-        tutorial.setPosition(248, 0);
-        stage.addActor(tutorial);
+        centerImage(TextureManager.Object_Texture.MOVEMENT_TUTORIAL, 40,170);
     }
 
     @Override

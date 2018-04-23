@@ -2,7 +2,9 @@ package com.lpoortal.game.view;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Button;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 
 public class ButtonView extends Button {
@@ -12,4 +14,5 @@ public class ButtonView extends Button {
                 new SpriteDrawable(new Sprite(texSourceDown)));
         this.setBounds(position.getX(), position.getY(), size.getX(), size.getY());
     }
+
 }

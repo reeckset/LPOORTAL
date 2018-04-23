@@ -11,15 +11,15 @@ public class ControlsView extends ScreenView{
     private ButtonView jumpBtn;
     private JoyStick joystick;
 
-    public ControlsView(TextureManager textureManager){
+    public ControlsView(){
 
-        super(textureManager);
-
+        super();
+        landscapeMode();
         createControls();
     }
 
     private void createControls(){
-        jumpBtn = new ButtonView(new Point(420, 20),
+        jumpBtn = new ButtonView(new Point(440 - LANDSCAPE_MARGIN, LANDSCAPE_MARGIN),
                                 new Point(200, 200),
                                 textureManager.getTexture(TextureManager.Object_Texture.JUMP_BTN_UP),
                                 textureManager.getTexture(TextureManager.Object_Texture.JUMP_BTN_DOWN));
@@ -28,9 +28,9 @@ public class ControlsView extends ScreenView{
         Image logo = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.LOGO)));
 
         logo.setSize(256, 144);
-        logo.setPosition(192, 200);
+        logo.setPosition(192 - LANDSCAPE_MARGIN, 200 + LANDSCAPE_MARGIN);
         stage.addActor(logo);
-        joystick = new JoyStick(new Point(20, 20),
+        joystick = new JoyStick(new Point(20 - LANDSCAPE_MARGIN, LANDSCAPE_MARGIN),
                 new Point(200,200), 10, textureManager);
         stage.addActor(joystick);
     }

@@ -3,12 +3,12 @@ package com.lpoortal.game.controller;
 import com.lpoortal.game.LPOORTAL_Game;
 import com.lpoortal.game.network.MessageManager;
 
-public class KeyboardController {
+public class IpKeyboardController {
 
     private String input;
     private long ip;
 
-    public KeyboardController(){
+    public IpKeyboardController(){
         input = "";
     }
 
@@ -37,7 +37,7 @@ public class KeyboardController {
             }
             System.out.println(hostname);
             MessageManager.getInstance().start(hostname);
-            LPOORTAL_Game.getInstance().changeState(LPOORTAL_Game.State.DRAWING_STATE);
+            LPOORTAL_Game.getInstance().changeState(LPOORTAL_Game.State.PLAYER_CUSTOMIZATION_STATE);
         }else{
             System.out.println("Hostname must be input fully");
         }

@@ -1,39 +1,25 @@
 package com.lpoortal.game.view;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Event;
-import com.badlogic.gdx.scenes.scene2d.EventListener;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.ui.Button;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
-import com.lpoortal.game.LPOORTAL_Game;
-import com.lpoortal.game.controller.KeyboardController;
-import com.lpoortal.game.network.Client;
-import com.lpoortal.game.network.ClientToServerMsg;
-import com.lpoortal.game.network.MessageManager;
+import com.lpoortal.game.controller.IpKeyboardController;
 
 import java.util.ArrayList;
 
 public class ConnectView extends ScreenView{
 
-    private static final int BUTTON_SIZE = 70;
-    private static final int MARGIN_KEYBOARD = 140;
+    private static final int BUTTON_SIZE = VP_WIDTH/5;
 
-    KeyboardController kbController;
+    IpKeyboardController kbController;
     ArrayList<Image> displayImgs = new ArrayList<Image>();
 
-    public ConnectView(TextureManager textureManager) {
-        super(textureManager);
+    public ConnectView() {
+        super();
 
-        kbController = new KeyboardController();
-        portraitMode();
+        kbController = new IpKeyboardController();
         createUI();
     }
 
@@ -65,7 +51,7 @@ public class ConnectView extends ScreenView{
 
     private void addKeyboardValues(){
         for(int i = 0; i < 16; i++) {
-            ButtonView newBtn = new ButtonView(new Point(i%4*BUTTON_SIZE + MARGIN_KEYBOARD, (3-i/4)*BUTTON_SIZE - MARGIN_KEYBOARD),
+            ButtonView newBtn = new ButtonView(new Point(i%4*BUTTON_SIZE, (3-i/4)*BUTTON_SIZE),
                     new Point(BUTTON_SIZE, BUTTON_SIZE),
                     textureManager.getKeyboardKeyTexture(i),
                     textureManager.getTexture(TextureManager.Object_Texture.KEYBOARD_KEY_DOWN));
@@ -76,7 +62,7 @@ public class ConnectView extends ScreenView{
     }
 
     private void addKeyboardDoneKey(){
-        ButtonView doneBtn = new ButtonView(new Point(4*BUTTON_SIZE + MARGIN_KEYBOARD, - MARGIN_KEYBOARD),
+        ButtonView doneBtn = new ButtonView(new Point(4*BUTTON_SIZE, 0),
                 new Point(BUTTON_SIZE, BUTTON_SIZE),
                 textureManager.getTexture(TextureManager.Object_Texture.KEYBOARD_DONE),
                 textureManager.getTexture(TextureManager.Object_Texture.KEYBOARD_KEY_DOWN));
@@ -90,7 +76,7 @@ public class ConnectView extends ScreenView{
     }
 
     private void addKeyboardEraseKey(){
-        ButtonView eraseBtn = new ButtonView(new Point(4*BUTTON_SIZE + MARGIN_KEYBOARD, 3*BUTTON_SIZE - MARGIN_KEYBOARD),
+        ButtonView eraseBtn = new ButtonView(new Point(4*BUTTON_SIZE, 3*BUTTON_SIZE),
                 new Point(BUTTON_SIZE, BUTTON_SIZE),
                 textureManager.getTexture(TextureManager.Object_Texture.KEYBOARD_ERASE),
                 textureManager.getTexture(TextureManager.Object_Texture.KEYBOARD_KEY_DOWN));
@@ -106,8 +92,8 @@ public class ConnectView extends ScreenView{
     private void createDisplay(){
         for(int i = 0; i < 8; i++){
             Image newImg = new Image(textureManager.getTexture(TextureManager.Object_Texture.KEYBOARD_KEY_DOWN));
-            newImg.setSize(45,  45);
-            newImg.setPosition(i*45 + MARGIN_KEYBOARD, 160);
+            newImg.setSize(VP_WIDTH/8,  VP_WIDTH/8);
+            newImg.setPosition(i*VP_WIDTH/8, 300);
             displayImgs.add(newImg);
             stage.addActor(newImg);
         }
@@ -124,29 +110,16 @@ public class ConnectView extends ScreenView{
     }
 
     private void addLogo(){
-        Image logo = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.LOGO)));
-        logo.setSize(256, 144);
-        logo.setPosition(192, 360);
-        stage.addActor(logo);
+        centerImage(TextureManager.Object_Texture.LOGO, 70, VP_HEIGHT - 140);
     }
 
     private void addInstructions(){
-        Image instructions = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.CONNECTION_INSTRUCTIONS)));
-        instructions.setSize(330, 150);
-        instructions.setPosition(MARGIN_KEYBOARD + 10, 200);
-        stage.addActor(instructions);
+        centerImage(TextureManager.Object_Texture.CONNECTION_INSTRUCTIONS, 80, VP_HEIGHT - 280);
     }
 
     private void addSplitters(){
-        Image splitter1 = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.SPLITTER)));
-        splitter1.setSize(360, 32);
-        splitter1.setPosition(MARGIN_KEYBOARD, 140);
-        stage.addActor(splitter1);
-
-        Image splitter2 = new Image(new TextureRegion(textureManager.getTexture(TextureManager.Object_Texture.SPLITTER)));
-        splitter2.setSize(360, 32);
-        splitter2.setPosition(MARGIN_KEYBOARD, 190);
-        stage.addActor(splitter2);
+        centerImage(TextureManager.Object_Texture.SPLITTER, 100, 325);
+        centerImage(TextureManager.Object_Texture.SPLITTER, 100, 275);
     }
 
 }
