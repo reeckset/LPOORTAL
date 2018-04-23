@@ -16,6 +16,7 @@ import controller.entities.CursorBody;
 import controller.entities.DrawnLineBody;
 import controller.entities.StickmanBody;
 import model.GameModel;
+import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
@@ -38,9 +39,9 @@ public class GameController implements ContactListener {
 	/**
      * The arena height in meters.
      */
-    public static final int LEVEL_HEIGHT = 50;
+    public static final int LEVEL_HEIGHT = 70;
     
-    public static final int JUMP_STRENGTH = 5;
+    public static final int JUMP_STRENGTH = 100;
 
 
     /**
@@ -82,6 +83,7 @@ public class GameController implements ContactListener {
         this.cursorBody = new CursorBody(world, gameInstance.getCursor());
 
         List<DrawnLineModel> drawnLines = GameModel.getInstance().getDrawnLines();
+        this.drawLine(50, 20, 400, 20);
 
         world.setContactListener(this);
     }
@@ -209,6 +211,10 @@ public class GameController implements ContactListener {
                 world.destroyBody(body);
             }
         }
+    }
+    
+    public void moveCursor(float dx, float dy) {
+            ((CursorModel)cursorBody.getUserData()).move(dx, dy);
     }
     
     public static int getWidth() {

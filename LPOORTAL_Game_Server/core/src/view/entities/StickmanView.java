@@ -1,6 +1,7 @@
 package view.entities;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.lpoortal.game.LpoortalGame;
 
@@ -32,6 +33,17 @@ public class StickmanView extends EntityView {
      * Stickman facing direction (LEFT, RIGHT)
      */
     private StickmanModel.Stickman_Facing_Direction stickmanFacingDirection;
+    
+    
+    /**
+     * Stickman x position
+     */
+    private float x;
+    
+    /**
+     * Stickman y position
+     */
+    private float y;
 
     /**
      * game object this stickman view corresponds to
@@ -80,6 +92,8 @@ public class StickmanView extends EntityView {
 
         stickmanState = ((StickmanModel)model).getState();
         stickmanFacingDirection = ((StickmanModel)model).getFacingDirection();
+        x = ((StickmanModel)model).getX();
+        y = ((StickmanModel)model).getY();
         								
     }
 
@@ -98,6 +112,8 @@ public class StickmanView extends EntityView {
 						stickmanState, 
 						stickmanFacingDirection).getKeyFrame(stateTime, true));
 
+        //sprite.setColor(20f/255f, 160f/255f , 1, 1); // blue
+        sprite.setColor(1, 160f/255f , 20f/255f, 1); // orange
         sprite.draw(batch);
     }
 

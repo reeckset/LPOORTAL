@@ -14,6 +14,11 @@ import model.entities.EntityModel;
  * body supported by a Box2D body.
  */
 public abstract class EntityBody {
+	
+    final static short STICKMAN_BODY = 0x0001;
+    final static short CURSOR_BODY = 0x0002;
+    final static short DRAWNLINE_BODY = 0x0004;
+	
     /**
      * The Box2D body that supports this body.
      */

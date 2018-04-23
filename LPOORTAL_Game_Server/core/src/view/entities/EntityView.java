@@ -1,5 +1,6 @@
 package view.entities;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lpoortal.game.LpoortalGame;
@@ -36,6 +37,7 @@ public abstract class EntityView {
      * @param batch The sprite batch to be used for drawing.
      */
     public void draw(SpriteBatch batch) {
+    	
         sprite.draw(batch);
     }
 

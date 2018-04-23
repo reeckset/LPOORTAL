@@ -26,7 +26,7 @@ public class CursorView extends EntityView {
     public Sprite createSprite(LpoortalGame game) {
         Texture texture = game.getTextureManager().getCursor();
 
-        return new Sprite(texture, texture.getWidth(), texture.getHeight());
+        return new Sprite(texture, 40, 40);
     }
 
 }

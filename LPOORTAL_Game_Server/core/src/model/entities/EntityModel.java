@@ -1,7 +1,9 @@
 package model.entities;
 
 public abstract class EntityModel {
-	private float x,y;
+	protected float x;
+
+	protected float y;
 	
 	private boolean flaggedForRemoval = false;
 

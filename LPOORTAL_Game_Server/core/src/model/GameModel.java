@@ -8,6 +8,7 @@ import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
+import view.LevelScreen;
 
 public class GameModel {
 	/**
@@ -52,9 +53,12 @@ public class GameModel {
      */
     private GameModel() {
     	
-        this.cursor = new CursorModel(GameController.LEVEL_WIDTH / 2,
-        							  GameController.LEVEL_HEIGHT / 2);
-        this.stickman = new StickmanModel(20, 20);
+        
+    	this.cursor = new CursorModel((float) GameController.LEVEL_WIDTH  / 2f,
+    								  (float) GameController.LEVEL_HEIGHT / 2f);
+        
+    	//this.cursor = new CursorModel(1,10);
+        this.stickman = new StickmanModel(50, 35);
         this.drawnLines = new ArrayList<DrawnLineModel>();
 
     }

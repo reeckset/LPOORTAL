@@ -11,7 +11,6 @@ import view.entities.TextureManager;
 
 public class LpoortalGame extends Game {
 	SpriteBatch batch;
-	Sprite pencilSprite;
 	
 	float lastReceivedX = 0;
 	float lastReceivedY = 0;
@@ -21,7 +20,6 @@ public class LpoortalGame extends Game {
 	@Override
 	public void create () {
 		batch = new SpriteBatch();
-		pencilSprite = new Sprite(new Texture("pencil.png"));
 		NetworkManager server = new NetworkManager(8765);
 		textureManager = new TextureManager();
 		

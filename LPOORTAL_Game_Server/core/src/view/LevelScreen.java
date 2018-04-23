@@ -3,6 +3,7 @@ package view;
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -10,9 +11,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.lpoortal.game.LpoortalGame;
+import com.lpoortal.game.network.NetworkManager;
 
 import controller.GameController;
 import model.GameModel;
+import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.StickmanModel;
 import view.entities.EntityView;
@@ -26,7 +29,7 @@ public class LevelScreen extends ScreenAdapter {
     /**
      * Used to debug the position of the physics fixtures
      */
-    private static final boolean DEBUG_PHYSICS = false;
+    private static final boolean DEBUG_PHYSICS = true;
 
     /**
      * How much meters does a pixel represent.
@@ -37,7 +40,7 @@ public class LevelScreen extends ScreenAdapter {
      * The width of the viewport in meters. The height is
      * automatically calculated using the screen ratio.
      */
-    private static final float VIEWPORT_WIDTH = 20;
+    private static final float VIEWPORT_WIDTH = 100;
     
     /**
      * The game this screen belongs to.
@@ -112,7 +115,7 @@ public class LevelScreen extends ScreenAdapter {
      * Loads the assets needed by this screen.
      */
     private void loadAssets() {
-        this.textureManager = new TextureManager();
+        this.textureManager = this.game.getTextureManager();
     }
 
     /**
@@ -145,15 +148,6 @@ public class LevelScreen extends ScreenAdapter {
     }
 
     /**
-     * Handles any inputs and passes them to the controller.
-     *
-     * @param delta time since last time inputs where handled in seconds
-     */
-    private void handleInputs(float delta) {
-        //TODO HANDLE INPUTS
-    }
-
-    /**
      * Draws the entities to the screen.
      */
     private void drawEntities() {
@@ -166,8 +160,37 @@ public class LevelScreen extends ScreenAdapter {
 
         StickmanModel stickmanModel = GameModel.getInstance().getStickman();
         EntityView view = ViewFactory.makeView(game, stickmanModel);
+        
         view.update(stickmanModel);
         view.draw(game.getBatch());
+
+        CursorModel cursorModel = GameModel.getInstance().getCursor();
+        view = ViewFactory.makeView(game, cursorModel);
+        
+
+        view.update(cursorModel);
+        view.draw(game.getBatch());
+    }
+    
+    /**
+     * Handles any inputs and passes them to the controller.
+     *
+     * @param delta time since last time inputs where handled in seconds
+     */
+    private void handleInputs(float delta) {
+        if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
+            GameController.getInstance().jump(delta);
+        }
+        
+        /*
+        float dx = NetworkManager.getInstance().getLastMessage().dx;
+        float dy = NetworkManager.getInstance().getLastMessage().dy;
+        */
+        
+        float dx = Gdx.input.getX();
+        float dy = Gdx.input.getY();
+        
+        GameController.getInstance().moveCursor(dx, dy);
     }
 
     /**
@@ -175,7 +198,7 @@ public class LevelScreen extends ScreenAdapter {
      */
     private void drawBackground() {
         Texture background = this.textureManager.getBackground();
-        background.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
+        //background.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
         game.getBatch().draw(background, 0, 0, 0, 0, 
         				(int)(LEVEL_WIDTH / PIXEL_TO_METER),
         				(int) (LEVEL_HEIGHT / PIXEL_TO_METER));

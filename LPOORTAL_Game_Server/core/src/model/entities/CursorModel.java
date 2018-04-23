@@ -11,4 +11,10 @@ public class CursorModel extends EntityModel {
 		return ModelType.CURSOR;
 	}
 
+	public void move(float dx, float dy) {
+		this.x = dx;
+		this.y = dy;
+		
+	}
+
 }
