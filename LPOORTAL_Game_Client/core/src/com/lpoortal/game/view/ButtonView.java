@@ -12,6 +12,4 @@ public class ButtonView extends Button {
                 new SpriteDrawable(new Sprite(texSourceDown)));
         this.setBounds(position.getX(), position.getY(), size.getX(), size.getY());
     }
-
-
 }

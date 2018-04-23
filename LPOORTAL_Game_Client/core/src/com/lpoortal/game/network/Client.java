@@ -19,9 +19,9 @@ public class Client implements Disposable, Runnable {
 
     private static final int MESSAGE_SEND_FREQUENCY_MILLIS = 100;
 
-    public Client() {
+    public Client(String ip) {
         try {
-            socket = new Socket("192.168.2.87", 8765);
+            socket = new Socket(ip, 8765);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
             nextSendingMessage = new ClientToServerMsg();

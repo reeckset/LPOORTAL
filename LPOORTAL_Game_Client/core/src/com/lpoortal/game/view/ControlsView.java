@@ -4,6 +4,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.lpoortal.game.LPOORTAL_Game;
 import com.lpoortal.game.network.ClientToServerMsg;
+import com.lpoortal.game.network.MessageManager;
 
 public class ControlsView extends ScreenView{
 
@@ -37,7 +38,7 @@ public class ControlsView extends ScreenView{
     @Override
     public void render(float delta){
         super.render(delta);
-        LPOORTAL_Game.getInstance().getClient().setNextSendingMessage(
+        MessageManager.getInstance().getClient().setNextSendingMessage(
                 new ClientToServerMsg(LPOORTAL_Game.getInstance().getState().toString(),
                         joystick.getKnobPercentX(), joystick.getKnobPercentY(),
                         jumpBtn.isPressed())
