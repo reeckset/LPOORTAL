@@ -86,8 +86,8 @@ public class GameController implements ContactListener {
         this.cursorBody = new CursorBody(world, gameInstance.getCursor());
 
         List<DrawnLineModel> drawnLines = GameModel.getInstance().getDrawnLines();
-        this.drawLine(50, 20, 400, 20);
-
+        this.drawLine(50, 10, 60, 10);
+        
         world.setContactListener(this);
     }
 
@@ -133,7 +133,31 @@ public class GameController implements ContactListener {
      * 
      */
     private void applyClientInput() {
-    	cursorBody.updatePosition(NetworkManager.getInstance().getPlayer1());
+    	PlayerClient player1 = NetworkManager.getInstance().getPlayer1();
+    	cursorBody.updatePosition(player1);
+    	if(player1 != null) {
+    		ClientToServerMsg msg = player1.getLastMessage();
+    		if(msg != null) {
+    			handleDraw(msg.actionBtn);
+    		}
+    	}
+	}
+
+    
+    //TODO TAKE CARE OF THIS
+    boolean wasDrawing = false;
+	int lastCursorPosX = 0;
+	int lastCursorPosY = 0; 
+    /**
+     * Handles the drawing
+     */
+	private void handleDraw(boolean willDraw) {
+		if(wasDrawing) {
+			drawLine(lastCursorPosX, lastCursorPosY, (int) cursorBody.getX(), (int) cursorBody.getY());
+		}
+		wasDrawing = willDraw;
+		lastCursorPosX = (int) cursorBody.getX();
+		lastCursorPosY = (int) cursorBody.getY();
 	}
 
 	/**

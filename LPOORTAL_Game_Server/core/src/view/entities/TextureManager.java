@@ -28,7 +28,7 @@ public class TextureManager {
 	private void populateStaticTextures() {
 		this.background = new Texture("background.jpg");
 		this.cursor = new Texture("pencil.png");
-		this.lineTexture = new Texture("Cowboy_Hat.png");
+		this.lineTexture = new Texture("pencil_scratch.png");
 		
 	}
 

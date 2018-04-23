@@ -15,4 +15,12 @@ public class DrawnLineModel extends EntityModel {
 		return ModelType.LINE;
 	}
 	
+	public int getXf() {
+		return xf;
+	}
+	
+	public int getYf() {
+		return yf;
+	}
+	
 }
