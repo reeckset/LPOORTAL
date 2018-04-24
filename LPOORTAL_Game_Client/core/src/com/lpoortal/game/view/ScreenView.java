@@ -31,6 +31,11 @@ public abstract class ScreenView extends ScreenAdapter {
         stage.draw();
     }
 
+    @Override
+    public void dispose() {
+        stage.dispose();
+    }
+
     protected void clearScreen(){
         Gdx.gl.glClearColor(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
         Gdx.gl.glClear( GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT );

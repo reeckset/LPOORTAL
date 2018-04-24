@@ -30,7 +30,6 @@ public class NetworkManager{
 		lastMessage = new ClientToServerMsg();
 		try {
 			socket = new ServerSocket(port);
-			
 			//Creates a server in an alternate thread
 			Server server = new Server(socket);
 			

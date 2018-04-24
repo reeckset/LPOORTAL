@@ -36,12 +36,12 @@ public class DrawnLineView extends EntityView {
     @Override
     public void update(EntityModel model) {
     	DrawnLineModel line = (DrawnLineModel) model;
-        sprite.setCenter((line.getX()+line.getXf())/ 2 / PIXEL_TO_METER, (line.getY()+line.getYf())/ 2 / PIXEL_TO_METER);
+        sprite.setCenter(line.getX() / PIXEL_TO_METER, line.getY() / PIXEL_TO_METER);
         float xLength = line.getX()-line.getXf();
         float yLength = line.getY()-line.getYf();
         float length = (float) Math.sqrt(xLength*xLength+yLength*yLength);
         float angle = (float) Math.acos(xLength/length);
-        sprite.setScale(length/45, 0.01f);
+        sprite.setScale(length/50, 0.01f);
         if(yLength < 0) angle = -angle;
         sprite.setRotation((float) (angle*180/Math.PI));
     }

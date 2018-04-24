@@ -31,7 +31,7 @@ public class CursorView extends EntityView {
     }
     @Override
     public void draw(SpriteBatch batch) {
-    	sprite.setSize(80, 80);
+    	sprite.setSize(160, 160);
     	sprite.draw(batch);
     }
 

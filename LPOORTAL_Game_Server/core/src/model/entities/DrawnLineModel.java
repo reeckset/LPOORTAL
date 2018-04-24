@@ -8,6 +8,7 @@ public class DrawnLineModel extends EntityModel {
 		super(xi, yi);
 		this.xf = xf;
 		this.yf = yf;
+		
 	}
 
 	@Override
