@@ -30,20 +30,15 @@ public class DrawnLineView extends EntityView {
      */
     public Sprite createSprite(LpoortalGame game) {
         Texture texture = game.getTextureManager().getLineTexture();
-        return new Sprite(texture);
+        return new Sprite(texture, texture.getWidth(), texture.getHeight());
     }
     
     @Override
     public void update(EntityModel model) {
     	DrawnLineModel line = (DrawnLineModel) model;
         sprite.setCenter(line.getX() / PIXEL_TO_METER, line.getY() / PIXEL_TO_METER);
-        float xLength = line.getX()-line.getXf();
-        float yLength = line.getY()-line.getYf();
-        float length = (float) Math.sqrt(xLength*xLength+yLength*yLength);
-        float angle = (float) Math.acos(xLength/length);
-        sprite.setScale(length/50, 0.01f);
-        if(yLength < 0) angle = -angle;
-        sprite.setRotation((float) (angle*180/Math.PI));
+        sprite.setScale(line.getLength() / PIXEL_TO_METER / (this.sprite.getWidth() - 20f), line.THICKNESS / PIXEL_TO_METER / this.sprite.getHeight());
+        sprite.setRotation((float) (line.getAngle()*180/Math.PI));
     }
 
 }

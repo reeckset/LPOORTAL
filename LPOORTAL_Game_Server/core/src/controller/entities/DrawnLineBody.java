@@ -15,21 +15,12 @@ public class DrawnLineBody extends EntityBody {
 		super(world, model,BodyDef.BodyType.StaticBody);
 	    
 		DrawnLineModel lineModel = (DrawnLineModel) model;
-		
-		float xLength = lineModel.getX()-lineModel.getXf();
-        float yLength = lineModel.getY()-lineModel.getYf();
-        float length = (float) Math.sqrt(xLength*xLength+yLength*yLength);
-        
-        Vector2 center = new Vector2(0,0);
-		
-        float angle = (float) Math.acos(xLength/length);
-        if(yLength < 0) angle = -angle;
         
 	    PolygonShape polygonShape = new PolygonShape();
-	    polygonShape.setAsBox(Math.abs(xLength)/2,
-	    		0.01f,
-	    						center,
-	    						angle);
+	    polygonShape.setAsBox(lineModel.getXLength()/2,
+	    					  DrawnLineModel.THICKNESS / 2,
+	    					  new Vector2(0,0),
+	    					  lineModel.getAngle());
 	    
 	    FixtureDef def = new FixtureDef();
 	    def.shape = polygonShape;

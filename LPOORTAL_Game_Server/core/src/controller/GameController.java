@@ -146,18 +146,22 @@ public class GameController implements ContactListener {
     
     //TODO TAKE CARE OF THIS
     boolean wasDrawing = false;
-	int lastCursorPosX = 0;
-	int lastCursorPosY = 0; 
+	float lastCursorPosX = 0;
+	float lastCursorPosY = 0; 
     /**
      * Handles the drawing
      */
 	private void handleDraw(boolean willDraw) {
 		if(wasDrawing) {
-			drawLine(lastCursorPosX, lastCursorPosY, (int) cursorBody.getX(), (int) cursorBody.getY());
+			if(Math.sqrt(Math.pow(cursorBody.getX() - lastCursorPosX, 2) + Math.pow(cursorBody.getY() - lastCursorPosY, 2)) > 0.5f) {
+			drawLine(lastCursorPosX, lastCursorPosY, cursorBody.getX(), cursorBody.getY());
+			} else {
+				return;
+			}
 		}
 		wasDrawing = willDraw;
-		lastCursorPosX = (int) cursorBody.getX();
-		lastCursorPosY = (int) cursorBody.getY();
+		lastCursorPosX = cursorBody.getX();
+		lastCursorPosY = cursorBody.getY();
 	}
 
 	/**
@@ -206,7 +210,7 @@ public class GameController implements ContactListener {
     /**
      * Draws a Line on Level
      */
-    public void drawLine(int xi, int yi, int xf, int yf) {
+    public void drawLine(float xi, float yi, float xf, float yf) {
         DrawnLineModel line = new DrawnLineModel(xi, yi, xf, yf);
         GameModel.getInstance().addLine(line);
         DrawnLineBody body = new DrawnLineBody(world, line);

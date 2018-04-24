@@ -8,6 +8,7 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.lpoortal.game.LpoortalGame;
@@ -29,7 +30,7 @@ public class LevelScreen extends ScreenAdapter {
     /**
      * Used to debug the position of the physics fixtures
      */
-    private static final boolean DEBUG_PHYSICS = true;
+    private static final boolean DEBUG_PHYSICS = false;
 
     /**
      * How much meters does a pixel represent.
@@ -132,7 +133,7 @@ public class LevelScreen extends ScreenAdapter {
         GameController.getInstance().update(delta);
         game.getBatch().setProjectionMatrix(camera.combined);
 
-        Gdx.gl.glClearColor( 103/255f, 69/255f, 117/255f, 1 );
+        Gdx.gl.glClearColor( 255/255f, 255/255f, 255/255f, 1 );
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT );
 
         game.getBatch().begin();
@@ -190,9 +191,14 @@ public class LevelScreen extends ScreenAdapter {
      */
     private void drawBackground() {
         Texture background = this.textureManager.getBackground();
-        //background.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        game.getBatch().draw(background, 0, 0, 0, 0, 
+        background.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
+       /* game.getBatch().draw(background, 0, 0, 0, 0, 
         				(int)(LEVEL_WIDTH / PIXEL_TO_METER),
-        				(int) (LEVEL_HEIGHT / PIXEL_TO_METER));
+        				(int) (LEVEL_HEIGHT / PIXEL_TO_METER));*/
+        
+        Sprite s = new Sprite(background);
+        s.setPosition(0,0);
+        s.setSize(getWidthPixels(), getWidthPixels() / getViewportRatio());
+        s.draw(game.getBatch());
     }
 }

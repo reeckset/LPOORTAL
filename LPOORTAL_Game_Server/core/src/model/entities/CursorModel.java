@@ -1,6 +1,8 @@
 package model.entities;
 
 public class CursorModel extends EntityModel {
+	
+	public final static float THICKNESS = 0.02f;
 
 	public CursorModel(float x, float y) {
 		super(x, y);

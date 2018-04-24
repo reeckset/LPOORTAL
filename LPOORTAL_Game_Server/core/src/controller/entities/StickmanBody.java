@@ -10,7 +10,7 @@ public class StickmanBody extends EntityBody {
 	public StickmanBody(World world, EntityModel model) {
 		super(world, model, BodyDef.BodyType.DynamicBody);
 		
-		float density = 0.5f, friction = 0.4f, restitution = 0.5f;
+		float density = 0.5f, friction = 0.4f, restitution = 0f;
         int width = 75, height = 140;
 
         // Body

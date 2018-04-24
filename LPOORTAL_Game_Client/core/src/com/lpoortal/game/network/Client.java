@@ -47,6 +47,7 @@ public class Client implements Disposable, Runnable {
             try {
                 output.writeObject(msg);
                 output.flush();
+                output.reset();
             }catch (SocketException e){
                 closeSocket();
             }
