@@ -138,4 +138,18 @@ public abstract class EntityBody {
     public Object getUserData() {
         return body.getUserData();
     }
+    
+    /**
+     * Returns the current linear speed on the Y axis
+     */
+	public float getSpeedY() {
+		return body.getLinearVelocity().y;
+	}
+	
+    /**
+     * Returns the current linear speed on the X axis
+     */
+	public float getSpeedX() {
+		return body.getLinearVelocity().x;
+	}
 }

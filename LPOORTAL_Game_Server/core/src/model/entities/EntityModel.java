@@ -1,10 +1,12 @@
 package model.entities;
 
+import com.badlogic.gdx.math.Vector2;
+
 public abstract class EntityModel {
 	protected float x;
 
 	protected float y;
-	
+
 	private boolean flaggedForRemoval = false;
 
 	public enum ModelType {STICKMAN, CURSOR, LINE};
@@ -60,6 +62,4 @@ public abstract class EntityModel {
     }
     
     public abstract ModelType getType();
-	
-	
 }

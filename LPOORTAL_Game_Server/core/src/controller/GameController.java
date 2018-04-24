@@ -23,6 +23,8 @@ import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
+import view.LevelScreen;
+import view.entities.CursorView;
 
 /**
  * Controls the physics aspect of the game.
@@ -44,8 +46,9 @@ public class GameController implements ContactListener {
      */
     public static final int LEVEL_HEIGHT = 70;
     
-    public static final int JUMP_STRENGTH = 100;
+    public static final int JUMP_STRENGTH = 1000;
 
+    public static final float STICKMAN_SPEED = 100f;
 
     /**
      * The physics world controlled by this controller.
@@ -152,16 +155,20 @@ public class GameController implements ContactListener {
      * Handles the drawing
      */
 	private void handleDraw(boolean willDraw) {
+		
+		float currX = cursorBody.getX() + CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER /2; //Offset will put the position  
+		float currY = cursorBody.getY() - CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER /2; //in the corner of the cursor (pencil tip)
+		
 		if(wasDrawing) {
-			if(Math.sqrt(Math.pow(cursorBody.getX() - lastCursorPosX, 2) + Math.pow(cursorBody.getY() - lastCursorPosY, 2)) > 0.5f) {
-			drawLine(lastCursorPosX, lastCursorPosY, cursorBody.getX(), cursorBody.getY());
+			if(Math.sqrt(Math.pow(currX - lastCursorPosX, 2) + Math.pow(currY - lastCursorPosY, 2)) > 0.5f) {
+			drawLine(lastCursorPosX, lastCursorPosY, currX, currY);
 			} else {
 				return;
 			}
 		}
 		wasDrawing = willDraw;
-		lastCursorPosX = cursorBody.getX();
-		lastCursorPosY = cursorBody.getY();
+		lastCursorPosX = currX;
+		lastCursorPosY = currY;
 	}
 
 	/**
@@ -202,10 +209,18 @@ public class GameController implements ContactListener {
      */
     public void jump(float delta) {
     	if(!( ((StickmanModel)stickmanBody.getUserData()).isJumping())) {
-    		stickmanBody.applyForceToCenter(0, JUMP_STRENGTH * delta,true);
+    		stickmanBody.setLinearVelocity(0, JUMP_STRENGTH * delta);
             ((StickmanModel)stickmanBody.getUserData()).setJumping(true);
     	}
     }
+    
+
+	public void moveLeft(float delta) {
+		stickmanBody.setLinearVelocity(-STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
+	}
+	public void moveRight(float delta) {
+		stickmanBody.setLinearVelocity(STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
+	}
 
     /**
      * Draws a Line on Level
@@ -224,18 +239,23 @@ public class GameController implements ContactListener {
      */
     @Override
     public void beginContact(Contact contact) {
-        //TODO HANDLE COLLISIONS
-
+    	
     }
 
-    @Override
+	@Override
     public void endContact(Contact contact) {
 
     }
 
     @Override
     public void preSolve(Contact contact, Manifold oldManifold) {
-
+    	Body bodyA = contact.getFixtureA().getBody();
+        Body bodyB = contact.getFixtureB().getBody();
+        
+        if (bodyA.getUserData() instanceof StickmanModel)
+            stickmanCollisionHandler(bodyB, oldManifold.getLocalNormal());
+        if (bodyB.getUserData() instanceof StickmanModel)
+            stickmanCollisionHandler(bodyA,oldManifold.getLocalNormal());
     }
 
     @Override
@@ -280,5 +300,22 @@ public class GameController implements ContactListener {
         	return LEVEL_HEIGHT;
         }
 		return y;
+	}
+	
+    private void stickmanCollisionHandler(Body collider, Vector2 point) {
+		float angle;
+		if(point.x != 0) {
+			 angle = (float) Math.acos(Math.sqrt(point.x*point.x + point.y*point.y)/Math.abs(point.x));
+		}else {
+			if(point.y < 0) {
+				angle = (float) (-Math.PI/2);
+			}else {
+				angle = (float) (Math.PI/2);
+			}
+		}
+		angle = (float) ((angle + (Math.PI*2)) % (Math.PI*2));
+		if(angle > 5/4f*Math.PI && angle < 7/4f*Math.PI) {
+			((StickmanModel)stickmanBody.getUserData()).setJumping(false);
+		}
 	}
 }

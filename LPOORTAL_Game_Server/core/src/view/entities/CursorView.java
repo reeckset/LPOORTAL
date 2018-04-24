@@ -5,8 +5,12 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lpoortal.game.LpoortalGame;
 
+import controller.entities.CursorBody;
+
 public class CursorView extends EntityView {
 
+	public static final int CURSOR_SIZE = 80;
+	
 	/**
      * Constructs a cursor view.
      *
@@ -31,7 +35,7 @@ public class CursorView extends EntityView {
     }
     @Override
     public void draw(SpriteBatch batch) {
-    	sprite.setSize(160, 160);
+    	sprite.setSize(CURSOR_SIZE, CURSOR_SIZE);
     	sprite.draw(batch);
     }
 

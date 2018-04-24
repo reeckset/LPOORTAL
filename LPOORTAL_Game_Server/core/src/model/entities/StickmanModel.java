@@ -18,11 +18,15 @@ public class StickmanModel extends EntityModel {
 	}
 
 	public boolean isJumping() {
-		return stickmanState.equals(Stickman_Animation.JUMPING);
+		return stickmanState == Stickman_Animation.JUMPING;
 	}
 
-	public void setJumping(boolean value) {
-		this.stickmanState = Stickman_Animation.JUMPING;
+	public void setJumping(boolean jumping) {
+		if(jumping) {
+			this.stickmanState = Stickman_Animation.JUMPING;
+		}else {
+			this.stickmanState = Stickman_Animation.IDLE;
+		}
 	}
 
 	@Override
@@ -42,5 +46,4 @@ public class StickmanModel extends EntityModel {
 		this.stickmanState = state;
 		
 	}
-
 }

@@ -30,7 +30,7 @@ public class LevelScreen extends ScreenAdapter {
     /**
      * Used to debug the position of the physics fixtures
      */
-    private static final boolean DEBUG_PHYSICS = false;
+    private static final boolean DEBUG_PHYSICS = true;
 
     /**
      * How much meters does a pixel represent.
@@ -183,6 +183,12 @@ public class LevelScreen extends ScreenAdapter {
     private void handleInputs(float delta) {
         if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
             GameController.getInstance().jump(delta);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.A)) {
+            GameController.getInstance().moveLeft(delta);
+        }
+        if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+            GameController.getInstance().moveRight(delta);
         }
     }
 
