@@ -17,7 +17,7 @@ public class StickmanBody extends EntityBody {
 	private static final float FRICTION = 0.8f;
 	private static final float RESTITUTION = 0f;
 	private static final float DENSITY = 1f;
-	public static final float WIDTH = 2f, HEIGHT = 2f;
+	public static final float WIDTH = 4f, HEIGHT = 5f;
 
 	public StickmanBody(World world, EntityModel model) {
 		super(world, model, BodyDef.BodyType.DynamicBody);
@@ -25,9 +25,9 @@ public class StickmanBody extends EntityBody {
         
 
         PolygonShape polygonShape = new PolygonShape();
-	    polygonShape.setAsBox(WIDTH/4,
-	    					  HEIGHT / 2,
-	    					  new Vector2(0,0),
+	    polygonShape.setAsBox(WIDTH/8,
+	    					  HEIGHT / 3,
+	    					  new Vector2(0,-0.7f),
 	    					  0);
 	    
 	    FixtureDef def = new FixtureDef();

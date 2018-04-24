@@ -46,7 +46,9 @@ public class GameController implements ContactListener {
      */
     public static final int LEVEL_HEIGHT = 70;
     
-    public static final int JUMP_STRENGTH = 500;
+    public static final float GRAVITY = 30;
+    
+    public static final int JUMP_STRENGTH = 1300;
 
     public static final float STICKMAN_SPEED = 300f;
     
@@ -87,7 +89,7 @@ public class GameController implements ContactListener {
      *
      */
     private GameController() {
-        world = new World(new Vector2(0, -10), true);
+        world = new World(new Vector2(0, -GRAVITY), true);
         
         GameModel gameInstance = GameModel.getInstance();
         
@@ -319,7 +321,7 @@ public class GameController implements ContactListener {
 			}
 		}
 		angle = (float) ((angle + (Math.PI*2)) % (Math.PI*2));
-		if(angle > 11/12f*Math.PI && angle < 23/12f*Math.PI) {
+		if(angle > Math.PI && angle < 2*Math.PI) {
 			((StickmanModel)stickmanBody.getUserData()).setJumping(false);
 		}
 	}

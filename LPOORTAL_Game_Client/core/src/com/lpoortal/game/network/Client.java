@@ -22,7 +22,6 @@ public class Client implements Disposable, Runnable {
     public Client(String ip) {
         try {
             socket = new Socket(ip, 8765);
-            socket.setTcpNoDelay(true);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
             nextSendingMessage = new ClientToServerMsg();
