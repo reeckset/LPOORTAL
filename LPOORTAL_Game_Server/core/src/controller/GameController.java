@@ -39,16 +39,22 @@ public class GameController implements ContactListener {
     /**
      * The arena width in meters.
      */
-    public static final int LEVEL_WIDTH = 100;
+    public static final int LEVEL_WIDTH = 50;
 
 	/**
      * The arena height in meters.
      */
     public static final int LEVEL_HEIGHT = 70;
     
-    public static final int JUMP_STRENGTH = 1000;
+    public static final int JUMP_STRENGTH = 500;
 
-    public static final float STICKMAN_SPEED = 100f;
+    public static final float STICKMAN_SPEED = 300f;
+    
+    boolean wasDrawing = false;
+    
+	float lastCursorPosX = 0;
+	
+	float lastCursorPosY = 0; 
 
     /**
      * The physics world controlled by this controller.
@@ -89,7 +95,7 @@ public class GameController implements ContactListener {
         this.cursorBody = new CursorBody(world, gameInstance.getCursor());
 
         List<DrawnLineModel> drawnLines = GameModel.getInstance().getDrawnLines();
-        this.drawLine(50, 10, 60, 10);
+        this.drawLine(10, 10, 40, 10);
         
         world.setContactListener(this);
     }
@@ -128,10 +134,11 @@ public class GameController implements ContactListener {
             ((EntityModel) body.getUserData()).setPosition(body.getPosition().x, body.getPosition().y);
         }
         
+        updateStickman();
         applyClientInput();
     }
 
-    /**
+	/**
      * Takes the last received messages by the Network Manager
      * 
      */
@@ -146,11 +153,7 @@ public class GameController implements ContactListener {
     	}
 	}
 
-    
-    //TODO TAKE CARE OF THIS
-    boolean wasDrawing = false;
-	float lastCursorPosX = 0;
-	float lastCursorPosY = 0; 
+  
     /**
      * Handles the drawing
      */
@@ -216,9 +219,11 @@ public class GameController implements ContactListener {
     
 
 	public void moveLeft(float delta) {
+		stickmanBody.faceLeft();
 		stickmanBody.setLinearVelocity(-STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
 	}
 	public void moveRight(float delta) {
+		stickmanBody.faceRight();
 		stickmanBody.setLinearVelocity(STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
 	}
 
@@ -314,8 +319,13 @@ public class GameController implements ContactListener {
 			}
 		}
 		angle = (float) ((angle + (Math.PI*2)) % (Math.PI*2));
-		if(angle > 5/4f*Math.PI && angle < 7/4f*Math.PI) {
+		if(angle > 11/12f*Math.PI && angle < 23/12f*Math.PI) {
 			((StickmanModel)stickmanBody.getUserData()).setJumping(false);
 		}
+	}
+    
+
+    private void updateStickman() {
+		stickmanBody.update();
 	}
 }

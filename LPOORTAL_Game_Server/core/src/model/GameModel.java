@@ -54,10 +54,10 @@ public class GameModel {
     private GameModel() {
     	
         
-    	this.cursor = new CursorModel(50,35);
+    	this.cursor = new CursorModel(25,15);
         
     	//this.cursor = new CursorModel(1,10);
-        this.stickman = new StickmanModel(50, 35);
+        this.stickman = new StickmanModel(25, 15);
         this.drawnLines = new ArrayList<DrawnLineModel>();
 
     }

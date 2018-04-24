@@ -25,7 +25,7 @@ public class StickmanModel extends EntityModel {
 		if(jumping) {
 			this.stickmanState = Stickman_Animation.JUMPING;
 		}else {
-			this.stickmanState = Stickman_Animation.IDLE;
+			this.stickmanState = Stickman_Animation.LANDING;
 		}
 	}
 
@@ -45,5 +45,9 @@ public class StickmanModel extends EntityModel {
 	public void setState(Stickman_Animation state) {
 		this.stickmanState = state;
 		
+	}
+
+	public void setFacingDirection(Stickman_Facing_Direction direction) {
+		this.stickmanFacingDirection = direction;
 	}
 }

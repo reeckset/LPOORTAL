@@ -17,7 +17,7 @@ public class DrawnLineBody extends EntityBody {
 		DrawnLineModel lineModel = (DrawnLineModel) model;
         
 	    PolygonShape polygonShape = new PolygonShape();
-	    polygonShape.setAsBox(lineModel.getXLength()/2,
+	    polygonShape.setAsBox(lineModel.getLength()/2,
 	    					  DrawnLineModel.THICKNESS / 2,
 	    					  new Vector2(0,0),
 	    					  lineModel.getAngle());
@@ -26,7 +26,7 @@ public class DrawnLineBody extends EntityBody {
 	    def.shape = polygonShape;
 	    def.restitution = 0;
 	    def.density = 1000;
-	    def.friction = 1000;
+	    def.friction = 1f;
 	    
 	    body.createFixture(def);
 	}

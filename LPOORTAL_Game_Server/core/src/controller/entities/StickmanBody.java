@@ -9,30 +9,58 @@ import com.badlogic.gdx.physics.box2d.World;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
+import model.entities.StickmanModel.Stickman_Animation;
+import model.entities.StickmanModel.Stickman_Facing_Direction;
 
 public class StickmanBody extends EntityBody {
+	
+	private static final float FRICTION = 0.8f;
+	private static final float RESTITUTION = 0f;
+	private static final float DENSITY = 1f;
+	public static final float WIDTH = 2f, HEIGHT = 2f;
 
 	public StickmanBody(World world, EntityModel model) {
 		super(world, model, BodyDef.BodyType.DynamicBody);
-		
-		float density = 1f, friction = 0.8f, restitution = 0f;
-        float width = 2f, height = 4f;
+	
+        
 
         PolygonShape polygonShape = new PolygonShape();
-	    polygonShape.setAsBox(width/2,
-	    					  height / 2,
-	    					  new Vector2(0,-0.5f),
+	    polygonShape.setAsBox(WIDTH/4,
+	    					  HEIGHT / 2,
+	    					  new Vector2(0,0),
 	    					  0);
 	    
 	    FixtureDef def = new FixtureDef();
 	    def.shape = polygonShape;
-	    def.restitution = restitution;
-	    def.density = density;
-	    def.friction = friction;
+	    def.restitution = RESTITUTION;
+	    def.density = DENSITY;
+	    def.friction = FRICTION;
 	    body.setFixedRotation(true);  
 	    body.createFixture(def);
 	}
+	
+	public void update() {
+		StickmanModel model = ((StickmanModel) this.getUserData());
 
+		if(!model.isJumping()) {
+			if(getSpeedX() != 0) {
+				model.setState(Stickman_Animation.WALKING);
+			}else {
+				model.setState(Stickman_Animation.IDLE);
+			}
+			
+		}
+	}
+
+	public void faceLeft() {
+		StickmanModel model = ((StickmanModel) this.getUserData());
+		model.setFacingDirection(Stickman_Facing_Direction.LEFT);
+	}
+
+	public void faceRight() {
+		StickmanModel model = ((StickmanModel) this.getUserData());
+		model.setFacingDirection(Stickman_Facing_Direction.RIGHT);
+	}
 }
 
 

@@ -2,7 +2,7 @@ package model.entities;
 
 public class DrawnLineModel extends EntityModel {
 
-	public static final float THICKNESS = 0.3f;
+	public static final float THICKNESS = 0.2f;
 	private float xi, yi, xf, yf;
 	private float xLength, yLength, length, angle;
 

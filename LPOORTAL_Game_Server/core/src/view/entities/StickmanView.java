@@ -5,9 +5,11 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.lpoortal.game.LpoortalGame;
 
+import controller.entities.StickmanBody;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
 import model.entities.StickmanModel.Stickman_Animation;
+import view.LevelScreen;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -75,9 +77,12 @@ public class StickmanView extends EntityView {
     @Override
     public Sprite createSprite(LpoortalGame game) {
         
-        return new Sprite(game.getTextureManager()
+        Sprite sprite = new Sprite(game.getTextureManager()
         					  .getStickmanAnimation(Stickman_Animation.IDLE, stickmanFacingDirection.RIGHT)
         					  .getKeyFrame(stateTime));
+        sprite.setSize(StickmanBody.WIDTH / LevelScreen.PIXEL_TO_METER,
+        					  StickmanBody.HEIGHT / LevelScreen.PIXEL_TO_METER);
+        return sprite;
     }
     
 

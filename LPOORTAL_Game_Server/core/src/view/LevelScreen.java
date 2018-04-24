@@ -41,7 +41,7 @@ public class LevelScreen extends ScreenAdapter {
      * The width of the viewport in meters. The height is
      * automatically calculated using the screen ratio.
      */
-    private static final float VIEWPORT_WIDTH = 100;
+    private static final float VIEWPORT_WIDTH = 50;
     
     /**
      * The game this screen belongs to.

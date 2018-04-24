@@ -12,8 +12,8 @@ import model.entities.EntityModel;
 
 public class CursorBody extends EntityBody {
 	
-	private static final float GYRO_SENSITIVITY_X = 0.4f;
-	private static final float GYRO_SENSITIVITY_Y = 0.4f;
+	private static final float GYRO_SENSITIVITY_X = 0.2f;
+	private static final float GYRO_SENSITIVITY_Y = 0.2f;
 	
 	private float lastX = 0;
 	private float lastY = 0;
