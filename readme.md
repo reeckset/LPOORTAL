@@ -19,6 +19,10 @@ The game will have three main screens, as presented below.
 
 # Architecture Design
 
+
+Desktop
+======
+
 ## Packages Diagram
 ![Alt text](UMLDiagrams/Lpoortal_Server_PackageDiagram.png?raw=true)
 
@@ -33,3 +37,10 @@ The game will have three main screens, as presented below.
 
 ## Network Diagram
 ![Alt text](UMLDiagrams/Lpoortal_Server_NetworkDiagram.png?raw=true)
+
+Mobile
+======
+
+## Class Diagram
+![Alt text](UMLDiagrams/Lpoortal_Client_Diagram.png?raw=true)
+
