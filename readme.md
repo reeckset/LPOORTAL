@@ -2,8 +2,9 @@
 A 2-player Co-Op based game for desktop with android smartphones as controllers!
 
 Final Project made for the unit course of *Laboratory of Object Oriented Programming* @ FEUP 2018
-Ângelo Teixeira - up201606516@fe.up.pt
-Henrique Lima - up201606525@fe.up.pt
+
+  - Angelo Teixeira - up201606516 - up201606516@fe.up.pt
+  - Henrique Lima - up201606525 - up201606525@fe.up.pt
 
 # Game Mockups
 
