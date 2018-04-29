@@ -16,3 +16,20 @@ The game will have three main screens, as presented below.
 
 ## Gyroscope Controller Explanation
 ![Alt text](Mockups/screen4.jpg?raw=true)
+
+# Architecture Design
+
+## Packages Diagram
+![Alt text](UMLDiagrams/Lpoortal_Server_PackageDiagram.png?raw=true)
+
+## Model Diagram
+![Alt text](UMLDiagrams/Lpoortal_Server_ModelDiagram.png?raw=true)
+
+## View Diagram
+![Alt text](UMLDiagrams/Lpoortal_Server_ViewDiagram.png?raw=true)
+
+## Controller Diagram
+![Alt text](UMLDiagrams/Lpoortal_Server_ControllerDiagram.png?raw=true)
+
+## Network Diagram
+![Alt text](UMLDiagrams/Lpoortal_Server_NetworkDiagram.png?raw=true)
