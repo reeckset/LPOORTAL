@@ -19,6 +19,19 @@ The game will have three main screens, as presented below.
 
 # Architecture Design
 
+## Design Patterns
+
+**MVC - Model View Controller** Used to separate the concerns of the state of the elements (Model), their evolution over time (Controller) and their representation to the user (View)
+
+**Singleton** on the LpoortalGame (Main Game Class), GameModel, GameView, GameController and NetworkManager classes, because at every moment, there will only be one instance of them, and therefore, can be accessed more easily.
+
+**Observer** On the controller, the GameController itself will be a listener (ContactListener) for collisions of the physical world (Embedded in the LibGDX library)
+
+**Flyweight** Used in the View Package (Desktop) to keep a cache of views being used, and allow for their reutilization
+
+**State** Both desktop and mobile apps will have a state, that can be changed based on received events (i.e. when the server sends the message to the client so that it changes from PlayerCustomization State to Playing State (Drawing/Moving controller))
+
+
 
 Desktop
 ======
