@@ -44,3 +44,16 @@ Mobile
 ## Class Diagram
 ![Alt text](UMLDiagrams/Lpoortal_Client_Diagram.png?raw=true)
 
+
+# Test Design
+
+To test the game, we will focus on the Models, as well as the network packages.
+
+We can test if the stickman moves to the desired position, if he doesn't walk out of the map, and if he collides with the lines/obstacles. We can also test if the level progresses after we crosses the portal
+
+We can also test the drawings, by giving a start and end position, and testing the actual line that is produced.
+
+To test the cursor, we can check that it moves according to the given parameters, and that it stays within bounds.
+
+To test the network package, we can send malformed packets and assure that it deals correctly with them.
+
