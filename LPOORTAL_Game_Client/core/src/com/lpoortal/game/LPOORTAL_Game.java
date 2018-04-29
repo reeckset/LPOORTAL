@@ -20,7 +20,7 @@ public class LPOORTAL_Game extends Game {
 	@Override
 	public void create() {
 		this.instance = this;
-		textureManager = new TextureManager(TextureManager.Player_Color.ORANGE);
+		textureManager = new TextureManager(TextureManager.Player_Color.BLUE);
 		MessageManager msgMngr = new MessageManager();
 		changeState(State.CONNECT_STATE);
 	}

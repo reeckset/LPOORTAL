@@ -117,8 +117,8 @@ public class StickmanView extends EntityView {
 						stickmanState, 
 						stickmanFacingDirection).getKeyFrame(stateTime, true));
 
-        //sprite.setColor(20f/255f, 160f/255f , 1, 1); // blue
-        sprite.setColor(1, 160f/255f , 20f/255f, 1); // orange
+        sprite.setColor(20f/255f, 160f/255f , 1, 1); // blue
+        //sprite.setColor(1, 160f/255f , 20f/255f, 1); // orange
         sprite.draw(batch);
     }
 
