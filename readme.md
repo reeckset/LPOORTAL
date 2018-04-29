@@ -1,3 +1,10 @@
+# LPOORTAL
+A 2-player Co-Op based game for desktop with android smartphones as controllers!
+
+Final Project made for the unit course of *Laboratory of Object Oriented Programming* @ FEUP 2018
+Ângelo Teixeira - up201606516@fe.up.pt
+Henrique Lima - up201606525@fe.up.pt
+
 # Game Mockups
 
 The game will have three main screens, as presented below.
