@@ -27,7 +27,7 @@ The game will have three main screens, as presented below.
 
 **Observer** On the controller, the GameController itself will be a listener (ContactListener) for collisions of the physical world (Embedded in the LibGDX library)
 
-**Flyweight** Used in the View Package (Desktop) to keep a cache of views being used, and allow for their reutilization
+**Flyweight** Used in the View Package (Desktop) [ViewFactory class] to keep a cache of views being used, and allow for their reutilization
 
 **State** Both desktop and mobile apps will have a state, that can be changed based on received events (i.e. when the server sends the message to the client so that it changes from PlayerCustomization State to Playing State (Drawing/Moving controller))
 
