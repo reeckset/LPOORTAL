@@ -19,11 +19,6 @@ public class PlayerCustomizationView extends ScreenView{
 
     TextureManager.Player_Color selectedColor = TextureManager.Player_Color.BLUE;
 
-    public PlayerCustomizationView() {
-        super();
-        createUI();
-    }
-
     @Override
     public void render(float delta){
         super.render(delta);
@@ -32,6 +27,11 @@ public class PlayerCustomizationView extends ScreenView{
         }else{
             tick.setPosition(260, TICK_Y);
         }
+    }
+
+    public PlayerCustomizationView() {
+        super();
+        createUI();
     }
 
     private void createUI(){

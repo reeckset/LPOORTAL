@@ -23,8 +23,8 @@ import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
-import view.LevelScreen;
 import view.entities.CursorView;
+import view.entities.LevelScreen;
 
 /**
  * Controls the physics aspect of the game.

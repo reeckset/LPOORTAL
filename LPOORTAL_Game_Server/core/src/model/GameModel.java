@@ -8,7 +8,7 @@ import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
-import view.LevelScreen;
+import view.entities.LevelScreen;
 
 public class GameModel {
 	/**

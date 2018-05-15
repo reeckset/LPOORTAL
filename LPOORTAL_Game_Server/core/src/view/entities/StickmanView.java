@@ -9,7 +9,6 @@ import controller.entities.StickmanBody;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
 import model.entities.StickmanModel.Stickman_Animation;
-import view.LevelScreen;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 

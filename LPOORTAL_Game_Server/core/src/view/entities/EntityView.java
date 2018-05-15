@@ -1,13 +1,13 @@
 package view.entities;
 
+import static view.entities.LevelScreen.PIXEL_TO_METER;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lpoortal.game.LpoortalGame;
 
 import model.entities.EntityModel;
-
-import static view.LevelScreen.PIXEL_TO_METER;
 
 /**
  * A abstract view capable of holding a sprite with a certain

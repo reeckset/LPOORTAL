@@ -1,6 +1,6 @@
 package view.entities;
 
-import static view.LevelScreen.PIXEL_TO_METER;
+import static view.entities.LevelScreen.PIXEL_TO_METER;
 
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;

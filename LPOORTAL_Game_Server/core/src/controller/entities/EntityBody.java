@@ -1,5 +1,5 @@
 package controller.entities;
-import static view.LevelScreen.PIXEL_TO_METER;
+import static view.entities.LevelScreen.PIXEL_TO_METER;
 
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.BodyDef;
