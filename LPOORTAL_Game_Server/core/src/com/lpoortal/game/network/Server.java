@@ -20,16 +20,18 @@ public class Server implements Runnable{
 	public void run() {
 		try {
 			while(true) {
-		        Socket clientSocket = socket.accept();
+				System.out.println("antes");
+				Socket clientSocket = socket.accept();
+		        System.out.println("depois");
 		        clientSocket.setTcpNoDelay(true);
 		        PlayerClient player = new PlayerClient(clientSocket);
 		        socketCommunicator = new SocketCommunicator(player);
-		        NetworkManager.getInstance().addPlayerClient(player);
+		        NetworkManager.getInstance().addPlayerClient(socketCommunicator);
 		        new Thread(socketCommunicator).start();
 			}
 		}
 		catch (IOException e) {
-			System.out.println(e);
+			e.printStackTrace();
 	    }
 		
 	}

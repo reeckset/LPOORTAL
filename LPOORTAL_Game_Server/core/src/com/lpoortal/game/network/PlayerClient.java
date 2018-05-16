@@ -8,7 +8,7 @@ import java.net.Socket;
 public class PlayerClient{
 	
 	Socket clientSocket;
-	ClientToServerMsg lastReceivedMessage;
+	
 	
 	public PlayerClient(Socket clientSocket){
 		this.clientSocket = clientSocket;
@@ -30,11 +30,5 @@ public class PlayerClient{
 		clientSocket.close();
 	}
 
-	public void setLastReceivedMsg(ClientToServerMsg msg) {
-		lastReceivedMessage = msg;		
-	}
-
-	public ClientToServerMsg getLastMessage() {
-		return lastReceivedMessage;
-	}
+	
 }

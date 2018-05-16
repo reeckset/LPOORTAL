@@ -36,7 +36,7 @@ public class LpoortalGame extends Game {
 	
 	
 	private void startGame() {
-		setState(STATE.GAMEPLAY);
+		setState(STATE.WELCOME);
 	}
 
 

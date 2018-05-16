@@ -20,20 +20,15 @@ public class NetworkManager{
 	ServerSocket socket;
 	
 	public static NetworkManager instance;
-	public static final int defaultPort = 8888;
 	
-	PlayerClient player1Socket;
-	PlayerClient player2Socket;
+	SocketCommunicator player1Communicator;
+	SocketCommunicator player2Communicator;
 	
-	ClientToServerMsg lastMessage;
 	
-	public ClientToServerMsg getLastMessage() {
-		return lastMessage;
-	}
 
 	private NetworkManager() {
 		instance = this;
-		lastMessage = new ClientToServerMsg();
+		
 		try {
 			socket = new ServerSocket(DEFAULT_PORT);
 			//Creates a server in an alternate thread
@@ -53,26 +48,24 @@ public class NetworkManager{
 		return instance;
 	}
 	
-	public void updateGameWithRequest(ClientToServerMsg msg) {
-		lastMessage = msg;
-	}
 	
-	public void addPlayerClient(PlayerClient client) {
-		if(this.player1Socket == null) {
-			this.player1Socket = client;
+	
+	public void addPlayerClient(SocketCommunicator playerCommunicator) {
+		if(this.player1Communicator == null) {
+			this.player1Communicator = playerCommunicator;
 			System.out.println("Player 1 connected");
-		}else if(this.player2Socket == null) {
-			this.player2Socket = client;
+		}else if(this.player2Communicator == null) {
+			this.player2Communicator = playerCommunicator;
 			System.out.println("Player 2 connected");
 		}
 	}
 	
-	public PlayerClient getPlayer1() {
-		return player1Socket;
+	public SocketCommunicator getPlayer1() {
+		return player1Communicator;
 	}
 	
-	public PlayerClient getPlayer2() {
-		return player2Socket;
+	public SocketCommunicator getPlayer2() {
+		return player2Communicator;
 	}
    
 	public String getHostIp() {

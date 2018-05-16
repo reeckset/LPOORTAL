@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.Array;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.PlayerClient;
+import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.entities.CursorBody;
 import controller.entities.DrawnLineBody;
@@ -145,7 +146,7 @@ public class GameController implements ContactListener {
      * 
      */
     private void applyClientInput() {
-    	PlayerClient player1 = NetworkManager.getInstance().getPlayer1();
+    	SocketCommunicator player1 = NetworkManager.getInstance().getPlayer1();
     	cursorBody.updatePosition(player1);
     	if(player1 != null) {
     		ClientToServerMsg msg = player1.getLastMessage();

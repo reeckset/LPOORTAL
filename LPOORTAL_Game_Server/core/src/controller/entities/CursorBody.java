@@ -5,6 +5,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.PlayerClient;
+import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.GameController;
 import model.entities.CursorModel;
@@ -22,7 +23,7 @@ public class CursorBody extends EntityBody {
 		super(world, model, BodyDef.BodyType.StaticBody);
 	}
 	
-	public void updatePosition(PlayerClient player) {
+	public void updatePosition(SocketCommunicator player) {
     	if(player != null) {
     		ClientToServerMsg player1Msg = player.getLastMessage();	
     		if(player1Msg != null) {

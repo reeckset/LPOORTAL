@@ -27,7 +27,7 @@ public class WelcomeScreen extends GUIScreen {
     public void render(float delta) {
     	super.render(delta);
     	
-    	if(NetworkManager.getInstance().getPlayer1() != null && NetworkManager.getInstance().getPlayer2() != null) {
+    	if(NetworkManager.getInstance().getPlayer1() != null || NetworkManager.getInstance().getPlayer2() != null) {
     		controller.nextState();
     	}
     	
