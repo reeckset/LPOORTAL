@@ -3,8 +3,6 @@ package controller;
 import com.lpoortal.game.LpoortalGame;
 import com.lpoortal.game.network.NetworkManager;
 
-import view.entities.LevelScreen;
-
 public class WelcomeController {
 	
 	private String gameCode = null;
