@@ -21,7 +21,7 @@ public class WelcomeController {
 		String[] values = ip.split("\\.");
 		String tmpGameCode = "";
 		for(String value : values) {
-			tmpGameCode += Integer.toHexString(Integer.parseInt(value));
+			tmpGameCode += String.format("%02x", Integer.parseInt(value));
 		}
 		this.gameCode = tmpGameCode.toUpperCase();
 	}

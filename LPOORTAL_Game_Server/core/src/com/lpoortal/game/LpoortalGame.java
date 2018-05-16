@@ -36,7 +36,7 @@ public class LpoortalGame extends Game {
 	
 	
 	private void startGame() {
-		setScreen(new WelcomeScreen(this));
+		setState(STATE.WELCOME);
 	}
 
 
