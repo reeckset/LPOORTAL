@@ -21,7 +21,7 @@ public class LPOORTAL_Game extends Game {
 	public void create() {
 		this.instance = this;
 		textureManager = new TextureManager(TextureManager.Player_Color.BLUE);
-		MessageManager msgMngr = new MessageManager();
+		new MessageManager();
 		changeState(State.CONNECT_STATE);
 	}
 

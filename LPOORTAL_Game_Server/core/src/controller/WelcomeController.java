@@ -29,6 +29,6 @@ public class WelcomeController {
 	}
 	
 	public void nextState() {
-		game.setState(LpoortalGame.STATE.GAMEPLAY);
+		game.setState(LpoortalGame.STATE.PLAYER_CUSTOMIZATION);
 	}
 }

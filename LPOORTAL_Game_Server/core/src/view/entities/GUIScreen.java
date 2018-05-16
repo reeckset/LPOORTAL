@@ -8,6 +8,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.lpoortal.game.LpoortalGame;
 
@@ -57,13 +59,29 @@ public abstract class GUIScreen extends ScreenAdapter {
         stage.addActor(img);
     }
     
-    protected void showImage(TextureManager.GUI_Texture guiTextureName, int x, int y, int w, int h){
+    protected Image showImage(TextureManager.GUI_Texture guiTextureName, int x, int y, int w, int h){
     	Texture texture = textureManager.getGUITexture(guiTextureName);
         Image img = new Image(new TextureRegion(texture));
         img.setSize(w, h);
         img.setPosition(x, y);
         stage.addActor(img);
+        return img;
     }
-
+    
+    protected Label showSubText(String text, int x, int y, int w, int h) {
+    	Label label = new Label(text, textureManager.getSubTextStyle());
+        stage.addActor(label);
+        label.setPosition(x, y);
+        label.setSize(w, h);
+        return label;
+    }
+    
+    protected Label showLabel(String text, int x, int y, int w, int h) {
+    	Label label = new Label(text, textureManager.getLabelStyle());
+        stage.addActor(label);
+        label.setPosition(x, y);
+        label.setSize(w, h);
+        return label;
+    }
 
 }

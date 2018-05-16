@@ -5,6 +5,7 @@ import com.badlogic.gdx.physics.box2d.World;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.PlayerClient;
+import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.GameController;
 import model.entities.CursorModel;
@@ -13,7 +14,7 @@ import model.entities.EntityModel;
 public class CursorBody extends EntityBody {
 	
 	private static final float GYRO_SENSITIVITY_X = 0.2f;
-	private static final float GYRO_SENSITIVITY_Y = 0.2f;
+	private static final float GYRO_SENSITIVITY_Y = 0.1f;
 	
 	private float lastX = 0;
 	private float lastY = 0;
@@ -22,7 +23,7 @@ public class CursorBody extends EntityBody {
 		super(world, model, BodyDef.BodyType.StaticBody);
 	}
 	
-	public void updatePosition(PlayerClient player) {
+	public void updatePosition(SocketCommunicator player) {
     	if(player != null) {
     		ClientToServerMsg player1Msg = player.getLastMessage();	
     		if(player1Msg != null) {

@@ -14,6 +14,7 @@ import com.badlogic.gdx.utils.Array;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.PlayerClient;
+import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.entities.CursorBody;
 import controller.entities.DrawnLineBody;
@@ -145,7 +146,7 @@ public class GameController implements ContactListener {
      * 
      */
     private void applyClientInput() {
-    	PlayerClient player1 = NetworkManager.getInstance().getPlayer1();
+    	SocketCommunicator player1 = NetworkManager.getInstance().getPlayer1();
     	cursorBody.updatePosition(player1);
     	if(player1 != null) {
     		ClientToServerMsg msg = player1.getLastMessage();
@@ -164,7 +165,7 @@ public class GameController implements ContactListener {
 		float currX = cursorBody.getX() + CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER /2; //Offset will put the position  
 		float currY = cursorBody.getY() - CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER /2; //in the corner of the cursor (pencil tip)
 		
-		if(wasDrawing) {
+		if(wasDrawing && willDraw) {
 			if(Math.sqrt(Math.pow(currX - lastCursorPosX, 2) + Math.pow(currY - lastCursorPosY, 2)) > 0.5f) {
 			drawLine(lastCursorPosX, lastCursorPosY, currX, currY);
 			} else {
@@ -221,11 +222,9 @@ public class GameController implements ContactListener {
     
 
 	public void moveLeft(float delta) {
-		stickmanBody.faceLeft();
 		stickmanBody.setLinearVelocity(-STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
 	}
 	public void moveRight(float delta) {
-		stickmanBody.faceRight();
 		stickmanBody.setLinearVelocity(STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
 	}
 

@@ -13,7 +13,7 @@ import java.net.Socket;
 public class SocketCommunicator implements Runnable {
 
 	private PlayerClient clientSocket;
-//	private PrintWriter writer;
+	ClientToServerMsg lastReceivedMessage;
 	private ObjectOutputStream writer;
 	private ObjectInputStream reader;
 	
@@ -43,7 +43,7 @@ public class SocketCommunicator implements Runnable {
 				try {
 					ClientToServerMsg msg;
 					if((msg = (ClientToServerMsg) reader.readObject()) != null) {
-						clientSocket.setLastReceivedMsg(msg);
+						setLastReceivedMsg(msg);
 					}
 				} catch (Exception e) {
 					closeSocket();
@@ -53,6 +53,7 @@ public class SocketCommunicator implements Runnable {
 	}
 	
 	public void writeMsg(ServerToClientMsg msg) {
+		
 		
 		if(msg != null && writer != null) {
 			System.out.println("Sending Message...");
@@ -74,4 +75,11 @@ public class SocketCommunicator implements Runnable {
 		}
 	}
 
+	private void setLastReceivedMsg(ClientToServerMsg msg) {
+		lastReceivedMessage = msg;		
+	}
+
+	public ClientToServerMsg getLastMessage() {
+		return lastReceivedMessage;
+	}
 }

@@ -8,6 +8,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lpoortal.game.network.NetworkManager;
 
 import view.entities.LevelScreen;
+import view.entities.PlayerCustomizationScreen;
 import view.entities.TextureManager;
 import view.entities.WelcomeScreen;
 
@@ -36,7 +37,7 @@ public class LpoortalGame extends Game {
 	
 	
 	private void startGame() {
-		setState(STATE.GAMEPLAY);
+		setState(STATE.WELCOME);
 	}
 
 
@@ -60,6 +61,9 @@ public class LpoortalGame extends Game {
 			break;
 		case WELCOME:
 			setScreen(new WelcomeScreen(this));
+			break;
+		case PLAYER_CUSTOMIZATION:
+			setScreen(new PlayerCustomizationScreen(this));
 			break;
 		}
 	}

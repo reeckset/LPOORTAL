@@ -24,7 +24,8 @@ public class TextureManager {
 	private Texture background, cursor, lineTexture;
     private Label.LabelStyle labelStyle, subTextStyle;
     
-    public enum GUI_Texture {LOGO};
+    public enum GUI_Texture {LOGO, TICK, CROSS};
+    public enum Player_Color {ORANGE, BLUE};
     private HashMap<GUI_Texture, Texture> guiTextures;
 	
 	public TextureManager(){
@@ -134,6 +135,8 @@ public class TextureManager {
 	
 	private void populateGUITextures(){
         guiTextures.put(GUI_Texture.LOGO, new Texture("logo.png"));
+        guiTextures.put(GUI_Texture.CROSS, new Texture("cross.png"));
+        guiTextures.put(GUI_Texture.TICK, new Texture("tick.png"));
     }
 	
     private void createLabelStyle(){
@@ -156,5 +159,14 @@ public class TextureManager {
     
     public LabelStyle getSubTextStyle() {
     	return subTextStyle;
+    }
+    
+    public static Color getColorFromString(String color) {
+    	switch(Player_Color.valueOf(color)) {
+    	case ORANGE:
+    		return Color.ORANGE;
+    	default:
+    		return Color.BLUE;
+    	}
     }
 }
