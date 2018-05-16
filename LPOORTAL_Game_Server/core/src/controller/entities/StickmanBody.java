@@ -17,7 +17,8 @@ public class StickmanBody extends EntityBody {
 	private static final float FRICTION = 0.8f;
 	private static final float RESTITUTION = 0f;
 	private static final float DENSITY = 1f;
-	public static final float WIDTH = 4f, HEIGHT = 5f;
+	public static final float WIDTH = 5f, HEIGHT = 5f;
+	private int nbrCollidingObjects = 0;
 
 	public StickmanBody(World world, EntityModel model) {
 		super(world, model, BodyDef.BodyType.DynamicBody);
@@ -37,6 +38,16 @@ public class StickmanBody extends EntityBody {
 	    def.friction = FRICTION;
 	    body.setFixedRotation(true);  
 	    body.createFixture(def);
+	    
+	    PolygonShape sensorShape = new PolygonShape();
+	    sensorShape.setAsBox(WIDTH/12,
+    					  HEIGHT / 300,
+    					  new Vector2(0,-HEIGHT/2),
+    					  0);
+	    FixtureDef sensor = new FixtureDef();
+	    sensor.isSensor = true;
+	    sensor.shape = sensorShape; 
+	    body.createFixture(sensor);
 	}
 	
 	public void update() {
@@ -60,6 +71,17 @@ public class StickmanBody extends EntityBody {
 	public void faceRight() {
 		StickmanModel model = ((StickmanModel) this.getUserData());
 		model.setFacingDirection(Stickman_Facing_Direction.RIGHT);
+	}
+	
+	public void increaseNbrCollidedObjs() {
+		nbrCollidingObjects++;
+	}
+	public void decreaseNbrCollidedObjs() {
+		nbrCollidingObjects--;
+	}
+	
+	public boolean isColliding() {
+		return nbrCollidingObjects > 0;
 	}
 }
 
