@@ -165,7 +165,7 @@ public class GameController implements ContactListener {
 		float currX = cursorBody.getX() + CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER /2; //Offset will put the position  
 		float currY = cursorBody.getY() - CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER /2; //in the corner of the cursor (pencil tip)
 		
-		if(wasDrawing) {
+		if(wasDrawing && willDraw) {
 			if(Math.sqrt(Math.pow(currX - lastCursorPosX, 2) + Math.pow(currY - lastCursorPosY, 2)) > 0.5f) {
 			drawLine(lastCursorPosX, lastCursorPosY, currX, currY);
 			} else {
@@ -222,11 +222,9 @@ public class GameController implements ContactListener {
     
 
 	public void moveLeft(float delta) {
-		stickmanBody.faceLeft();
 		stickmanBody.setLinearVelocity(-STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
 	}
 	public void moveRight(float delta) {
-		stickmanBody.faceRight();
 		stickmanBody.setLinearVelocity(STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
 	}
 

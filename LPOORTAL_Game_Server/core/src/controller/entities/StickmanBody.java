@@ -18,6 +18,7 @@ public class StickmanBody extends EntityBody {
 	private static final float RESTITUTION = 0f;
 	private static final float DENSITY = 1f;
 	public static final float WIDTH = 5f, HEIGHT = 5f;
+	private static final float FACING_DIRECTION_THRESHOLD = 0.2f;
 	private int nbrCollidingObjects = 0;
 
 	public StickmanBody(World world, EntityModel model) {
@@ -40,7 +41,7 @@ public class StickmanBody extends EntityBody {
 	    body.createFixture(def);
 	    
 	    PolygonShape sensorShape = new PolygonShape();
-	    sensorShape.setAsBox(WIDTH/12,
+	    sensorShape.setAsBox(WIDTH/10,
     					  HEIGHT / 300,
     					  new Vector2(0,-HEIGHT/2),
     					  0);
@@ -59,7 +60,16 @@ public class StickmanBody extends EntityBody {
 			}else {
 				model.setState(Stickman_Animation.IDLE);
 			}
-			
+		}
+		
+		updateFacingDirection();
+	}
+	
+	private void updateFacingDirection() {
+		if(this.getSpeedX() > FACING_DIRECTION_THRESHOLD) {
+			faceRight();
+		}else if(this.getSpeedX() < FACING_DIRECTION_THRESHOLD) {
+			faceLeft();
 		}
 	}
 

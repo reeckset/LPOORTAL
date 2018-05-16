@@ -5,6 +5,8 @@ import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.lpoortal.game.LPOORTAL_Game;
+import com.lpoortal.game.network.ClientToServerMsg;
+import com.lpoortal.game.network.MessageManager;
 
 public class PlayerCustomizationView extends ScreenView{
 
@@ -18,6 +20,7 @@ public class PlayerCustomizationView extends ScreenView{
     private static final int TILE_Y = 220;
 
     TextureManager.Player_Color selectedColor = TextureManager.Player_Color.BLUE;
+    TextField textField;
 
     @Override
     public void render(float delta){
@@ -27,6 +30,9 @@ public class PlayerCustomizationView extends ScreenView{
         }else{
             tick.setPosition(260, TICK_Y);
         }
+        MessageManager.getInstance().getClient().sendMessage(new ClientToServerMsg(
+                "", selectedColor.toString(), "", textField.getText()
+        ));
     }
 
     public PlayerCustomizationView() {
@@ -102,7 +108,7 @@ public class PlayerCustomizationView extends ScreenView{
     }
 
     private void addNameInput(){
-        TextField textField = new TextField("", textureManager.getTextInputStyle());
+        textField = new TextField("", textureManager.getTextInputStyle());
         textField.setMaxLength(10);
         stage.addActor(textField);
         textField.setPosition(0,330);

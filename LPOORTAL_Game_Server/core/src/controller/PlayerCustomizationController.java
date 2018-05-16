@@ -22,7 +22,7 @@ public class PlayerCustomizationController {
 		SocketCommunicator p2 = NetworkManager.getInstance().getPlayer2();
 		
 		//Mandar msgs aos players
-		ServerToClientMsg msg = new ServerToClientMsg("PILA");
+		//ServerToClientMsg msg = new ServerToClientMsg("");
 		//p1.writeMsg(msg);
 	}
 	
