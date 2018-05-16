@@ -136,7 +136,7 @@ public class GameController implements ContactListener {
             ((EntityModel) body.getUserData()).setPosition(body.getPosition().x, body.getPosition().y);
         }
         
-        updateStickman();
+        stickmanBody.update();
         applyClientInput();
     }
 
@@ -246,23 +246,36 @@ public class GameController implements ContactListener {
      */
     @Override
     public void beginContact(Contact contact) {
-    	
+    	Body bodyA = contact.getFixtureA().getBody();
+        Body bodyB = contact.getFixtureB().getBody();
+        
+        if ((bodyA.getUserData() instanceof StickmanModel && contact.getFixtureA().isSensor() && bodyB.getUserData() instanceof DrawnLineModel)
+          || (bodyB.getUserData() instanceof StickmanModel && contact.getFixtureB().isSensor() && bodyA.getUserData() instanceof DrawnLineModel)) {
+        	stickmanBody.increaseNbrCollidedObjs();
+        	((StickmanModel)stickmanBody.getUserData()).setJumping(false);
+        }
+        
+        
     }
 
 	@Override
     public void endContact(Contact contact) {
-
+		Body bodyA = contact.getFixtureA().getBody();
+        Body bodyB = contact.getFixtureB().getBody();
+        
+        if ((bodyA.getUserData() instanceof StickmanModel && contact.getFixtureA().isSensor() && bodyB.getUserData() instanceof DrawnLineModel)
+          || (bodyB.getUserData() instanceof StickmanModel && contact.getFixtureB().isSensor() && bodyA.getUserData() instanceof DrawnLineModel)) {
+        	stickmanBody.decreaseNbrCollidedObjs();
+        }
+        
+        if(!stickmanBody.isColliding()) {
+        	((StickmanModel)stickmanBody.getUserData()).setJumping(true);
+        }
     }
 
     @Override
     public void preSolve(Contact contact, Manifold oldManifold) {
-    	Body bodyA = contact.getFixtureA().getBody();
-        Body bodyB = contact.getFixtureB().getBody();
-        
-        if (bodyA.getUserData() instanceof StickmanModel)
-            stickmanCollisionHandler(bodyB, oldManifold.getLocalNormal());
-        if (bodyB.getUserData() instanceof StickmanModel)
-            stickmanCollisionHandler(bodyA,oldManifold.getLocalNormal());
+
     }
 
     @Override
@@ -307,27 +320,5 @@ public class GameController implements ContactListener {
         	return LEVEL_HEIGHT;
         }
 		return y;
-	}
-	
-    private void stickmanCollisionHandler(Body collider, Vector2 point) {
-		float angle;
-		if(point.x != 0) {
-			 angle = (float) Math.acos(Math.sqrt(point.x*point.x + point.y*point.y)/Math.abs(point.x));
-		}else {
-			if(point.y < 0) {
-				angle = (float) (-Math.PI/2);
-			}else {
-				angle = (float) (Math.PI/2);
-			}
-		}
-		angle = (float) ((angle + (Math.PI*2)) % (Math.PI*2));
-		if(angle > Math.PI && angle < 2*Math.PI) {
-			((StickmanModel)stickmanBody.getUserData()).setJumping(false);
-		}
-	}
-    
-
-    private void updateStickman() {
-		stickmanBody.update();
 	}
 }
