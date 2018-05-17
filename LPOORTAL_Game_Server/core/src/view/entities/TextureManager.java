@@ -163,10 +163,10 @@ public class TextureManager {
     
     public static Color getColorFromString(String color) {
     	switch(Player_Color.valueOf(color)) {
-    	case ORANGE:
-    		return Color.ORANGE;
+    	case BLUE:
+    		return new Color(20f/255f, 160f/255f , 1, 1);
     	default:
-    		return Color.BLUE;
+    		return new Color(1, 160f/255f, 20f/255f, 1);
     	}
     }
 }
