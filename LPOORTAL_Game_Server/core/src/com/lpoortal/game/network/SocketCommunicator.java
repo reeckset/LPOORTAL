@@ -89,4 +89,8 @@ public class SocketCommunicator implements Runnable {
 	public void changeState(LpoortalGame.CONTROLLER_STATE state) {
 		this.writeMsg(new ServerToClientMsg(state.toString()));
 	}
+
+	public Socket getClientSocket() {
+		return this.clientSocket.clientSocket;
+	}
 }

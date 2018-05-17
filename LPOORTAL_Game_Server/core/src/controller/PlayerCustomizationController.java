@@ -32,6 +32,10 @@ public class PlayerCustomizationController {
 		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
 		SocketCommunicator p2 = NetworkManager.getInstance().getPlayer2();
 		
+		if(p1.getLastMessage().playerColor.equals(p2.getLastMessage().playerColor)) {
+			return;
+		}
+		
 		p1.changeState(LpoortalGame.CONTROLLER_STATE.DRAWING_STATE);
 		p2.changeState(LpoortalGame.CONTROLLER_STATE.MOVEMENT_STATE);
 		
@@ -57,10 +61,12 @@ public class PlayerCustomizationController {
     			p1Ready = true;
     		} else {
     			
-    			verifyDifferentColors();
+    			/*verifyDifferentColors();
     			getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
     			p1Ready = true;
+    			*/
     			//Aqui pode ser chamado o nextState(), mas antes fzr a verificaçao das cores diferentes
+    			nextState();
     		}
 			
     		
@@ -73,11 +79,7 @@ public class PlayerCustomizationController {
     			p2Ready = true;
     		} else {
     			
-    			verifyDifferentColors();
-    			getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
-    			p2Ready = true;
-    			
-    			//Aqui pode ser chamado o nextState(), mas antes fzr a verificaçao das cores diferentes
+    			nextState();
     		}
     			
     		
