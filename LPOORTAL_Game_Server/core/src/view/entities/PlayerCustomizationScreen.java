@@ -59,11 +59,11 @@ public class PlayerCustomizationScreen extends GUIScreen {
     }
 	
 	private void showPlayerNames() {
-		player1NameLabel = showSubText("Player 1 Name", 95, 200, 200, 40);
-		player1NameLabel.setFontScale(0.3f);
+		player1NameLabel = showSubText("Player 1 Name", 90, 200, 200, 40);
+		player1NameLabel.setFontScale(0.4f);
 		player1NameLabel.setAlignment(Align.center);
-		player2NameLabel = showSubText("Player 2 Name", 360, 210, 200, 40);
-		player2NameLabel.setFontScale(0.3f);
+		player2NameLabel = showSubText("Player 2 Name", 330, 210, 200, 40);
+		player2NameLabel.setFontScale(0.4f);
 		player1NameLabel.setAlignment(Align.center);
 		
 	}
