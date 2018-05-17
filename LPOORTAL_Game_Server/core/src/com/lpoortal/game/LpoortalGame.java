@@ -21,6 +21,7 @@ public class LpoortalGame extends Game {
 	private TextureManager textureManager;
 	
 	public enum STATE {WELCOME, PLAYER_CUSTOMIZATION, GAMEPLAY}
+	public enum CONTROLLER_STATE {CONNECT_STATE, PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE}
 		
 	@Override
 	public void create () {
@@ -56,16 +57,17 @@ public class LpoortalGame extends Game {
 	
 	public void setState(STATE state) {
 		switch(state) {
-		case GAMEPLAY:
-			setScreen(new LevelScreen(this));
-			break;
 		case WELCOME:
 			setScreen(new WelcomeScreen(this));
 			break;
 		case PLAYER_CUSTOMIZATION:
 			setScreen(new PlayerCustomizationScreen(this));
 			break;
+		case GAMEPLAY:
+			setScreen(new LevelScreen(this));
+			break;
 		}
+		
 	}
 	
 }

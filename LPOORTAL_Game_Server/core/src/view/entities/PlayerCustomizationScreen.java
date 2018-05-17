@@ -15,6 +15,8 @@ import com.badlogic.gdx.utils.Align;
 import com.lpoortal.game.LpoortalGame;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
+import com.lpoortal.game.network.ServerToClientMsg;
+import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.PlayerCustomizationController;
 import model.entities.StickmanModel.Stickman_Animation;
@@ -104,5 +106,7 @@ public class PlayerCustomizationScreen extends GUIScreen {
 		player2Stickman.setPosition(0.5f*WIDTH, 0.05f*HEIGHT);
 		player2Stickman.setSize(0.4f*WIDTH, 0.7f*HEIGHT);
 	}
+	
+	
 
 }
