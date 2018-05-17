@@ -47,10 +47,11 @@ public class PlayerCustomizationScreen extends GUIScreen {
     @Override
     public void render(float delta) {
     	super.render(delta);
+    	
     	time += delta;
 		spriteBatch.begin();
     	updateStickmen();
-    	
+    	controller.update();
 		spriteBatch.end();
     }
 
