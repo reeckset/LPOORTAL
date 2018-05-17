@@ -24,6 +24,9 @@ public class WelcomeScreen extends GUIScreen {
 	
 	SpriteDrawable tickDrawable;
 	
+	boolean p1Ready = false;
+	boolean p2Ready = false;
+	
     public WelcomeScreen(LpoortalGame game) {
         super(game);
         controller = new WelcomeController(game);
@@ -34,15 +37,21 @@ public class WelcomeScreen extends GUIScreen {
     public void render(float delta) {
     	super.render(delta);
     	
-    	if(NetworkManager.getInstance().getPlayer1() != null || NetworkManager.getInstance().getPlayer2() != null) {
+    	if(NetworkManager.getInstance().getPlayer1() != null && !p1Ready) {
+    		showPlayer1Connected();
+    		controller.getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
+    		p1Ready = true;
+    	}
+    	if(NetworkManager.getInstance().getPlayer2() != null && !p2Ready) {
+    		showPlayer2Connected();
+    		controller.getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
+    		p2Ready = true;
+    	}
+    	
+    	if(NetworkManager.getInstance().getPlayer1() != null && NetworkManager.getInstance().getPlayer2() != null) {
     		controller.nextState();
     	}
-    	if(NetworkManager.getInstance().getPlayer1() != null) {
-    		showPlayer1Connected();
-    	}
-    	if(NetworkManager.getInstance().getPlayer2() != null) {
-    		showPlayer2Connected();
-    	}
+    	
     	
     }
 

@@ -61,12 +61,12 @@ public class PlayerCustomizationScreen extends GUIScreen {
     }
 	
 	private void showPlayerNames() {
-		player1NameLabel = showSubText("Player 1 Name", 90, 200, 200, 40);
+		player1NameLabel = showSubText("Player 1 Name", 100, 200, 200, 40);
 		player1NameLabel.setFontScale(0.4f);
 		player1NameLabel.setAlignment(Align.center);
-		player2NameLabel = showSubText("Player 2 Name", 330, 210, 200, 40);
+		player2NameLabel = showSubText("Player 2 Name", 375, 210, 200, 40);
 		player2NameLabel.setFontScale(0.4f);
-		player1NameLabel.setAlignment(Align.center);
+		player2NameLabel.setAlignment(Align.center);
 		
 	}
 
@@ -89,11 +89,11 @@ public class PlayerCustomizationScreen extends GUIScreen {
 		
 		
 		//TODO UNCOMMENT THIS FOR TWO PLAYERS
-		/*ClientToServerMsg msgPlayer2 = NetworkManager.getInstance().getPlayer2().getLastMessage();
+		ClientToServerMsg msgPlayer2 = NetworkManager.getInstance().getPlayer2().getLastMessage();
 		if(msgPlayer2 != null && msgPlayer2.playerColor != null) {
 			player2Stickman.setColor(TextureManager.getColorFromString(msgPlayer2.playerColor));
 			player2NameLabel.setText(msgPlayer2.playerName);
-		}*/
+		}
 		player2Stickman.draw(spriteBatch);
 		
 	}

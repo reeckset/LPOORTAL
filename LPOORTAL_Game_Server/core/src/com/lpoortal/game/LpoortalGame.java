@@ -21,7 +21,7 @@ public class LpoortalGame extends Game {
 	private TextureManager textureManager;
 	
 	public enum STATE {WELCOME, PLAYER_CUSTOMIZATION, GAMEPLAY}
-	public enum CONTROLLER_STATE {CONNECT_STATE, PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE}
+	public enum CONTROLLER_STATE {CONNECT_STATE, PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE, READY_STATE}
 		
 	@Override
 	public void create () {

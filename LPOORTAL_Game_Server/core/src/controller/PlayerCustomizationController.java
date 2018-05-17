@@ -29,11 +29,8 @@ public class PlayerCustomizationController {
 		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
 		SocketCommunicator p2 = NetworkManager.getInstance().getPlayer2();
 		
-		//Mandar msgs aos players
-		ServerToClientMsg msg1 = new ServerToClientMsg(LpoortalGame.CONTROLLER_STATE.DRAWING_STATE.toString());
-		ServerToClientMsg msg2 = new ServerToClientMsg(LpoortalGame.CONTROLLER_STATE.MOVEMENT_STATE.toString());
-		p1.writeMsg(msg1);
-		//p2.writeMsg(msg2);
+		p1.changeState(LpoortalGame.CONTROLLER_STATE.DRAWING_STATE);
+		p2.changeState(LpoortalGame.CONTROLLER_STATE.MOVEMENT_STATE);
 		
 		game.setState(LpoortalGame.STATE.GAMEPLAY);
 		
