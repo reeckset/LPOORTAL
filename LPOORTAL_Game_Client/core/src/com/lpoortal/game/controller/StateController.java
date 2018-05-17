@@ -24,9 +24,11 @@ public class StateController implements Runnable {
             if (MessageManager.getInstance().getClient() != null &&
                     System.currentTimeMillis() - lastMessageMillis >= MESSAGE_RECEIVE_FREQUENCY_MILLIS) {
                 ServerToClientMsg msg = MessageManager.getInstance().getClient().readMessage();
-                lastMessageMillis = System.currentTimeMillis();
-                this.nextState = LPOORTAL_Game.State.valueOf(msg.controllerState);
-                System.out.println(msg.controllerState);
+                if(msg != null) {
+                    lastMessageMillis = System.currentTimeMillis();
+                    this.nextState = LPOORTAL_Game.State.valueOf(msg.controllerState);
+                    System.out.println(msg.controllerState);
+                }
             }
         }
     }
@@ -42,4 +44,7 @@ public class StateController implements Runnable {
         return instance;
     }
 
+    public void setNextState(LPOORTAL_Game.State nextState) {
+        this.nextState = nextState;
+    }
 }

@@ -1,12 +1,17 @@
 package com.lpoortal.game.network;
 
 import com.badlogic.gdx.utils.Disposable;
+import com.lpoortal.game.LPOORTAL_Game;
+import com.lpoortal.game.controller.StateController;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.ConnectException;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.SocketException;
+import java.net.SocketTimeoutException;
 
 public class Client implements Disposable, Runnable {
     private Socket socket;
@@ -21,20 +26,19 @@ public class Client implements Disposable, Runnable {
 
     public Client(String ip) {
         try {
-            socket = new Socket(ip, 8765);
+            socket = new Socket();
+            socket.connect(new InetSocketAddress(ip, 8765), 1000);
             output = new ObjectOutputStream(socket.getOutputStream());
             input = new ObjectInputStream(socket.getInputStream());
             nextSendingMessage = new ClientToServerMsg();
-        } catch (IOException e) {
-            System.out.println(e);
+        } catch (Exception e) {
+            LPOORTAL_Game.getInstance().changeState(LPOORTAL_Game.State.CONNECT_STATE);
         }
     }
 
     @Override
     public void dispose() {
         try {
-            output.close();
-            input.close();
             socket.close();
         } catch (IOException e) {
             System.out.println(e);
@@ -47,41 +51,33 @@ public class Client implements Disposable, Runnable {
                 output.writeObject(msg);
                 output.flush();
                 output.reset();
-            }catch (SocketException e){
+            }catch (Exception e){
                 closeSocket();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
             }
         }
     }
 
     public ServerToClientMsg readMessage() {
-        if (input != null) {
-            while(true) {
-                try {
-                    return (ServerToClientMsg) input.readObject();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+        while(input != null) {
+            try {
+                return (ServerToClientMsg) input.readObject();
+            } catch (Exception e) {
+                closeSocket();
             }
         }
         return null;
     }
 
     private void closeSocket(){
-        try {
-            socket.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        dispose();
+        StateController.getInstance().setNextState(LPOORTAL_Game.State.CONNECT_STATE);
     }
 
 
     @Override
     public void run() {
         while(true) {
-            if (socket != null && !socket.isClosed() && nextSendingMessage.controllerState != ""
+            if (socket != null && !socket.isClosed() && nextSendingMessage != null && nextSendingMessage.controllerState != ""
                     && System.currentTimeMillis() - lastSentMessageMillis >= MESSAGE_SEND_FREQUENCY_MILLIS) {
                 sendMessage(nextSendingMessage);
                 lastSentMessageMillis = System.currentTimeMillis();
@@ -91,5 +87,9 @@ public class Client implements Disposable, Runnable {
 
     public void setNextSendingMessage(ClientToServerMsg nextSendingMessage){
         this.nextSendingMessage = nextSendingMessage;
+    }
+
+    public boolean isOpen(){
+        return socket != null && !socket.isClosed();
     }
 }

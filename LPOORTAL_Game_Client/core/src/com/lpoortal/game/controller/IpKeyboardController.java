@@ -26,6 +26,11 @@ public class IpKeyboardController {
         }
     }
 
+    public void clear(){
+        ip = 0;
+        input = "";
+    }
+
     public void submit(){
         if(input.length() == 8) {
             String hostname = "";

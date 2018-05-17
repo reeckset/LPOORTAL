@@ -19,6 +19,8 @@ public class PlayerCustomizationView extends ScreenView{
     private static final int TILE_WIDTH = SkinTile.TILE_WIDTH;
     private static final int TILE_Y = 220;
 
+    private boolean ready = false;
+
     TextureManager.Player_Color selectedColor = TextureManager.Player_Color.BLUE;
     TextField textField;
 
@@ -31,7 +33,7 @@ public class PlayerCustomizationView extends ScreenView{
             tick.setPosition(260, TICK_Y);
         }
         MessageManager.getInstance().getClient().setNextSendingMessage(new ClientToServerMsg(
-                LPOORTAL_Game.getInstance().getState().toString(), selectedColor.toString(), "", textField.getText()
+                LPOORTAL_Game.getInstance().getState().toString(), selectedColor.toString(), "", textField.getText(), ready
         ));
     }
 
@@ -137,8 +139,7 @@ public class PlayerCustomizationView extends ScreenView{
         readyTile.addListener(new ClickListener(){
             @Override
             public void clicked(InputEvent event, float x1, float y1) {
-                //TODO SET READY
-                LPOORTAL_Game.getInstance().changeState(LPOORTAL_Game.State.DRAWING_STATE);
+                ready = true;
             }
         });
     }

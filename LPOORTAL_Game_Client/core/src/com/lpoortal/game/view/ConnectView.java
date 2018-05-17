@@ -20,6 +20,7 @@ public class ConnectView extends ScreenView{
         super();
 
         kbController = new IpKeyboardController();
+        kbController.clear();
         createUI();
     }
 

@@ -7,12 +7,13 @@ import com.lpoortal.game.view.ConnectView;
 import com.lpoortal.game.view.ControlsView;
 import com.lpoortal.game.view.DrawingView;
 import com.lpoortal.game.view.PlayerCustomizationView;
+import com.lpoortal.game.view.ReadyView;
 import com.lpoortal.game.view.TextureManager;
 
 public class LPOORTAL_Game extends Game {
 
 	public static LPOORTAL_Game instance;
-	public enum State {PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE, CONNECT_STATE};
+	public enum State {PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE, CONNECT_STATE, READY_STATE};
 	private State state;
 
 	TextureManager textureManager;
@@ -39,6 +40,9 @@ public class LPOORTAL_Game extends Game {
 				break;
 			case PLAYER_CUSTOMIZATION_STATE:
 				this.setScreen(new PlayerCustomizationView());
+				break;
+			case READY_STATE:
+				this.setScreen(new ReadyView());
 				break;
 		}
 		this.state = controllerState;

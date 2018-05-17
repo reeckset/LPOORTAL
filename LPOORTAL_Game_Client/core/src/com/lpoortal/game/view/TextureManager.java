@@ -25,8 +25,8 @@ public class TextureManager {
         COLOR_PICKER_ORANGE_UP, COLOR_PICKER_ORANGE_DOWN, COLOR_PICKER_BLUE_UP, COLOR_PICKER_BLUE_DOWN, PICK_COLOR_LABEL,
         INSERT_NAME_LABEL,
         TILE_COWBOY_UP, TILE_SPACEMAN_UP, TILE_CHEF_UP, TILE_NINJA_UP, TILE_LOL_UP, TILE_DOWN, TILE_READY_UP, TILE_SELECTED,
-        TICK
-        };
+        TICK,
+        READY_BACKGROUND};
 
     private HashMap<Object_Texture, Texture> textures;
     private AssetManager assetManager;
@@ -69,6 +69,7 @@ public class TextureManager {
         textures.put(Object_Texture.COLOR_PICKER_BLUE_DOWN, getTextureFromSource("color_picker_blue_down.png"));
         textures.put(Object_Texture.PICK_COLOR_LABEL, getTextureFromSource("pick_color_label.png"));
         textures.put(Object_Texture.INSERT_NAME_LABEL, getTextureFromSource("insert_name_label.png"));
+        textures.put(Object_Texture.READY_BACKGROUND, getTextureFromSource("ready.png"));
 
         textures.put(Object_Texture.TILE_COWBOY_UP, getTextureFromSource("tile_cowboy.png"));
         textures.put(Object_Texture.TILE_SPACEMAN_UP, getTextureFromSource("tile_spaceman.png"));

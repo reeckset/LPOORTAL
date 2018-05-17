@@ -30,7 +30,7 @@ public class ClientToServerMsg implements Serializable {
         this(dx, dy, actionBtn, controllerState, "", "", "");
     }
 
-    public ClientToServerMsg(String controllerState, String playerColor, String playerSkin, String playerName){
-        this(0,0,false,controllerState, playerColor, playerSkin, playerName);
+    public ClientToServerMsg(String controllerState, String playerColor, String playerSkin, String playerName, boolean actionBtn){
+        this(0,0,actionBtn,controllerState, playerColor, playerSkin, playerName);
     }
 }
