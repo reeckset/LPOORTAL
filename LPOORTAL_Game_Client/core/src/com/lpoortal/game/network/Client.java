@@ -80,10 +80,11 @@ public class Client implements Disposable, Runnable {
 
     @Override
     public void run() {
-        while(socket != null && !socket.isClosed()) {
-            if (nextSendingMessage.controllerState != "" && System.currentTimeMillis() - lastSentMessageMillis >= MESSAGE_SEND_FREQUENCY_MILLIS) {
+        while(true) {
+            if (socket != null && !socket.isClosed() && nextSendingMessage.controllerState != ""
+                    && System.currentTimeMillis() - lastSentMessageMillis >= MESSAGE_SEND_FREQUENCY_MILLIS) {
                 sendMessage(nextSendingMessage);
-                nextSendingMessage = new ClientToServerMsg();
+                lastSentMessageMillis = System.currentTimeMillis();
             }
         }
     }

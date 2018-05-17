@@ -1,8 +1,8 @@
 package com.lpoortal.game;
 
 import com.badlogic.gdx.Game;
-import com.lpoortal.game.network.Client;
 import com.lpoortal.game.network.MessageManager;
+import com.lpoortal.game.controller.StateController;
 import com.lpoortal.game.view.ConnectView;
 import com.lpoortal.game.view.ControlsView;
 import com.lpoortal.game.view.DrawingView;
@@ -21,7 +21,8 @@ public class LPOORTAL_Game extends Game {
 	public void create() {
 		this.instance = this;
 		textureManager = new TextureManager(TextureManager.Player_Color.BLUE);
-		new MessageManager();
+		StateController msgReceiver = StateController.getInstance();
+		new Thread(msgReceiver).start();
 		changeState(State.CONNECT_STATE);
 	}
 

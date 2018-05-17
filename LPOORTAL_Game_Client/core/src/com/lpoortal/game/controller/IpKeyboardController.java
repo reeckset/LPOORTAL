@@ -35,9 +35,7 @@ public class IpKeyboardController {
                 tmp &= 0xFF;
                 hostname = tmp + ((hostname == "") ? "" : ("." + hostname));
             }
-            System.out.println(hostname);
             MessageManager.getInstance().start(hostname);
-            LPOORTAL_Game.getInstance().changeState(LPOORTAL_Game.State.PLAYER_CUSTOMIZATION_STATE);
         }else{
             System.out.println("Hostname must be input fully");
         }

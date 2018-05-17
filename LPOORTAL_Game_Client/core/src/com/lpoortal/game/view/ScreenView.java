@@ -10,6 +10,7 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.lpoortal.game.LPOORTAL_Game;
+import com.lpoortal.game.controller.StateController;
 
 public abstract class ScreenView extends ScreenAdapter {
     protected static final int VP_WIDTH = 360;
@@ -29,6 +30,7 @@ public abstract class ScreenView extends ScreenAdapter {
         clearScreen();
         stage.act(delta);
         stage.draw();
+        checkStateChange();
     }
 
     @Override
@@ -53,6 +55,12 @@ public abstract class ScreenView extends ScreenAdapter {
         img.setSize(width, height);
         img.setPosition((VP_WIDTH - width)/2, y);
         stage.addActor(img);
+    }
+
+    protected void checkStateChange(){
+        if(StateController.getInstance().getNextState() != LPOORTAL_Game.getInstance().getState()){
+            LPOORTAL_Game.getInstance().changeState(StateController.getInstance().getNextState());
+        }
     }
 
 
