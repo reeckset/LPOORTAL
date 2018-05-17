@@ -10,6 +10,8 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import com.lpoortal.game.LpoortalGame;
+
 public class SocketCommunicator implements Runnable {
 
 	private PlayerClient clientSocket;
@@ -82,5 +84,13 @@ public class SocketCommunicator implements Runnable {
 
 	public ClientToServerMsg getLastMessage() {
 		return lastReceivedMessage;
+	}
+	
+	public void changeState(LpoortalGame.CONTROLLER_STATE state) {
+		this.writeMsg(new ServerToClientMsg(state.toString()));
+	}
+
+	public Socket getClientSocket() {
+		return this.clientSocket.clientSocket;
 	}
 }

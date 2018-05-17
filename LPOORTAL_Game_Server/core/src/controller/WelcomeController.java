@@ -35,14 +35,19 @@ public class WelcomeController {
 		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
 		SocketCommunicator p2 = NetworkManager.getInstance().getPlayer2();
 		
-		//Mandar msgs aos players
-		ServerToClientMsg msg1 = new ServerToClientMsg(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE.toString());
-		ServerToClientMsg msg2 = new ServerToClientMsg(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE.toString());
-		p1.writeMsg(msg1);
-		//p2.writeMsg(msg2);
+		p1.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
+		p2.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
 		
 		game.setState(LpoortalGame.STATE.PLAYER_CUSTOMIZATION);
 		
 		
+	}
+	
+	public SocketCommunicator getPlayer1() {
+		return NetworkManager.getInstance().getPlayer1();
+	}
+	
+	public SocketCommunicator getPlayer2() {
+		return NetworkManager.getInstance().getPlayer2();
 	}
 }

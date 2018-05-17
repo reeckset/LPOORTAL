@@ -23,6 +23,13 @@ public class WelcomeScreen extends GUIScreen {
 	Image player2Connection;
 	
 	SpriteDrawable tickDrawable;
+	SpriteDrawable crossDrawable;
+	
+	private boolean p1Ready = false;
+	private boolean p2Ready = false;
+	private boolean p1Closed = false;
+	private boolean p2Closed = false;
+
 	
     public WelcomeScreen(LpoortalGame game) {
         super(game);
@@ -34,15 +41,41 @@ public class WelcomeScreen extends GUIScreen {
     public void render(float delta) {
     	super.render(delta);
     	
-    	if(NetworkManager.getInstance().getPlayer1() != null || NetworkManager.getInstance().getPlayer2() != null) {
+    	
+    	if(p1Closed) {
+    		showPlayer1Disconnected();
+    	}
+    	if(p2Closed) {
+    		showPlayer2Disconnected();
+    	}
+    	
+    	
+    	
+    	if(NetworkManager.getInstance().getPlayer1() != null && NetworkManager.getInstance().getPlayer1().getClientSocket().isClosed()) {
+    		p1Closed = true;
+    		p1Ready = false;
+    	} else if(NetworkManager.getInstance().getPlayer2() != null && NetworkManager.getInstance().getPlayer2().getClientSocket().isClosed()) {
+    		p2Closed = true;
+    		p2Ready = false;
+    	}
+    	
+    	if(NetworkManager.getInstance().getPlayer1() != null && !p1Closed && !p1Ready) {
+    		showPlayer1Connected();
+    		controller.getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
+    		p1Ready = true;
+    	}
+    	if(NetworkManager.getInstance().getPlayer2() != null && !p2Closed && !p2Ready) {
+    		showPlayer2Connected();
+    		controller.getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
+    		p2Ready = true;
+    	}
+    	
+    	
+    	
+    	if(NetworkManager.getInstance().getPlayer1() != null && NetworkManager.getInstance().getPlayer2() != null) {
     		controller.nextState();
     	}
-    	if(NetworkManager.getInstance().getPlayer1() != null) {
-    		showPlayer1Connected();
-    	}
-    	if(NetworkManager.getInstance().getPlayer2() != null) {
-    		showPlayer2Connected();
-    	}
+    	
     	
     }
 
@@ -53,7 +86,17 @@ public class WelcomeScreen extends GUIScreen {
 	private void showPlayer1Connected() {
 		player1Connection.setDrawable(tickDrawable);
 	}
+	
+	
+	private void showPlayer1Disconnected() {
+		player1Connection.setDrawable(crossDrawable);
+	}
+	
+	private void showPlayer2Disconnected() {
+    	player2Connection.setDrawable(crossDrawable);		
+	}
 
+	
 	private void createUI(){
     	showGameCode();
     	showImage(GUI_Texture.LOGO, 400, 260, 200, 100);
@@ -68,6 +111,7 @@ public class WelcomeScreen extends GUIScreen {
 		player1Connection = showImage(GUI_Texture.CROSS, 230, 30, 25, 25);
 		player2Connection = showImage(GUI_Texture.CROSS, 235, 0, 25, 25);
 		tickDrawable = new SpriteDrawable(new Sprite(textureManager.getGUITexture(GUI_Texture.TICK)));
+		crossDrawable = new SpriteDrawable(new Sprite(textureManager.getGUITexture(GUI_Texture.CROSS)));
 	}
 
 	private void showGameCodeInstruction() {
