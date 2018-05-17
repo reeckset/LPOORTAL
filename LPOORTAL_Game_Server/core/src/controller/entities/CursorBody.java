@@ -23,19 +23,15 @@ public class CursorBody extends EntityBody {
 		super(world, model, BodyDef.BodyType.StaticBody);
 	}
 	
-	public void updatePosition(SocketCommunicator player) {
-    	if(player != null) {
-    		ClientToServerMsg player1Msg = player.getLastMessage();	
-    		if(player1Msg != null) {
-    			float dx = player1Msg.dx - lastX;
-    			float dy = player1Msg.dy - lastY;
-    			lastX = player1Msg.dx;
-    			lastY = player1Msg.dy;
-    			float x = GameController.limitBoundsX(this.getX() + dx * GYRO_SENSITIVITY_X);
-    			float y = GameController.limitBoundsY(this.getY() + dy * GYRO_SENSITIVITY_Y);
-    			setTransform(x, y, 0);
-    		}
-    	}
+	public void updatePosition(float inputX, float inputY) {
+		float dx = inputX - lastX;
+		float dy = inputY - lastY;
+		lastX = inputX;
+		lastY = inputY;
+		float x = GameController.limitBoundsX(this.getX() + dx * GYRO_SENSITIVITY_X);
+		float y = GameController.limitBoundsY(this.getY() + dy * GYRO_SENSITIVITY_Y);
+		setTransform(x, y, 0);
+ 
 	}
 
 

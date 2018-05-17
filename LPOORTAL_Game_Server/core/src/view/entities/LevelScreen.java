@@ -125,8 +125,6 @@ public class LevelScreen extends ScreenAdapter {
     public void render(float delta) {
         GameController.getInstance().removeFlagged();
 
-        handleInputs(delta);
-
         GameController.getInstance().update(delta);
         game.getBatch().setProjectionMatrix(camera.combined);
 
@@ -170,23 +168,6 @@ public class LevelScreen extends ScreenAdapter {
         view.update(stickmanModel);
         view.draw(game.getBatch());
 
-    }
-    
-    /**
-     * Handles any inputs and passes them to the controller.
-     *
-     * @param delta time since last time inputs where handled in seconds
-     */
-    private void handleInputs(float delta) {
-        if (Gdx.input.isKeyPressed(Input.Keys.SPACE)) {
-            GameController.getInstance().jump(delta);
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.A)) {
-            GameController.getInstance().moveLeft(delta);
-        }
-        if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-            GameController.getInstance().moveRight(delta);
-        }
     }
 
     /**

@@ -7,11 +7,8 @@ import com.lpoortal.game.controller.StateController;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.net.ConnectException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
 
 public class Client implements Disposable, Runnable {
     private Socket socket;
@@ -22,7 +19,7 @@ public class Client implements Disposable, Runnable {
     private ClientToServerMsg nextSendingMessage;
     private long lastSentMessageMillis = 0;
 
-    private static final int MESSAGE_SEND_FREQUENCY_MILLIS = 100;
+    private static final int MESSAGE_SEND_FREQUENCY_MILLIS = 30;
 
     public Client(String ip) {
         try {

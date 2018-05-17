@@ -24,11 +24,6 @@ public class WelcomeScreen extends GUIScreen {
 	
 	SpriteDrawable tickDrawable;
 	SpriteDrawable crossDrawable;
-	
-	private boolean p1Ready = false;
-	private boolean p2Ready = false;
-	private boolean p1Closed = false;
-	private boolean p2Closed = false;
 
 	
     public WelcomeScreen(LpoortalGame game) {

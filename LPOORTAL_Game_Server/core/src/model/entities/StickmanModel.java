@@ -1,6 +1,7 @@
 package model.entities;
 
 import utilities.Pair;
+import view.entities.TextureManager;
 
 public class StickmanModel extends EntityModel {
 
@@ -9,7 +10,6 @@ public class StickmanModel extends EntityModel {
 	
 	private Stickman_Animation stickmanState;
 	private Stickman_Facing_Direction stickmanFacingDirection;
-	
 	
 	public StickmanModel(float x, float y) {
 		super(x, y);
@@ -50,4 +50,6 @@ public class StickmanModel extends EntityModel {
 	public void setFacingDirection(Stickman_Facing_Direction direction) {
 		this.stickmanFacingDirection = direction;
 	}
+	
+	
 }

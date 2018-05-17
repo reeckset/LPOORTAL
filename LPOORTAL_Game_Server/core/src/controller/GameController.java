@@ -3,6 +3,8 @@ package controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
@@ -49,9 +51,9 @@ public class GameController implements ContactListener {
     
     public static final float GRAVITY = 30;
     
-    public static final int JUMP_STRENGTH = 1300;
+    public static final int JUMP_STRENGTH = 20;
 
-    public static final float STICKMAN_SPEED = 300f;
+    public static final float STICKMAN_SPEED = 10f;
     
     boolean wasDrawing = false;
     
@@ -82,6 +84,12 @@ public class GameController implements ContactListener {
     /**
      * Lines that should be added in the next simulation step.
      */
+    
+    private boolean isPlayer1Drawer = true;
+    
+    SocketCommunicator player1;
+	SocketCommunicator player2;
+    
     private List<DrawnLineModel> linesToAdd = new ArrayList<DrawnLineModel>();
 
 
@@ -146,18 +154,41 @@ public class GameController implements ContactListener {
      * 
      */
     private void applyClientInput() {
-    	SocketCommunicator player1 = NetworkManager.getInstance().getPlayer1();
-    	cursorBody.updatePosition(player1);
-    	if(player1 != null) {
-    		ClientToServerMsg msg = player1.getLastMessage();
-    		if(msg != null) {
-    			handleDraw(msg.actionBtn);
-    		}
+    	//TODO MOVE THESE TWO LINES TO THE CONSTRUCTOR IF POSSIBLE
+    	player1 = NetworkManager.getInstance().getPlayer1();
+        player2 = NetworkManager.getInstance().getPlayer2();
+    	
+    	ClientToServerMsg drawerPlayer, stickmanPlayer;
+    	if(isPlayer1Drawer) {
+    		drawerPlayer = player1.getLastMessage();
+    		stickmanPlayer = player2.getLastMessage();
+    	}else {
+    		drawerPlayer = player2.getLastMessage();
+    		stickmanPlayer = player1.getLastMessage();
     	}
+    	
+    	cursorBody.updatePosition(drawerPlayer.dx, drawerPlayer.dy);
+    	handleDraw(drawerPlayer.actionBtn);
+    	
+    	movePlayer(stickmanPlayer.dx, stickmanPlayer.actionBtn);
+    	
 	}
 
   
-    /**
+    private void movePlayer(float dx, boolean actionBtn) {
+       
+        if (actionBtn) {
+            GameController.getInstance().jump();
+        }
+        if(dx < 0) {
+        	GameController.getInstance().moveLeft(-dx);
+        }else if(dx > 0) {
+            GameController.getInstance().moveRight(dx);
+        }
+       
+	}
+
+	/**
      * Handles the drawing
      */
 	private void handleDraw(boolean willDraw) {
@@ -213,9 +244,9 @@ public class GameController implements ContactListener {
      *
      * @param delta Duration of the rotation in seconds.
      */
-    public void jump(float delta) {
+    public void jump() {
     	if(!( ((StickmanModel)stickmanBody.getUserData()).isJumping())) {
-    		stickmanBody.setLinearVelocity(0, JUMP_STRENGTH * delta);
+    		stickmanBody.setLinearVelocity(0, JUMP_STRENGTH);
             ((StickmanModel)stickmanBody.getUserData()).setJumping(true);
     	}
     }
