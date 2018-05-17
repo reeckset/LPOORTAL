@@ -22,8 +22,7 @@ public class Server implements Runnable{
 			while(true) {
 				Socket clientSocket = socket.accept();
 		        clientSocket.setTcpNoDelay(true);
-		        PlayerClient player = new PlayerClient(clientSocket);
-		        socketCommunicator = new SocketCommunicator(player);
+		        socketCommunicator = new SocketCommunicator(clientSocket);
 		        NetworkManager.getInstance().addPlayerClient(socketCommunicator);
 		        new Thread(socketCommunicator).start();
 			}

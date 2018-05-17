@@ -5,6 +5,7 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
+import com.badlogic.gdx.utils.Disposable;
 import com.lpoortal.game.controller.IpKeyboardController;
 
 import java.util.ArrayList;
@@ -15,6 +16,9 @@ public class ConnectView extends ScreenView{
 
     IpKeyboardController kbController;
     ArrayList<Image> displayImgs = new ArrayList<Image>();
+    ArrayList<SpriteDrawable> displayDrawables = new ArrayList<SpriteDrawable>();
+
+    SpriteDrawable keyDown = new SpriteDrawable(new Sprite(textureManager.getTexture(TextureManager.Object_Texture.KEYBOARD_KEY_DOWN)));
 
     public ConnectView() {
         super();
@@ -98,14 +102,21 @@ public class ConnectView extends ScreenView{
             displayImgs.add(newImg);
             stage.addActor(newImg);
         }
+        populateSpriteDrawables();
+    }
+
+    private void populateSpriteDrawables() {
+        for(int i = 0; i < 16; i++){
+                displayDrawables.add(new SpriteDrawable( new Sprite(textureManager.getKeyboardKeyTexture(i))));
+        }
     }
 
     private void updateDisplay(){
         for(int i = 0; i < displayImgs.size(); i++){
             if(kbController.toString().length() > i) {
-                displayImgs.get(i).setDrawable(new SpriteDrawable( new Sprite(textureManager.getKeyboardKeyTexture(kbController.getValAt(i)))));
+                displayImgs.get(i).setDrawable(displayDrawables.get(kbController.getValAt(i)));
             }else{
-                displayImgs.get(i).setDrawable(new SpriteDrawable( new Sprite(textureManager.getTexture(TextureManager.Object_Texture.KEYBOARD_KEY_DOWN))));
+                displayImgs.get(i).setDrawable(keyDown);
             }
         }
     }
@@ -122,5 +133,4 @@ public class ConnectView extends ScreenView{
         centerImage(TextureManager.Object_Texture.SPLITTER, 100, 325);
         centerImage(TextureManager.Object_Texture.SPLITTER, 100, 275);
     }
-
 }

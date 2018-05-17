@@ -10,6 +10,9 @@ public class WelcomeController {
 	private String gameCode = null;
 	private LpoortalGame game;
 	
+	private boolean isPlayer1Ready = false;
+	private boolean isPlayer2Ready = false;
+	
 	public WelcomeController(LpoortalGame game) {
 		this.game = game;
 		generateGameCode();
@@ -49,5 +52,21 @@ public class WelcomeController {
 	
 	public SocketCommunicator getPlayer2() {
 		return NetworkManager.getInstance().getPlayer2();
+	}
+	
+	public void update() {
+
+		if(NetworkManager.getInstance().isPlayer1Connected() && !isPlayer1Ready) {
+			this.getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
+			isPlayer1Ready = true;
+		}
+		if(NetworkManager.getInstance().isPlayer2Connected() && !isPlayer2Ready) {
+			this.getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
+			isPlayer2Ready = true;
+		}
+		
+    	if(NetworkManager.getInstance().isPlayer1Connected() && NetworkManager.getInstance().isPlayer2Connected()) {
+    		nextState();
+    	}
 	}
 }

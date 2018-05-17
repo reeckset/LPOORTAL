@@ -40,40 +40,17 @@ public class WelcomeScreen extends GUIScreen {
     @Override
     public void render(float delta) {
     	super.render(delta);
+    	controller.update();
     	
-    	
-    	if(p1Closed) {
+		if(NetworkManager.getInstance().isPlayer1Connected()) {
+    		showPlayer1Connected();
+    	} else {
     		showPlayer1Disconnected();
     	}
-    	if(p2Closed) {
-    		showPlayer2Disconnected();
-    	}
-    	
-    	
-    	
-    	if(NetworkManager.getInstance().getPlayer1() != null && NetworkManager.getInstance().getPlayer1().getClientSocket().isClosed()) {
-    		p1Closed = true;
-    		p1Ready = false;
-    	} else if(NetworkManager.getInstance().getPlayer2() != null && NetworkManager.getInstance().getPlayer2().getClientSocket().isClosed()) {
-    		p2Closed = true;
-    		p2Ready = false;
-    	}
-    	
-    	if(NetworkManager.getInstance().getPlayer1() != null && !p1Closed && !p1Ready) {
-    		showPlayer1Connected();
-    		controller.getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
-    		p1Ready = true;
-    	}
-    	if(NetworkManager.getInstance().getPlayer2() != null && !p2Closed && !p2Ready) {
+		if(NetworkManager.getInstance().isPlayer2Connected()) {
     		showPlayer2Connected();
-    		controller.getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
-    		p2Ready = true;
-    	}
-    	
-    	
-    	
-    	if(NetworkManager.getInstance().getPlayer1() != null && NetworkManager.getInstance().getPlayer2() != null) {
-    		controller.nextState();
+    	} else {
+    		showPlayer2Disconnected();
     	}
     	
     	

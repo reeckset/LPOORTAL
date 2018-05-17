@@ -1,6 +1,7 @@
 package controller;
 
 import com.lpoortal.game.LpoortalGame;
+import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.ServerToClientMsg;
 import com.lpoortal.game.network.SocketCommunicator;
@@ -32,15 +33,20 @@ public class PlayerCustomizationController {
 		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
 		SocketCommunicator p2 = NetworkManager.getInstance().getPlayer2();
 		
-		if(p1.getLastMessage().playerColor.equals(p2.getLastMessage().playerColor)) {
-			return;
+		if (p1.getLastMessage().playerColor.equals(p2.getLastMessage().playerColor)) {
+			p1.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
+			p2.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
+			p1Ready = false;
+			p2Ready = false;
+			NetworkManager.getInstance().getPlayer1().resetLastMessage();
+			NetworkManager.getInstance().getPlayer2().resetLastMessage();
+			
+		} else {
+			p1.changeState(LpoortalGame.CONTROLLER_STATE.DRAWING_STATE);
+			p2.changeState(LpoortalGame.CONTROLLER_STATE.MOVEMENT_STATE);
+			
+			game.setState(LpoortalGame.STATE.GAMEPLAY);
 		}
-		
-		p1.changeState(LpoortalGame.CONTROLLER_STATE.DRAWING_STATE);
-		p2.changeState(LpoortalGame.CONTROLLER_STATE.MOVEMENT_STATE);
-		
-		game.setState(LpoortalGame.STATE.GAMEPLAY);
-		
 		
 	}
 	
@@ -54,40 +60,21 @@ public class PlayerCustomizationController {
 
 
 	public void update() {
-		if(NetworkManager.getInstance().getPlayer1() != null && !p1Ready) {
-    		
-    		if(!p2Ready) {
-    			getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
-    			p1Ready = true;
-    		} else {
-    			
-    			/*verifyDifferentColors();
-    			getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
-    			p1Ready = true;
-    			*/
-    			//Aqui pode ser chamado o nextState(), mas antes fzr a verificaçao das cores diferentes
-    			nextState();
-    		}
-			
-    		
-    	}
-    	if(NetworkManager.getInstance().getPlayer2() != null && !p2Ready) {
-    	
-    		
-    		if(!p1Ready) {
-    			getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
-    			p2Ready = true;
-    		} else {
-    			
-    			nextState();
-    		}
-    			
-    		
-    	}
-    	
-    	if(NetworkManager.getInstance().getPlayer1() != null && NetworkManager.getInstance().getPlayer2() != null) {
-    		nextState();
-    	}
+		ClientToServerMsg player1Msg = NetworkManager.getInstance().getPlayer1().getLastMessage();
+		ClientToServerMsg player2Msg = NetworkManager.getInstance().getPlayer2().getLastMessage();
+		
+		if(!p1Ready && player1Msg != null && player1Msg.actionBtn) {
+			p1Ready = true;
+			NetworkManager.getInstance().getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
+		}
+		if(!p2Ready && player2Msg != null && player2Msg.actionBtn) {
+			p2Ready = true;
+			NetworkManager.getInstance().getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.READY_STATE);
+		}
+		if(p1Ready && p2Ready) {
+			nextState();
+		}
+		
 		
 	}
 }

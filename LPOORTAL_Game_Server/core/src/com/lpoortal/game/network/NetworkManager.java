@@ -51,10 +51,10 @@ public class NetworkManager{
 	
 	
 	public void addPlayerClient(SocketCommunicator playerCommunicator) {
-		if(this.player1Communicator == null) {
+		if(!isPlayer1Connected()) {
 			this.player1Communicator = playerCommunicator;
 			System.out.println("Player 1 connected");
-		}else if(this.player2Communicator == null) {
+		}else if(!isPlayer2Connected()) {
 			this.player2Communicator = playerCommunicator;
 			System.out.println("Player 2 connected");
 		}
@@ -88,5 +88,12 @@ public class NetworkManager{
 	        e.printStackTrace();
 	    }
         return null;
+	}
+	
+	public boolean isPlayer1Connected() {
+		return this.player1Communicator != null && this.player1Communicator.getClientSocket() != null;
+	}
+	public boolean isPlayer2Connected() {
+		return this.player2Communicator != null && this.player2Communicator.getClientSocket() != null;
 	}
 }

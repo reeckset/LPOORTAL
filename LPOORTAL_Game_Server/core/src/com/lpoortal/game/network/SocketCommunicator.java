@@ -10,11 +10,12 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import com.badlogic.gdx.utils.Disposable;
 import com.lpoortal.game.LpoortalGame;
 
 public class SocketCommunicator implements Runnable {
 
-	private PlayerClient clientSocket;
+	private Socket clientSocket;
 	ClientToServerMsg lastReceivedMessage;
 	private ObjectOutputStream writer;
 	private ObjectInputStream reader;
@@ -22,7 +23,7 @@ public class SocketCommunicator implements Runnable {
 	private static final long READ_FREQUENCY_MILLIS = 100;
 	private long lastReadAttemptMillis = 0;
 	
-	public SocketCommunicator(PlayerClient clientSocket) throws IOException {
+	public SocketCommunicator(Socket clientSocket) throws IOException {
 		this.clientSocket = clientSocket;
 		this.writer = new ObjectOutputStream(clientSocket.getOutputStream());
 		this.reader = new ObjectInputStream(clientSocket.getInputStream());
@@ -48,7 +49,7 @@ public class SocketCommunicator implements Runnable {
 						setLastReceivedMsg(msg);
 					}
 				} catch (Exception e) {
-					closeSocket();
+					disposeClient();
 				}
 			}
 		}		
@@ -70,12 +71,8 @@ public class SocketCommunicator implements Runnable {
 		
 	}
 	
-	private void closeSocket() {
-		try {
-		clientSocket.close();
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
+	private void disposeClient() {
+		this.clientSocket = null;
 	}
 
 	private void setLastReceivedMsg(ClientToServerMsg msg) {
@@ -91,6 +88,10 @@ public class SocketCommunicator implements Runnable {
 	}
 
 	public Socket getClientSocket() {
-		return this.clientSocket.clientSocket;
+		return this.clientSocket;
+	}
+
+	public void resetLastMessage() {
+		lastReceivedMessage = null;
 	}
 }
