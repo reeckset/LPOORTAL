@@ -30,8 +30,8 @@ public class PlayerCustomizationView extends ScreenView{
         }else{
             tick.setPosition(260, TICK_Y);
         }
-        MessageManager.getInstance().getClient().sendMessage(new ClientToServerMsg(
-                "", selectedColor.toString(), "", textField.getText()
+        MessageManager.getInstance().getClient().setNextSendingMessage(new ClientToServerMsg(
+                LPOORTAL_Game.getInstance().getState().toString(), selectedColor.toString(), "", textField.getText()
         ));
     }
 
