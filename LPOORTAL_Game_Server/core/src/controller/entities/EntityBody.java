@@ -38,6 +38,10 @@ public abstract class EntityBody {
         body = world.createBody(bodyDef);
         body.setUserData(model);
     }
+    
+    public void destroy() {
+    	body.getWorld().destroyBody(body);
+    }
 
     /**
      * Helper method to create a polygon fixture represented by a set of vertexes.

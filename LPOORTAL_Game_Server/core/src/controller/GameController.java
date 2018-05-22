@@ -1,7 +1,10 @@
 package controller;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
 import java.util.List;
+import java.util.ListIterator;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -14,6 +17,7 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
+import com.lpoortal.game.LpoortalGame.CONTROLLER_STATE;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.PlayerClient;
@@ -99,7 +103,9 @@ public class GameController implements ContactListener {
 	SocketCommunicator player2;
     
     private List<DrawnLineModel> linesToAdd = new ArrayList<DrawnLineModel>();
-
+    private List<DrawnLineBody> linesDrawn = new ArrayList<DrawnLineBody>();
+    
+    private boolean removeLines = false;
 
     /**
      * Creates a new GameController that controls the physics of a certain GameModel.
@@ -113,8 +119,7 @@ public class GameController implements ContactListener {
     	this.stickmanBody = new StickmanBody(world, gameInstance.getStickman());
         this.cursorBody = new CursorBody(world, gameInstance.getCursor());
 
-        List<DrawnLineModel> drawnLines = GameModel.getInstance().getDrawnLines();
-        this.drawLine(10, 10, 40, 10);
+        drawStartLine();
         
         player1 = NetworkManager.getInstance().getPlayer1();
         player2 = NetworkManager.getInstance().getPlayer2();
@@ -125,6 +130,10 @@ public class GameController implements ContactListener {
         
         world.setContactListener(this);
     }
+
+	private void drawStartLine() {
+		this.drawLine(10, 10, 40, 10);		
+	}
 
 	/**
      * Returns a singleton instance of a game controller
@@ -145,6 +154,10 @@ public class GameController implements ContactListener {
     public void update(float delta) {
         GameModel.getInstance().update(delta);
 
+        if(removeLines) {
+        	resetLines();
+        }
+        
         float frameTime = Math.min(delta, 0.25f);
         accumulator += frameTime;
         while (accumulator >= 1/60f) {
@@ -164,25 +177,37 @@ public class GameController implements ContactListener {
         applyClientInput();
     }
 
+	private void resetLines() {
+		for(DrawnLineBody line : linesDrawn) {
+      		line.destroy();
+      	}
+    	removeLines = false;
+      	linesDrawn = new ArrayList<DrawnLineBody>();
+      	drawStartLine();		
+	}
+
 	/**
      * Takes the last received messages by the Network Manager
      * 
      */
     private void applyClientInput() {
     	
-    	ClientToServerMsg drawerPlayer, stickmanPlayer;
+    	ClientToServerMsg drawerPlayerMsg, stickmanPlayerMsg;
+    	
     	if(isPlayer1Drawer) {
-    		drawerPlayer = player1.getLastMessage();
-    		stickmanPlayer = player2.getLastMessage();
+    		drawerPlayerMsg = player1.getLastMessage();
+    		stickmanPlayerMsg = player2.getLastMessage();
     	}else {
-    		drawerPlayer = player2.getLastMessage();
-    		stickmanPlayer = player1.getLastMessage();
+    		drawerPlayerMsg = player2.getLastMessage();
+    		stickmanPlayerMsg = player1.getLastMessage();
     	}
-    	
-    	cursorBody.updatePosition(drawerPlayer.dx, drawerPlayer.dy);
-    	handleDraw(drawerPlayer.actionBtn);
-    	
-    	movePlayer(stickmanPlayer.dx, stickmanPlayer.actionBtn);
+	    
+    	if(drawerPlayerMsg != null && stickmanPlayerMsg != null) {	
+	    	cursorBody.updatePosition(drawerPlayerMsg.dx, drawerPlayerMsg.dy);
+	    	handleDraw(drawerPlayerMsg.actionBtn);
+	    	
+	    	movePlayer(stickmanPlayerMsg.dx, stickmanPlayerMsg.actionBtn);
+    	}
     	
 	}
 
@@ -279,6 +304,7 @@ public class GameController implements ContactListener {
         GameModel.getInstance().addLine(line);
         DrawnLineBody body = new DrawnLineBody(world, line);
         body.setLinearVelocity(0, 0);
+        linesDrawn.add(body);
     }
 
     /**
@@ -299,14 +325,33 @@ public class GameController implements ContactListener {
         
         if ((bodyA.getUserData() instanceof StickmanModel && bodyB.getUserData() instanceof PortalModel)
                 || (bodyB.getUserData() instanceof StickmanModel && bodyA.getUserData() instanceof PortalModel)) {
-              	isPlayer1Drawer = !isPlayer1Drawer;
-              	GameModel.getInstance().resetGame();
-              	updatePlayerVisuals();
-              	//TODO DISPOSE LINES and CHANGE MOBILE STATE
+              	nextLevel();
+              	
         }
         
         
     }
+
+	private void nextLevel() {
+		isPlayer1Drawer = !isPlayer1Drawer;
+      	NetworkManager.getInstance().getPlayer1().resetLastMessage();
+      	NetworkManager.getInstance().getPlayer2().resetLastMessage();
+      	stickmanBody.setLinearVelocity(0, 0);
+      	GameModel.getInstance().resetGame();
+      	updatePlayerVisuals();
+      	if(isPlayer1Drawer) {
+      		NetworkManager.getInstance().getPlayer1().changeState(CONTROLLER_STATE.DRAWING_STATE);
+      		NetworkManager.getInstance().getPlayer2().changeState(CONTROLLER_STATE.MOVEMENT_STATE);
+      	}else {
+      		NetworkManager.getInstance().getPlayer1().changeState(CONTROLLER_STATE.MOVEMENT_STATE);
+      		NetworkManager.getInstance().getPlayer2().changeState(CONTROLLER_STATE.DRAWING_STATE);
+      	}
+      	NetworkManager.getInstance().getPlayer1().resetLastMessage();
+      	NetworkManager.getInstance().getPlayer2().resetLastMessage();
+      	removeLines = true;
+      	//TODO DISPOSE LINES and CHANGE MOBILE STATE
+      	
+	}
 
 	@Override
     public void endContact(Contact contact) {
