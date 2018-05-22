@@ -1,6 +1,9 @@
 package model.entities;
 
+import com.badlogic.gdx.graphics.Color;
+
 import utilities.Pair;
+import view.entities.StickmanVisualDetails.Stickman_Skin;
 import view.entities.TextureManager;
 
 public class StickmanModel extends EntityModel {
@@ -11,6 +14,9 @@ public class StickmanModel extends EntityModel {
 	private Stickman_Animation stickmanState;
 	private Stickman_Facing_Direction stickmanFacingDirection;
 	
+	private Color color;
+	private Stickman_Skin skin;
+
 	public StickmanModel(float x, float y) {
 		super(x, y);
 		stickmanState = Stickman_Animation.IDLE;
@@ -49,6 +55,22 @@ public class StickmanModel extends EntityModel {
 
 	public void setFacingDirection(Stickman_Facing_Direction direction) {
 		this.stickmanFacingDirection = direction;
+	}
+	
+	public void setColor(Color color) {
+		this.color = color;
+	}
+	
+	public Color getColor() {
+		return this.color;
+	}
+	
+	public Stickman_Skin getSkin() {
+		return skin;
+	}
+
+	public void setSkin(Stickman_Skin skin) {
+		this.skin = skin;
 	}
 	
 	

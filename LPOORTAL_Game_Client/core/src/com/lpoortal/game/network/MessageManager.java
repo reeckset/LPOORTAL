@@ -4,6 +4,7 @@ public class MessageManager {
 
     public static MessageManager instance;
     private Client client;
+    private Thread clientThread;
 
     public static MessageManager getInstance() {
         if (instance == null)
@@ -16,8 +17,16 @@ public class MessageManager {
     }
 
     public void start(String ip){
+        if(this.clientThread != null) {
+            try {
+                clientThread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
         this.client = new Client(ip);
-        new Thread(client).start();
+        clientThread = new Thread(client);
+        clientThread.start();
     }
 
     public Client getClient() {

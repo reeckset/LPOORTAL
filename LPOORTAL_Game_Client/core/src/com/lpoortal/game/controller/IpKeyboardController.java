@@ -40,6 +40,7 @@ public class IpKeyboardController {
                 tmp &= 0xFF;
                 hostname = tmp + ((hostname == "") ? "" : ("." + hostname));
             }
+            System.out.println(hostname);
             MessageManager.getInstance().start(hostname);
         }else{
             System.out.println("Hostname must be input fully");

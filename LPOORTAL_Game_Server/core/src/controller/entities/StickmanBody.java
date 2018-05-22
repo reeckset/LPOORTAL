@@ -34,21 +34,23 @@ public class StickmanBody extends EntityBody {
 	    
 	    FixtureDef def = new FixtureDef();
 	    def.shape = polygonShape;
-	    def.restitution = RESTITUTION;
-	    def.density = DENSITY;
-	    def.friction = FRICTION;
+	    def.restitution = 0;
+	    def.density = 0;
+	    def.friction = 0;
 	    body.setFixedRotation(true);  
 	    body.createFixture(def);
 	    
 	    PolygonShape sensorShape = new PolygonShape();
-	    sensorShape.setAsBox(WIDTH/10,
+	    sensorShape.setAsBox(WIDTH/8,
     					  HEIGHT / 300,
     					  new Vector2(0,-HEIGHT/2),
     					  0);
-	    FixtureDef sensor = new FixtureDef();
-	    sensor.isSensor = true;
-	    sensor.shape = sensorShape; 
-	    body.createFixture(sensor);
+	    FixtureDef bottomDef = new FixtureDef();
+	    bottomDef.restitution = RESTITUTION;
+	    bottomDef.density = DENSITY;
+	    bottomDef.friction = FRICTION;
+	    bottomDef.shape = sensorShape;
+	    body.createFixture(bottomDef);
 	}
 	
 	public void update() {

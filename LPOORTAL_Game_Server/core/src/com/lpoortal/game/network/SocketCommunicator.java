@@ -10,8 +10,12 @@ import java.io.ObjectOutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.utils.Disposable;
 import com.lpoortal.game.LpoortalGame;
+
+import view.entities.StickmanVisualDetails.Stickman_Skin;
+import view.entities.TextureManager;
 
 public class SocketCommunicator implements Runnable {
 
@@ -20,6 +24,9 @@ public class SocketCommunicator implements Runnable {
 	private ObjectOutputStream writer;
 	private ObjectInputStream reader;
 	
+	private Color color;
+	private Stickman_Skin skin;
+
 	private static final long READ_FREQUENCY_MILLIS = 100;
 	private long lastReadAttemptMillis = 0;
 	
@@ -93,5 +100,21 @@ public class SocketCommunicator implements Runnable {
 
 	public void resetLastMessage() {
 		lastReceivedMessage = null;
+	}
+	
+	public void setColor(String colorStr) {
+		color = TextureManager.getColorFromString(colorStr);
+	}
+	
+	public Color getColor() {
+		return color;
+	}
+	
+	public Stickman_Skin getSkin() {
+		return skin;
+	}
+
+	public void setSkin(String skin) {
+		this.skin = Stickman_Skin.valueOf(skin);
 	}
 }

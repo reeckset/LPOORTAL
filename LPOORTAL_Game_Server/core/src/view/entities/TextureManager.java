@@ -15,12 +15,15 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 
 import utilities.Pair;
+import view.entities.StickmanVisualDetails.Stickman_Skin;
 import model.entities.StickmanModel.Stickman_Animation;
 import model.entities.StickmanModel.Stickman_Facing_Direction;
 
 public class TextureManager {
 	
 	private HashMap<Pair<Stickman_Animation, Stickman_Facing_Direction>, Animation<TextureRegion>> stickmanAnimations;
+	private HashMap<StickmanVisualDetails, Animation<TextureRegion>> stickmanSkinAnimations;
+	
 	private Texture background, cursor, lineTexture;
     private Label.LabelStyle labelStyle, subTextStyle;
     
@@ -30,6 +33,7 @@ public class TextureManager {
 	
 	public TextureManager(){
 		stickmanAnimations = new HashMap<Pair<Stickman_Animation,Stickman_Facing_Direction>, Animation<TextureRegion>>();
+		stickmanSkinAnimations = new HashMap<StickmanVisualDetails, Animation<TextureRegion>>();
 		guiTextures = new HashMap<GUI_Texture, Texture>();
 		populateStaticTextures();
 		populateGUITextures();
@@ -49,11 +53,45 @@ public class TextureManager {
 	}
 
 	private void populateAnimations() {
+		//TODO THIS CAN BE REFACTORED SO THAT THE addPlayerAnimation FUNCTION ADDS THE ANIMATION FOR EACH SKIN
+		
 		addPlayerAnimation("Idle.png", Stickman_Animation.IDLE, 4f/30f);
 		addPlayerAnimation("Lift_Off.png", Stickman_Animation.LIFT_OFF, 2f/30f);
 		addPlayerAnimation("Walking.png", Stickman_Animation.WALKING, 3f/30f);
 		addPlayerAnimation("mid_flight.png", Stickman_Animation.JUMPING, 30f/30f);
 		addPlayerAnimation("Lift_Off.png", Stickman_Animation.LANDING, 3f/30f, true);
+		
+		addPlayerSkinAnimation("cowboy_idle.png", Stickman_Animation.IDLE, Stickman_Skin.COWBOY, 4f/30f, false);
+		addPlayerSkinAnimation("cowboy_lift_off.png", Stickman_Animation.LIFT_OFF, Stickman_Skin.COWBOY, 2f/30f, false);
+		addPlayerSkinAnimation("cowboy_walking.png", Stickman_Animation.WALKING, Stickman_Skin.COWBOY, 3f/30f, false);
+		addPlayerSkinAnimation("cowboy_mid_flight.png", Stickman_Animation.JUMPING, Stickman_Skin.COWBOY, 30f/30f, false);
+		addPlayerSkinAnimation("cowboy_lift_off.png", Stickman_Animation.LANDING, Stickman_Skin.COWBOY, 3f/30f, true);
+		
+		addPlayerSkinAnimation("spaceman_idle.png", Stickman_Animation.IDLE, Stickman_Skin.SPACEMAN, 4f/30f, false);
+		addPlayerSkinAnimation("spaceman_lift_off.png", Stickman_Animation.LIFT_OFF, Stickman_Skin.SPACEMAN, 2f/30f, false);
+		addPlayerSkinAnimation("spaceman_walking.png", Stickman_Animation.WALKING, Stickman_Skin.SPACEMAN, 3f/30f, false);
+		addPlayerSkinAnimation("spaceman_mid_flight.png", Stickman_Animation.JUMPING, Stickman_Skin.SPACEMAN, 30f/30f, false);
+		addPlayerSkinAnimation("spaceman_lift_off.png", Stickman_Animation.LANDING, Stickman_Skin.SPACEMAN, 3f/30f, true);
+		
+		addPlayerSkinAnimation("ninja_idle.png", Stickman_Animation.IDLE, Stickman_Skin.NINJA, 4f/30f, false);
+		addPlayerSkinAnimation("ninja_lift_off.png", Stickman_Animation.LIFT_OFF, Stickman_Skin.NINJA, 2f/30f, false);
+		addPlayerSkinAnimation("ninja_walking.png", Stickman_Animation.WALKING, Stickman_Skin.NINJA, 3f/30f, false);
+		addPlayerSkinAnimation("ninja_mid_flight.png", Stickman_Animation.JUMPING, Stickman_Skin.NINJA, 30f/30f, false);
+		addPlayerSkinAnimation("ninja_lift_off.png", Stickman_Animation.LANDING, Stickman_Skin.NINJA, 3f/30f, true);
+		
+		addPlayerSkinAnimation("chef_idle.png", Stickman_Animation.IDLE, Stickman_Skin.CHEF, 4f/30f, false);
+		addPlayerSkinAnimation("chef_lift_off.png", Stickman_Animation.LIFT_OFF, Stickman_Skin.CHEF, 2f/30f, false);
+		addPlayerSkinAnimation("chef_walking.png", Stickman_Animation.WALKING, Stickman_Skin.CHEF, 3f/30f, false);
+		addPlayerSkinAnimation("chef_mid_flight.png", Stickman_Animation.JUMPING, Stickman_Skin.CHEF, 30f/30f, false);
+		addPlayerSkinAnimation("chef_lift_off.png", Stickman_Animation.LANDING, Stickman_Skin.CHEF, 3f/30f, true);
+		
+		addPlayerSkinAnimation("lol_idle.png", Stickman_Animation.IDLE, Stickman_Skin.LOL, 4f/30f, false);
+		addPlayerSkinAnimation("lol_lift_off.png", Stickman_Animation.LIFT_OFF, Stickman_Skin.LOL, 2f/30f, false);
+		addPlayerSkinAnimation("lol_walking.png", Stickman_Animation.WALKING, Stickman_Skin.LOL, 3f/30f, false);
+		addPlayerSkinAnimation("lol_mid_flight.png", Stickman_Animation.JUMPING, Stickman_Skin.LOL, 30f/30f, false);
+		addPlayerSkinAnimation("lol_lift_off.png", Stickman_Animation.LANDING, Stickman_Skin.LOL, 3f/30f, true);
+		
+		
 	}
 	
 	/**
@@ -103,6 +141,40 @@ public class TextureManager {
 	    		new Animation<TextureRegion>(frameTime, framesReversed));   
 	}
 	
+	private void addPlayerSkinAnimation(String source, Stickman_Animation animName, Stickman_Skin skin, float frameTime, boolean reversePlayback) {
+		Texture t = new Texture(source);
+		Texture tReversed = new Texture(source);
+		
+		
+		TextureRegion[][] tr = TextureRegion.split(t, 128, 128);
+		TextureRegion[][] trReversed = TextureRegion.split(tReversed, 128, 128);
+		
+		for(TextureRegion f : trReversed[0]) {
+			f.flip(true, false);
+		}
+		
+		
+		TextureRegion[] frames = new TextureRegion[tr[0].length];
+		System.arraycopy(tr[0], 0, frames, 0, tr[0].length); //copies one line of the texture region (all player animations are in one line)
+		if(reversePlayback) {
+			reverseTextureRegionArray(frames);
+		}
+		TextureRegion[] framesReversed = new TextureRegion[trReversed[0].length];
+		System.arraycopy(trReversed[0], 0, framesReversed, 0, trReversed[0].length);
+		
+	    stickmanSkinAnimations.put(new StickmanVisualDetails(
+	    		animName, 
+	    		Stickman_Facing_Direction.RIGHT,
+	    		skin),
+	    		new Animation<TextureRegion>(frameTime, frames));
+	    
+	    stickmanSkinAnimations.put(new StickmanVisualDetails(
+	    		animName, 
+	    		Stickman_Facing_Direction.LEFT,
+	    		skin),
+	    		new Animation<TextureRegion>(frameTime, framesReversed));
+	}
+	
 	private void reverseTextureRegionArray(TextureRegion[] array) {
 		for(int i = 0; i < array.length / 2; i++)
 		{
@@ -117,6 +189,10 @@ public class TextureManager {
 		return stickmanAnimations.get(animationProps);
 	}
 
+	public Animation<TextureRegion> getStickmanSkinAnimation(Stickman_Animation anim, Stickman_Facing_Direction direction, Stickman_Skin skin) {
+		return stickmanSkinAnimations.get(new StickmanVisualDetails(anim, direction, skin));
+	}	
+	
 	public Texture getBackground() {
 		return this.background;
 	}

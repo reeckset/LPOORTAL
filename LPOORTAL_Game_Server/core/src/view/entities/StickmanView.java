@@ -1,5 +1,7 @@
 package view.entities;
 
+import static view.entities.LevelScreen.PIXEL_TO_METER;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
@@ -9,6 +11,7 @@ import controller.entities.StickmanBody;
 import model.entities.EntityModel;
 import model.entities.StickmanModel;
 import model.entities.StickmanModel.Stickman_Animation;
+import view.entities.StickmanVisualDetails.Stickman_Skin;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -50,6 +53,11 @@ public class StickmanView extends EntityView {
      * game object this stickman view corresponds to
      **/
 	private LpoortalGame game;
+	
+	private Color color;
+	
+	private Sprite skinSprite;
+	private Stickman_Skin skin;
     
     
     /**
@@ -98,6 +106,17 @@ public class StickmanView extends EntityView {
         stickmanFacingDirection = ((StickmanModel)model).getFacingDirection();
         x = ((StickmanModel)model).getX();
         y = ((StickmanModel)model).getY();
+        
+        this.color = ((StickmanModel)model).getColor();
+        
+        if(this.skinSprite == null) {
+        	this.skinSprite = new Sprite(game.getTextureManager().getStickmanSkinAnimation(
+        			stickmanState, stickmanFacingDirection, ((StickmanModel)model).getSkin())
+        			.getKeyFrame(stateTime)) ;
+        }
+        
+        this.skin = ((StickmanModel)model).getSkin();
+        
         								
     }
 
@@ -115,10 +134,17 @@ public class StickmanView extends EntityView {
         sprite.setRegion(game.getTextureManager().getStickmanAnimation(
 						stickmanState, 
 						stickmanFacingDirection).getKeyFrame(stateTime, true));
+        
+        if(skinSprite != null)
+        skinSprite.setRegion(game.getTextureManager().getStickmanSkinAnimation(stickmanState, stickmanFacingDirection, skin).getKeyFrame(stateTime, true));
 
-        sprite.setColor(20f/255f, 160f/255f , 1, 1); // blue
-        //sprite.setColor(1, 160f/255f , 20f/255f, 1); // orange
+        sprite.setColor(color); 
         sprite.draw(batch);
+        
+        if(skinSprite != null) {
+        skinSprite.setCenter(x / PIXEL_TO_METER, y / PIXEL_TO_METER);
+        skinSprite.draw(batch);
+        }
     }
 
 }

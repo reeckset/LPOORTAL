@@ -21,6 +21,8 @@ public class Client implements Disposable, Runnable {
 
     private static final int MESSAGE_SEND_FREQUENCY_MILLIS = 30;
 
+    private boolean isRunning = true;
+
     public Client(String ip) {
         try {
             socket = new Socket();
@@ -29,7 +31,7 @@ public class Client implements Disposable, Runnable {
             input = new ObjectInputStream(socket.getInputStream());
             nextSendingMessage = new ClientToServerMsg();
         } catch (Exception e) {
-            LPOORTAL_Game.getInstance().changeState(LPOORTAL_Game.State.CONNECT_STATE);
+            StateController.getInstance().setNextState(LPOORTAL_Game.State.CONNECT_STATE);
         }
     }
 
@@ -66,6 +68,7 @@ public class Client implements Disposable, Runnable {
     }
 
     private void closeSocket(){
+        isRunning = false;
         dispose();
         StateController.getInstance().setNextState(LPOORTAL_Game.State.CONNECT_STATE);
     }
@@ -73,7 +76,7 @@ public class Client implements Disposable, Runnable {
 
     @Override
     public void run() {
-        while(true) {
+        while(isRunning) {
             if (socket != null && !socket.isClosed() && nextSendingMessage != null && nextSendingMessage.controllerState != ""
                     && System.currentTimeMillis() - lastSentMessageMillis >= MESSAGE_SEND_FREQUENCY_MILLIS) {
                 sendMessage(nextSendingMessage);
@@ -84,9 +87,5 @@ public class Client implements Disposable, Runnable {
 
     public void setNextSendingMessage(ClientToServerMsg nextSendingMessage){
         this.nextSendingMessage = nextSendingMessage;
-    }
-
-    public boolean isOpen(){
-        return socket != null && !socket.isClosed();
     }
 }

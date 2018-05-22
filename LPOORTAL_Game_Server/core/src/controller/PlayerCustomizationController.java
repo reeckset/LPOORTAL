@@ -33,15 +33,26 @@ public class PlayerCustomizationController {
 		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
 		SocketCommunicator p2 = NetworkManager.getInstance().getPlayer2();
 		
-		if (p1.getLastMessage().playerColor.equals(p2.getLastMessage().playerColor)) {
+		String p2Color = p2.getLastMessage().playerColor;
+		String p1Color = p1.getLastMessage().playerColor;
+		
+		String p2Skin = p2.getLastMessage().playerSkin;
+		String p1Skin = p1.getLastMessage().playerSkin;
+		
+		if (p1Color == p2Color){
 			p1.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
 			p2.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
 			p1Ready = false;
 			p2Ready = false;
 			NetworkManager.getInstance().getPlayer1().resetLastMessage();
 			NetworkManager.getInstance().getPlayer2().resetLastMessage();
-			
 		} else {
+			p1.setColor(p1Color);
+			p2.setColor(p2Color);
+			
+			p1.setSkin(p1Skin);
+			p2.setSkin(p2Skin);
+			
 			p1.changeState(LpoortalGame.CONTROLLER_STATE.DRAWING_STATE);
 			p2.changeState(LpoortalGame.CONTROLLER_STATE.MOVEMENT_STATE);
 			

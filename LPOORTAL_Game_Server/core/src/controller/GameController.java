@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Contact;
@@ -108,6 +109,11 @@ public class GameController implements ContactListener {
         List<DrawnLineModel> drawnLines = GameModel.getInstance().getDrawnLines();
         this.drawLine(10, 10, 40, 10);
         
+        player1 = NetworkManager.getInstance().getPlayer1();
+        player2 = NetworkManager.getInstance().getPlayer2();
+        
+        updatePlayerVisuals();
+        
         world.setContactListener(this);
     }
 
@@ -154,9 +160,6 @@ public class GameController implements ContactListener {
      * 
      */
     private void applyClientInput() {
-    	//TODO MOVE THESE TWO LINES TO THE CONSTRUCTOR IF POSSIBLE
-    	player1 = NetworkManager.getInstance().getPlayer1();
-        player2 = NetworkManager.getInstance().getPlayer2();
     	
     	ClientToServerMsg drawerPlayer, stickmanPlayer;
     	if(isPlayer1Drawer) {
@@ -279,8 +282,8 @@ public class GameController implements ContactListener {
     	Body bodyA = contact.getFixtureA().getBody();
         Body bodyB = contact.getFixtureB().getBody();
         
-        if ((bodyA.getUserData() instanceof StickmanModel && contact.getFixtureA().isSensor() && bodyB.getUserData() instanceof DrawnLineModel)
-          || (bodyB.getUserData() instanceof StickmanModel && contact.getFixtureB().isSensor() && bodyA.getUserData() instanceof DrawnLineModel)) {
+        if ((bodyA.getUserData() instanceof StickmanModel && contact.getFixtureA().getFriction() != 0 && bodyB.getUserData() instanceof DrawnLineModel)
+          || (bodyB.getUserData() instanceof StickmanModel && contact.getFixtureB().getFriction() != 0 && bodyA.getUserData() instanceof DrawnLineModel)) {
         	stickmanBody.increaseNbrCollidedObjs();
         	((StickmanModel)stickmanBody.getUserData()).setJumping(false);
         }
@@ -293,8 +296,8 @@ public class GameController implements ContactListener {
 		Body bodyA = contact.getFixtureA().getBody();
         Body bodyB = contact.getFixtureB().getBody();
         
-        if ((bodyA.getUserData() instanceof StickmanModel && contact.getFixtureA().isSensor() && bodyB.getUserData() instanceof DrawnLineModel)
-          || (bodyB.getUserData() instanceof StickmanModel && contact.getFixtureB().isSensor() && bodyA.getUserData() instanceof DrawnLineModel)) {
+        if ((bodyA.getUserData() instanceof StickmanModel && contact.getFixtureA().getFriction() != 0 && bodyB.getUserData() instanceof DrawnLineModel)
+          || (bodyB.getUserData() instanceof StickmanModel && contact.getFixtureB().getFriction() != 0 && bodyA.getUserData() instanceof DrawnLineModel)) {
         	stickmanBody.decreaseNbrCollidedObjs();
         }
         
@@ -350,5 +353,17 @@ public class GameController implements ContactListener {
         	return LEVEL_HEIGHT;
         }
 		return y;
+	}
+	
+	private void updatePlayerVisuals(){
+		if(isPlayer1Drawer) {
+			((CursorModel)cursorBody.getUserData()).setColor(player1.getColor());
+			((StickmanModel)stickmanBody.getUserData()).setColor(player2.getColor());
+			((StickmanModel)stickmanBody.getUserData()).setSkin(player2.getSkin());
+		}else {
+			((CursorModel)cursorBody.getUserData()).setColor(player2.getColor());
+			((StickmanModel)stickmanBody.getUserData()).setColor(player1.getColor());
+			((StickmanModel)stickmanBody.getUserData()).setSkin(player1.getSkin());
+		}
 	}
 }

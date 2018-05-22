@@ -33,7 +33,7 @@ public class PlayerCustomizationView extends ScreenView{
             tick.setPosition(260, TICK_Y);
         }
         MessageManager.getInstance().getClient().setNextSendingMessage(new ClientToServerMsg(
-                LPOORTAL_Game.getInstance().getState().toString(), selectedColor.toString(), "", textField.getText(), ready
+                LPOORTAL_Game.getInstance().getState().toString(), selectedColor.toString(), selectedSkin.toString(), textField.getText(), ready
         ));
     }
 
@@ -145,43 +145,88 @@ public class PlayerCustomizationView extends ScreenView{
     }
 
     private void addLOLTile() {
-        stage.addActor(new SkinTile(
+        SkinTile tile = new SkinTile(
                 (VP_WIDTH - TILE_WIDTH*2)/2, TILE_Y-TILE_HEIGHT*2,
                 Player_Skin.LOL, TextureManager.Object_Texture.TILE_LOL_UP,
                 this
-        ));
+        );
+
+        stage.addActor(tile);
+
+        tile.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x1, float y1) {
+                selectedSkin = Player_Skin.LOL;
+            }
+        });
     }
 
     private void addNinjaTile() {
-        stage.addActor(new SkinTile(
+        SkinTile tile = new SkinTile(
                 VP_WIDTH/2, TILE_Y-TILE_HEIGHT,
                 Player_Skin.NINJA, TextureManager.Object_Texture.TILE_NINJA_UP,
                 this
-        ));
+        );
+
+        stage.addActor(tile);
+
+        tile.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x1, float y1) {
+                selectedSkin = Player_Skin.NINJA;
+            }
+        });
     }
 
     private void addChefTile() {
-        stage.addActor(new SkinTile(
+        SkinTile tile = new SkinTile(
                 (VP_WIDTH - TILE_WIDTH*2)/2, TILE_Y-TILE_HEIGHT,
                 Player_Skin.CHEF, TextureManager.Object_Texture.TILE_CHEF_UP,
                 this
-        ));
+        );
+
+        stage.addActor(tile);
+
+        tile.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x1, float y1) {
+                selectedSkin = Player_Skin.CHEF;
+            }
+        });
     }
 
     private void addSpacemanTile() {
-        stage.addActor(new SkinTile(
+        SkinTile tile = new SkinTile(
                 VP_WIDTH/2, TILE_Y,
                 Player_Skin.SPACEMAN, TextureManager.Object_Texture.TILE_SPACEMAN_UP,
                 this
-        ));
+        );
+
+        stage.addActor(tile);
+
+        tile.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x1, float y1) {
+                selectedSkin = Player_Skin.SPACEMAN;
+            }
+        });
     }
 
     private void addCowboyTile() {
-        stage.addActor(new SkinTile(
+        SkinTile tile = new SkinTile(
                 (VP_WIDTH - TILE_WIDTH*2)/2, TILE_Y,
                 Player_Skin.COWBOY, TextureManager.Object_Texture.TILE_COWBOY_UP,
                 this
-        ));
+        );
+
+        stage.addActor(tile);
+
+        tile.addListener(new ClickListener(){
+            @Override
+            public void clicked(InputEvent event, float x1, float y1) {
+                selectedSkin = Player_Skin.COWBOY;
+            }
+        });
     }
 
     public void setSelectedSkin(Player_Skin skin){
