@@ -17,7 +17,9 @@ import com.badlogic.gdx.physics.box2d.ContactListener;
 import com.badlogic.gdx.physics.box2d.Manifold;
 import com.badlogic.gdx.physics.box2d.World;
 import com.badlogic.gdx.utils.Array;
+import com.lpoortal.game.LpoortalGame;
 import com.lpoortal.game.LpoortalGame.CONTROLLER_STATE;
+import com.lpoortal.game.LpoortalGame.STATE;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.PlayerClient;
@@ -106,12 +108,13 @@ public class GameController implements ContactListener {
     private List<DrawnLineBody> linesDrawn = new ArrayList<DrawnLineBody>();
     
     private boolean removeLines = false;
-
+    
     /**
      * Creates a new GameController that controls the physics of a certain GameModel.
      *
      */
     private GameController() {
+
         world = new World(new Vector2(0, -GRAVITY), true);
         
         GameModel gameInstance = GameModel.getInstance();
@@ -334,18 +337,17 @@ public class GameController implements ContactListener {
 
 	private void nextLevel() {
 		isPlayer1Drawer = !isPlayer1Drawer;
-      	NetworkManager.getInstance().getPlayer1().resetLastMessage();
-      	NetworkManager.getInstance().getPlayer2().resetLastMessage();
-      	stickmanBody.setLinearVelocity(0, 0);
-      	GameModel.getInstance().resetGame();
-      	updatePlayerVisuals();
-      	if(isPlayer1Drawer) {
+		LpoortalGame.getInstance().setState(STATE.COUNTDOWN);
+		if(isPlayer1Drawer) {
       		NetworkManager.getInstance().getPlayer1().changeState(CONTROLLER_STATE.DRAWING_STATE);
       		NetworkManager.getInstance().getPlayer2().changeState(CONTROLLER_STATE.MOVEMENT_STATE);
       	}else {
       		NetworkManager.getInstance().getPlayer1().changeState(CONTROLLER_STATE.MOVEMENT_STATE);
       		NetworkManager.getInstance().getPlayer2().changeState(CONTROLLER_STATE.DRAWING_STATE);
       	}
+      	stickmanBody.setLinearVelocity(0, 0);
+      	GameModel.getInstance().resetGame();
+      	updatePlayerVisuals();
       	NetworkManager.getInstance().getPlayer1().resetLastMessage();
       	NetworkManager.getInstance().getPlayer2().resetLastMessage();
       	removeLines = true;

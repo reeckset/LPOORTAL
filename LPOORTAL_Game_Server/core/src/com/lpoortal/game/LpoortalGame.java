@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lpoortal.game.network.NetworkManager;
 
+import view.entities.CountDownScreen;
 import view.entities.LevelScreen;
 import view.entities.PlayerCustomizationScreen;
 import view.entities.TextureManager;
@@ -20,12 +21,14 @@ public class LpoortalGame extends Game {
 
 	private TextureManager textureManager;
 	
-	public enum STATE {WELCOME, PLAYER_CUSTOMIZATION, GAMEPLAY}
+	public enum STATE {WELCOME, PLAYER_CUSTOMIZATION, GAMEPLAY, COUNTDOWN}
 	public enum CONTROLLER_STATE {CONNECT_STATE, PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE, READY_STATE}
 		
+	private static LpoortalGame instance;
+	
 	@Override
 	public void create () {
-		
+		this.instance = this;
 		Gdx.graphics.setWindowedMode(1920, 1080);
 		
 		batch = new SpriteBatch();
@@ -36,6 +39,9 @@ public class LpoortalGame extends Game {
 
 	}
 	
+	public static LpoortalGame getInstance() {
+		return instance;
+	}
 	
 	private void startGame() {
 		setState(STATE.WELCOME);
@@ -65,6 +71,9 @@ public class LpoortalGame extends Game {
 			break;
 		case GAMEPLAY:
 			setScreen(new LevelScreen(this));
+			break;
+		case COUNTDOWN:
+			setScreen(new CountDownScreen(this));
 			break;
 		}
 		
