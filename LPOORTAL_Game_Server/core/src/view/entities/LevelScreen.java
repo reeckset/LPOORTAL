@@ -18,6 +18,7 @@ import controller.GameController;
 import model.GameModel;
 import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
+import model.entities.PortalModel;
 import model.entities.StickmanModel;
 
 import static controller.GameController.LEVEL_HEIGHT;
@@ -160,6 +161,12 @@ public class LevelScreen extends ScreenAdapter {
         
 
         view.update(cursorModel);
+        view.draw(game.getBatch());
+        
+        PortalModel portalModel = GameModel.getInstance().getPortal();
+        view = ViewFactory.makeView(game, portalModel);
+        
+        view.update(portalModel);
         view.draw(game.getBatch());
         
         StickmanModel stickmanModel = GameModel.getInstance().getStickman();

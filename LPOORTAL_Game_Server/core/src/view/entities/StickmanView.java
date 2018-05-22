@@ -134,14 +134,12 @@ public class StickmanView extends EntityView {
         sprite.setRegion(game.getTextureManager().getStickmanAnimation(
 						stickmanState, 
 						stickmanFacingDirection).getKeyFrame(stateTime, true));
-        
-        if(skinSprite != null)
-        skinSprite.setRegion(game.getTextureManager().getStickmanSkinAnimation(stickmanState, stickmanFacingDirection, skin).getKeyFrame(stateTime, true));
 
         sprite.setColor(color); 
         sprite.draw(batch);
         
         if(skinSprite != null) {
+        skinSprite.setRegion(game.getTextureManager().getStickmanSkinAnimation(stickmanState, stickmanFacingDirection, skin).getKeyFrame(stateTime, true));
         skinSprite.setCenter(x / PIXEL_TO_METER, y / PIXEL_TO_METER);
         skinSprite.draw(batch);
         }

@@ -30,6 +30,8 @@ public class TextureManager {
     public enum GUI_Texture {LOGO, TICK, CROSS};
     public enum Player_Color {ORANGE, BLUE};
     private HashMap<GUI_Texture, Texture> guiTextures;
+    
+    private Animation<TextureRegion> portal;
 	
 	public TextureManager(){
 		stickmanAnimations = new HashMap<Pair<Stickman_Animation,Stickman_Facing_Direction>, Animation<TextureRegion>>();
@@ -91,7 +93,7 @@ public class TextureManager {
 		addPlayerSkinAnimation("lol_mid_flight.png", Stickman_Animation.JUMPING, Stickman_Skin.LOL, 30f/30f, false);
 		addPlayerSkinAnimation("lol_lift_off.png", Stickman_Animation.LANDING, Stickman_Skin.LOL, 3f/30f, true);
 		
-		
+		this.portal = createAnimation("portal.png", 4f/30f, 800);
 	}
 	
 	/**
@@ -175,6 +177,19 @@ public class TextureManager {
 	    		new Animation<TextureRegion>(frameTime, framesReversed));
 	}
 	
+	private Animation<TextureRegion> createAnimation(String source, float frameTime, int frameWidth) {
+		Texture t = new Texture(source);
+		
+		TextureRegion[][] tr = TextureRegion.split(t, frameWidth, 128);
+		
+		
+		TextureRegion[] frames = new TextureRegion[tr[0].length];
+		System.arraycopy(tr[0], 0, frames, 0, tr[0].length); //copies one line of the texture region (all player animations are in one line)
+		
+	    return new Animation<TextureRegion>(frameTime, frames);
+	    
+	}
+	
 	private void reverseTextureRegionArray(TextureRegion[] array) {
 		for(int i = 0; i < array.length / 2; i++)
 		{
@@ -244,5 +259,9 @@ public class TextureManager {
     	default:
     		return new Color(1, 160f/255f, 20f/255f, 1);
     	}
+    }
+    
+    public Animation<TextureRegion> getPortalAnimation() {
+    	return portal;
     }
 }

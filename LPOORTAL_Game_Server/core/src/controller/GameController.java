@@ -21,11 +21,13 @@ import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.entities.CursorBody;
 import controller.entities.DrawnLineBody;
+import controller.entities.PortalBody;
 import controller.entities.StickmanBody;
 import model.GameModel;
 import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
+import model.entities.PortalModel;
 import model.entities.StickmanModel;
 import view.entities.CursorView;
 import view.entities.LevelScreen;
@@ -70,12 +72,17 @@ public class GameController implements ContactListener {
     /**
      * The stickman body.
      */
-    private final StickmanBody stickmanBody;
+    private StickmanBody stickmanBody;
+    
+    /**
+     * The portal body.
+     */
+    private PortalBody portalBody;
     
     /**
      * The cursor body.
      */
-    private final CursorBody cursorBody;
+    private CursorBody cursorBody;
 
     /**
      * Accumulator used to calculate the simulation step.
@@ -102,8 +109,8 @@ public class GameController implements ContactListener {
         world = new World(new Vector2(0, -GRAVITY), true);
         
         GameModel gameInstance = GameModel.getInstance();
-        
-        this.stickmanBody = new StickmanBody(world, gameInstance.getStickman());
+    	
+    	this.stickmanBody = new StickmanBody(world, gameInstance.getStickman());
         this.cursorBody = new CursorBody(world, gameInstance.getCursor());
 
         List<DrawnLineModel> drawnLines = GameModel.getInstance().getDrawnLines();
@@ -112,12 +119,14 @@ public class GameController implements ContactListener {
         player1 = NetworkManager.getInstance().getPlayer1();
         player2 = NetworkManager.getInstance().getPlayer2();
         
+        portalBody = new PortalBody(world, gameInstance.getPortal());
+        
         updatePlayerVisuals();
         
         world.setContactListener(this);
     }
 
-    /**
+	/**
      * Returns a singleton instance of a game controller
      *
      * @return the singleton instance
@@ -288,6 +297,14 @@ public class GameController implements ContactListener {
         	((StickmanModel)stickmanBody.getUserData()).setJumping(false);
         }
         
+        if ((bodyA.getUserData() instanceof StickmanModel && bodyB.getUserData() instanceof PortalModel)
+                || (bodyB.getUserData() instanceof StickmanModel && bodyA.getUserData() instanceof PortalModel)) {
+              	isPlayer1Drawer = !isPlayer1Drawer;
+              	GameModel.getInstance().resetGame();
+              	updatePlayerVisuals();
+              	//TODO DISPOSE LINES and CHANGE MOBILE STATE
+        }
+        
         
     }
 
@@ -360,10 +377,12 @@ public class GameController implements ContactListener {
 			((CursorModel)cursorBody.getUserData()).setColor(player1.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setColor(player2.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setSkin(player2.getSkin());
+			((PortalModel)portalBody.getUserData()).setColor(player1.getColor());
 		}else {
 			((CursorModel)cursorBody.getUserData()).setColor(player2.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setColor(player1.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setSkin(player1.getSkin());
+			((PortalModel)portalBody.getUserData()).setColor(player2.getColor());
 		}
 	}
 }

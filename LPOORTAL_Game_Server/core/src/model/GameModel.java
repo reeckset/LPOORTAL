@@ -7,6 +7,7 @@ import controller.GameController;
 import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
+import model.entities.PortalModel;
 import model.entities.StickmanModel;
 import view.entities.LevelScreen;
 
@@ -33,7 +34,18 @@ public class GameModel {
      * User drawn lines on the screen.
      */
     private List<DrawnLineModel> drawnLines;
-
+    
+    /**
+     * Portal
+     */
+    private PortalModel portal;
+    
+    private final int CURSOR_DEFAULT_X = 25;
+    private final int CURSOR_DEFAULT_Y = 15;
+    private final int STICKMAN_DEFAULT_X = 25;
+    private final int STICKMAN_DEFAULT_Y = 15;
+    private final int PORTAL_DEFAULT_X = 25;
+    private final int PORTAL_DEFAULT_Y = 27;
     
 
     /**
@@ -52,14 +64,17 @@ public class GameModel {
      * and a cursor in the middle of the screen
      */
     private GameModel() {
-    	
-        
-    	this.cursor = new CursorModel(25,15);
-        
-    	//this.cursor = new CursorModel(1,10);
-        this.stickman = new StickmanModel(25, 15);
+    	this.cursor = new CursorModel(CURSOR_DEFAULT_X, CURSOR_DEFAULT_Y);
+        this.stickman = new StickmanModel(STICKMAN_DEFAULT_X, STICKMAN_DEFAULT_Y);
         this.drawnLines = new ArrayList<DrawnLineModel>();
-
+        this.portal = new PortalModel(PORTAL_DEFAULT_X, PORTAL_DEFAULT_Y);
+    }
+    
+    public void resetGame() {
+    	this.cursor.setPosition(CURSOR_DEFAULT_X, CURSOR_DEFAULT_Y);
+        this.stickman.setPosition(STICKMAN_DEFAULT_X, STICKMAN_DEFAULT_Y);
+        this.drawnLines = new ArrayList<DrawnLineModel>();
+        this.portal.setPosition(PORTAL_DEFAULT_X, PORTAL_DEFAULT_Y);
     }
 
 	public CursorModel getCursor() {
@@ -72,6 +87,10 @@ public class GameModel {
 
 	public List<DrawnLineModel> getDrawnLines() {
 		return drawnLines;
+	}
+	
+	public PortalModel getPortal() {
+		return portal;
 	}
     
 	/**

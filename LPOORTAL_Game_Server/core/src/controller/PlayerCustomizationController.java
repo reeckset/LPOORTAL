@@ -39,7 +39,7 @@ public class PlayerCustomizationController {
 		String p2Skin = p2.getLastMessage().playerSkin;
 		String p1Skin = p1.getLastMessage().playerSkin;
 		
-		if (p1Color == p2Color){
+		if (p1Color.equals(p2Color)){
 			p1.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
 			p2.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
 			p1Ready = false;

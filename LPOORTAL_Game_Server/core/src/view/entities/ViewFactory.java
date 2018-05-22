@@ -24,6 +24,8 @@ public class ViewFactory {
                 cache.put(model.getType(), new CursorView(game));
             if (model.getType() == ModelType.LINE)
                 cache.put(model.getType(), new DrawnLineView(game));
+            if (model.getType() == ModelType.PORTAL)
+                cache.put(model.getType(), new PortalView(game));
         }
         return cache.get(model.getType());
     }
