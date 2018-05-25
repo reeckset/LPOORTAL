@@ -28,7 +28,7 @@ public class LevelScreen extends ScreenAdapter {
     /**
      * Used to debug the position of the physics fixtures
      */
-    private static final boolean DEBUG_PHYSICS = true;
+    private static final boolean DEBUG_PHYSICS = false;
 
     /**
      * How much meters does a pixel represent.
@@ -150,7 +150,7 @@ public class LevelScreen extends ScreenAdapter {
     private void drawEntities() {
         List<DrawnLineModel> lines = GameModel.getInstance().getDrawnLines();
         for (DrawnLineModel line : lines) {
-            EntityView view = ViewFactory.makeView(game, line);
+            EntityView view = new DrawnLineView(game);
             view.update(line);
             view.draw(game.getBatch());
         }

@@ -29,13 +29,16 @@ public class DrawnLineView extends EntityView {
      * @return the sprite representing this cursor
      */
     public Sprite createSprite(LpoortalGame game) {
-        Texture texture = game.getTextureManager().getLineTexture();
+        Texture texture = game.getTextureManager().getLinePreview();
         return new Sprite(texture, texture.getWidth(), texture.getHeight());
     }
     
     @Override
     public void update(EntityModel model) {
     	DrawnLineModel line = (DrawnLineModel) model;
+    	if(!line.isPreview()) {
+    		this.sprite = new Sprite(LpoortalGame.getInstance().getTextureManager().getLineTexture());
+    	}
         sprite.setCenter(line.getX() / PIXEL_TO_METER, line.getY() / PIXEL_TO_METER);
         sprite.setScale(line.getLength() / PIXEL_TO_METER / this.sprite.getWidth(), line.THICKNESS / PIXEL_TO_METER / this.sprite.getHeight());
         sprite.setRotation((float) (line.getAngle()*180/Math.PI));

@@ -101,11 +101,17 @@ public class GameController implements ContactListener {
     
     private boolean isPlayer1Drawer = true;
     
+    
+    //Line draw system
+    private float inkAmount = 30;
+    private float inkSpentOnLine = 0;
+    private static final float MIN_INK_DRAWN = 5;
+ 
+    private List<DrawnLineBody> linesDrawn = new ArrayList<DrawnLineBody>();
+    private List<DrawnLineBody> currentPreviewLines = new ArrayList<DrawnLineBody>();
+    
     SocketCommunicator player1;
 	SocketCommunicator player2;
-    
-    private List<DrawnLineModel> linesToAdd = new ArrayList<DrawnLineModel>();
-    private List<DrawnLineBody> linesDrawn = new ArrayList<DrawnLineBody>();
     
     private boolean removeLines = false;
     
@@ -135,7 +141,7 @@ public class GameController implements ContactListener {
     }
 
 	private void drawStartLine() {
-		this.drawLine(10, 10, 40, 10);		
+		this.drawLine(10, 10, 40, 10).setDefinitive();	
 	}
 
 	/**
@@ -238,14 +244,42 @@ public class GameController implements ContactListener {
 		
 		if(wasDrawing && willDraw) {
 			if(Math.sqrt(Math.pow(currX - lastCursorPosX, 2) + Math.pow(currY - lastCursorPosY, 2)) > 0.5f) {
-			drawLine(lastCursorPosX, lastCursorPosY, currX, currY);
+				inkSpentOnLine += (float) Math.sqrt(Math.pow(lastCursorPosX-currX, 2) + Math.pow(lastCursorPosY-currY, 2));
+				if(inkSpentOnLine < inkAmount) {
+					currentPreviewLines.add(drawLine(lastCursorPosX, lastCursorPosY, currX, currY));
+				}
 			} else {
 				return;
 			}
 		}
+		
+		if(wasDrawing && !willDraw) {
+			if(inkSpentOnLine > MIN_INK_DRAWN) {
+				makeLinesDefinitive();
+			}else {
+				destroyPreviewLines();
+			}
+			currentPreviewLines.clear();	
+			inkSpentOnLine = 0;
+			
+		}
+		
 		wasDrawing = willDraw;
 		lastCursorPosX = currX;
 		lastCursorPosY = currY;
+	}
+
+	private void destroyPreviewLines() {
+		for(DrawnLineBody line : currentPreviewLines) {
+			GameModel.getInstance().remove((DrawnLineModel)line.getUserData());
+		}
+	}
+
+	private void makeLinesDefinitive() {
+		for(DrawnLineBody line : currentPreviewLines) {
+			line.setDefinitive();
+	        linesDrawn.add(line);
+		}
 	}
 
 	/**
@@ -302,12 +336,12 @@ public class GameController implements ContactListener {
     /**
      * Draws a Line on Level
      */
-    public void drawLine(float xi, float yi, float xf, float yf) {
+    public DrawnLineBody drawLine(float xi, float yi, float xf, float yf) {
         DrawnLineModel line = new DrawnLineModel(xi, yi, xf, yf);
         GameModel.getInstance().addLine(line);
         DrawnLineBody body = new DrawnLineBody(world, line);
         body.setLinearVelocity(0, 0);
-        linesDrawn.add(body);
+        return body;
     }
 
     /**

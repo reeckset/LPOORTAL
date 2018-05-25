@@ -11,7 +11,9 @@ import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
 
 public class DrawnLineBody extends EntityBody {
-
+	
+	private FixtureDef def;
+	
 	public DrawnLineBody(World world, EntityModel model) {
 		super(world, model,BodyDef.BodyType.StaticBody);
 	    
@@ -23,13 +25,20 @@ public class DrawnLineBody extends EntityBody {
 	    					  new Vector2(0,0),
 	    					  lineModel.getAngle());
 	    
-	    FixtureDef def = new FixtureDef();
+	    def = new FixtureDef();
 	    def.shape = polygonShape;
 	    def.restitution = 0;
 	    def.density = 1000;
 	    def.friction = 1f;
 	    
-	    body.createFixture(def);
+	}
+	
+	public void setDefinitive() {
+		if(((DrawnLineModel)getUserData()).isPreview()) {
+		    body.createFixture(def);
+		    System.out.println("Going to set a model to definitive");
+		    ((DrawnLineModel)getUserData()).setDefinitive();
+		}
 	}
 
 }

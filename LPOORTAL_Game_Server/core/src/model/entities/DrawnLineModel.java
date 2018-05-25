@@ -5,6 +5,7 @@ public class DrawnLineModel extends EntityModel {
 	public static final float THICKNESS = 0.2f;
 	private float xi, yi, xf, yf;
 	private float xLength, yLength, length, angle;
+	private boolean isPreview = true;
 
 	public DrawnLineModel(float  xi, float  yi, float  xf, float  yf) {
 		super((xi+xf)/2, (yi+yf)/2);
@@ -54,6 +55,15 @@ public class DrawnLineModel extends EntityModel {
 	
 	public float getAngle() {
 		return angle;
+	}
+
+	public boolean isPreview() {
+		return this.isPreview;
+	}
+	
+	public void setDefinitive() {
+		System.out.println("Changing model isPreview");
+		this.isPreview = false;
 	}
 
 	
