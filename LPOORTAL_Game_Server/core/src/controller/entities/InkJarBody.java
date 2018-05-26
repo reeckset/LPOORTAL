@@ -9,35 +9,29 @@ import com.badlogic.gdx.physics.box2d.World;
 
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
+import model.entities.InkJarModel;
 
-public class DrawnLineBody extends EntityBody {
+public class InkJarBody extends EntityBody {
 	
-	private FixtureDef def;
+	public static final float WIDTH = 2f;
+	public static final float HEIGHT = 2f;
 	
-	public DrawnLineBody(World world, EntityModel model) {
+	public InkJarBody(World world, InkJarModel model) {
 		super(world, model,BodyDef.BodyType.StaticBody);
-	    
-		DrawnLineModel lineModel = (DrawnLineModel) model;
         
 	    PolygonShape polygonShape = new PolygonShape();
-	    polygonShape.setAsBox(lineModel.getLength()/2,
-	    					  DrawnLineModel.THICKNESS / 2,
+	    polygonShape.setAsBox(WIDTH/2,
+	    					  HEIGHT/2,
 	    					  new Vector2(0,0),
-	    					  lineModel.getAngle());
+	    					  0);
 	    
-	    def = new FixtureDef();
+	    FixtureDef def = new FixtureDef();
 	    def.shape = polygonShape;
 	    def.restitution = 0;
 	    def.density = 1000;
 	    def.friction = 1f;
-	    
-	}
-	
-	public void setDefinitive() {
-		if(((DrawnLineModel)getUserData()).isPreview()) {
-		    body.createFixture(def);
-		    ((DrawnLineModel)getUserData()).setDefinitive();
-		}
+	    def.isSensor = true;
+	    body.createFixture(def);
 	}
 
 }

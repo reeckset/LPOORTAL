@@ -9,7 +9,7 @@ public abstract class EntityModel {
 
 	private boolean flaggedForRemoval = false;
 
-	public enum ModelType {STICKMAN, CURSOR, LINE, PORTAL};
+	public enum ModelType {STICKMAN, CURSOR, LINE, PORTAL, INKJAR};
 	
 	public EntityModel(float x, float y) {
 		this.x = x;

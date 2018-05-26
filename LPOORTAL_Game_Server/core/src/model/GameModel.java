@@ -7,6 +7,7 @@ import controller.GameController;
 import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
+import model.entities.InkJarModel;
 import model.entities.PortalModel;
 import model.entities.StickmanModel;
 import view.entities.LevelScreen;
@@ -34,6 +35,11 @@ public class GameModel {
      * User drawn lines on the screen.
      */
     private List<DrawnLineModel> drawnLines;
+    
+    /**
+     * User drawn lines on the screen.
+     */
+    private List<InkJarModel> inkJars;
     
     /**
      * Portal
@@ -67,6 +73,7 @@ public class GameModel {
     	this.cursor = new CursorModel(CURSOR_DEFAULT_X, CURSOR_DEFAULT_Y);
         this.stickman = new StickmanModel(STICKMAN_DEFAULT_X, STICKMAN_DEFAULT_Y);
         this.drawnLines = new ArrayList<DrawnLineModel>();
+        this.inkJars = new ArrayList<InkJarModel>();
         this.portal = new PortalModel(PORTAL_DEFAULT_X, PORTAL_DEFAULT_Y);
     }
     
@@ -74,6 +81,7 @@ public class GameModel {
     	this.cursor.setPosition(CURSOR_DEFAULT_X, CURSOR_DEFAULT_Y);
         this.stickman.setPosition(STICKMAN_DEFAULT_X, STICKMAN_DEFAULT_Y);
         this.drawnLines = new ArrayList<DrawnLineModel>();
+        this.inkJars = new ArrayList<InkJarModel>();
         this.portal.setPosition(PORTAL_DEFAULT_X, PORTAL_DEFAULT_Y);
     }
 
@@ -102,6 +110,9 @@ public class GameModel {
         if (model instanceof DrawnLineModel) {
             drawnLines.remove(model);
         }
+        if (model instanceof InkJarModel) {
+            inkJars.remove(model);
+        }
     }
 
     /**
@@ -116,5 +127,13 @@ public class GameModel {
     public void update(float delta) {
         
     }
+
+	public void addInkJar(InkJarModel model) {
+		inkJars.add(model);
+	}
+
+	public List<InkJarModel> getInkJars() {
+		return inkJars;
+	}
     
 }

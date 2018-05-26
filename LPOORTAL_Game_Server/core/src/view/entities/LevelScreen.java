@@ -18,6 +18,7 @@ import controller.GameController;
 import model.GameModel;
 import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
+import model.entities.InkJarModel;
 import model.entities.PortalModel;
 import model.entities.StickmanModel;
 
@@ -28,7 +29,7 @@ public class LevelScreen extends ScreenAdapter {
     /**
      * Used to debug the position of the physics fixtures
      */
-    private static final boolean DEBUG_PHYSICS = false;
+    private static final boolean DEBUG_PHYSICS = true;
 
     /**
      * How much meters does a pixel represent.
@@ -152,6 +153,13 @@ public class LevelScreen extends ScreenAdapter {
         for (DrawnLineModel line : lines) {
             EntityView view = new DrawnLineView(game);
             view.update(line);
+            view.draw(game.getBatch());
+        }
+        
+        List<InkJarModel> inkJars = GameModel.getInstance().getInkJars();
+        for (InkJarModel model : inkJars) {
+            EntityView view = ViewFactory.makeView(game, model);
+            view.update(model);
             view.draw(game.getBatch());
         }
 

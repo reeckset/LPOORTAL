@@ -62,7 +62,6 @@ public class DrawnLineModel extends EntityModel {
 	}
 	
 	public void setDefinitive() {
-		System.out.println("Changing model isPreview");
 		this.isPreview = false;
 	}
 

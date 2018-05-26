@@ -27,12 +27,14 @@ import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.entities.CursorBody;
 import controller.entities.DrawnLineBody;
+import controller.entities.InkJarBody;
 import controller.entities.PortalBody;
 import controller.entities.StickmanBody;
 import model.GameModel;
 import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
+import model.entities.InkJarModel;
 import model.entities.PortalModel;
 import model.entities.StickmanModel;
 import view.entities.CursorView;
@@ -103,12 +105,18 @@ public class GameController implements ContactListener {
     
     
     //Line draw system
-    private float inkAmount = 30;
+    private float inkAmount = 6;
     private float inkSpentOnLine = 0;
-    private static final float MIN_INK_DRAWN = 5;
+    private static final float MIN_INK_DRAWN = 3.1f;
+    private static final float INK_PER_JAR = 5;
+    private static final int INK_JAR_MIN_X = 3;
+    private static final int INK_JAR_MAX_X = 45;
+    private static final int INK_JAR_MIN_Y = 3;
+    private static final int INK_JAR_MAX_Y = 25;
  
     private List<DrawnLineBody> linesDrawn = new ArrayList<DrawnLineBody>();
     private List<DrawnLineBody> currentPreviewLines = new ArrayList<DrawnLineBody>();
+    private List<InkJarBody> inkJars = new ArrayList<InkJarBody>();
     
     SocketCommunicator player1;
 	SocketCommunicator player2;
@@ -129,6 +137,7 @@ public class GameController implements ContactListener {
         this.cursorBody = new CursorBody(world, gameInstance.getCursor());
 
         drawStartLine();
+        createInkJars();
         
         player1 = NetworkManager.getInstance().getPlayer1();
         player2 = NetworkManager.getInstance().getPlayer2();
@@ -161,11 +170,14 @@ public class GameController implements ContactListener {
      * @param delta The size of this physics step in seconds.
      */
     public void update(float delta) {
-        GameModel.getInstance().update(delta);
-
-        if(removeLines) {
+    	if(removeLines) {
         	resetLines();
+        	cleanInkJars();
+            createInkJars();
+          	currentPreviewLines.clear();
         }
+    	
+        GameModel.getInstance().update(delta);
         
         float frameTime = Math.min(delta, 0.25f);
         accumulator += frameTime;
@@ -173,7 +185,7 @@ public class GameController implements ContactListener {
             world.step(1/60f, 6, 2);
             accumulator -= 1/60f;
         }
-        
+
         Array<Body> bodies = new Array<Body>();
         world.getBodies(bodies);
 
@@ -181,14 +193,22 @@ public class GameController implements ContactListener {
             verifyBounds(body);
             ((EntityModel) body.getUserData()).setPosition(body.getPosition().x, body.getPosition().y);
         }
-        
+
         stickmanBody.update();
+
         applyClientInput();
     }
 
+	private void cleanInkJars() {
+		for(InkJarBody inkJar : inkJars) {
+			((EntityModel)inkJar.getUserData()).setFlaggedForRemoval(true);
+      	}
+      	inkJars = new ArrayList<InkJarBody>();
+	}
+
 	private void resetLines() {
 		for(DrawnLineBody line : linesDrawn) {
-      		line.destroy();
+			((DrawnLineModel)line.getUserData()).setFlaggedForRemoval(true);
       	}
     	removeLines = false;
       	linesDrawn = new ArrayList<DrawnLineBody>();
@@ -217,7 +237,6 @@ public class GameController implements ContactListener {
 	    	
 	    	movePlayer(stickmanPlayerMsg.dx, stickmanPlayerMsg.actionBtn);
     	}
-    	
 	}
 
   
@@ -241,29 +260,37 @@ public class GameController implements ContactListener {
 		
 		float currX = cursorBody.getX() + CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER /2; //Offset will put the position  
 		float currY = cursorBody.getY() - CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER /2; //in the corner of the cursor (pencil tip)
-		
 		if(wasDrawing && willDraw) {
 			if(Math.sqrt(Math.pow(currX - lastCursorPosX, 2) + Math.pow(currY - lastCursorPosY, 2)) > 0.5f) {
 				inkSpentOnLine += (float) Math.sqrt(Math.pow(lastCursorPosX-currX, 2) + Math.pow(lastCursorPosY-currY, 2));
 				if(inkSpentOnLine < inkAmount) {
 					currentPreviewLines.add(drawLine(lastCursorPosX, lastCursorPosY, currX, currY));
+				}else {
+					willDraw = false;
+					if(inkSpentOnLine > MIN_INK_DRAWN) {
+						makeLinesDefinitive();
+						currentPreviewLines.clear();
+						inkAmount -= inkSpentOnLine;
+						inkSpentOnLine = 0;
+					}
 				}
 			} else {
 				return;
 			}
 		}
-		
 		if(wasDrawing && !willDraw) {
-			if(inkSpentOnLine > MIN_INK_DRAWN) {
+			if(inkSpentOnLine > MIN_INK_DRAWN && inkAmount >= inkSpentOnLine) {
 				makeLinesDefinitive();
+				inkAmount -= inkSpentOnLine;
 			}else {
 				destroyPreviewLines();
 			}
-			currentPreviewLines.clear();	
+			currentPreviewLines.clear();
 			inkSpentOnLine = 0;
-			
 		}
-		
+		if(inkAmount < 0) { 
+			inkAmount = 0; 
+		}
 		wasDrawing = willDraw;
 		lastCursorPosX = currX;
 		lastCursorPosY = currY;
@@ -362,10 +389,17 @@ public class GameController implements ContactListener {
         
         if ((bodyA.getUserData() instanceof StickmanModel && bodyB.getUserData() instanceof PortalModel)
                 || (bodyB.getUserData() instanceof StickmanModel && bodyA.getUserData() instanceof PortalModel)) {
-              	nextLevel();
-              	
+              	nextLevel();       	
         }
         
+        if (bodyA.getUserData() instanceof StickmanModel && bodyB.getUserData() instanceof InkJarModel){
+        	 this.inkAmount += INK_PER_JAR;
+        	 ((EntityModel)bodyB.getUserData()).setFlaggedForRemoval(true);      	
+        }
+        if(bodyB.getUserData() instanceof StickmanModel && bodyA.getUserData() instanceof InkJarModel) {
+          	 this.inkAmount += INK_PER_JAR;
+          	((EntityModel)bodyA.getUserData()).setFlaggedForRemoval(true);
+        }
         
     }
 
@@ -385,8 +419,17 @@ public class GameController implements ContactListener {
       	NetworkManager.getInstance().getPlayer1().resetLastMessage();
       	NetworkManager.getInstance().getPlayer2().resetLastMessage();
       	removeLines = true;
-      	//TODO DISPOSE LINES and CHANGE MOBILE STATE
-      	
+      	this.inkAmount = 6;
+      	this.inkSpentOnLine = 0;
+	}
+
+	private void createInkJars() {
+		for(int i = 0; i < 2; i++) {
+			InkJarModel model = new InkJarModel(getRandomInt(INK_JAR_MIN_X, INK_JAR_MAX_X), getRandomInt(INK_JAR_MIN_Y, INK_JAR_MAX_Y));
+	        GameModel.getInstance().addInkJar(model);
+	        InkJarBody body = new InkJarBody(world, model);
+	        inkJars.add(body);
+		}
 	}
 
 	@Override
@@ -465,5 +508,13 @@ public class GameController implements ContactListener {
 			((StickmanModel)stickmanBody.getUserData()).setSkin(player1.getSkin());
 			((PortalModel)portalBody.getUserData()).setColor(player2.getColor());
 		}
+	}
+	
+	public Color getDrawerColor() {
+		return isPlayer1Drawer ? player1.getColor() : player2.getColor();
+	}
+	
+	private static int getRandomInt(int min, int max) {
+		 return (int) (Math.floor((double)Math.random() * (max - min)) + min);
 	}
 }

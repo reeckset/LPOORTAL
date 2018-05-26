@@ -24,6 +24,8 @@ public class ViewFactory {
                 cache.put(model.getType(), new CursorView(game));
             if (model.getType() == ModelType.PORTAL)
                 cache.put(model.getType(), new PortalView(game));
+            if (model.getType() == ModelType.INKJAR)
+                cache.put(model.getType(), new InkJarView(game));
         }
         return cache.get(model.getType());
     }
