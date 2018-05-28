@@ -26,7 +26,8 @@ public class TextureManager {
         INSERT_NAME_LABEL,
         TILE_COWBOY_UP, TILE_SPACEMAN_UP, TILE_CHEF_UP, TILE_NINJA_UP, TILE_LOL_UP, TILE_DOWN, TILE_READY_UP, TILE_SELECTED,
         TICK,
-        READY_BACKGROUND};
+        READY_BACKGROUND,
+        BACK_BTN_UP, BACK_BTN_DOWN};
 
     private HashMap<Object_Texture, Texture> textures;
     private AssetManager assetManager;
@@ -81,7 +82,8 @@ public class TextureManager {
         textures.put(Object_Texture.TILE_SELECTED, getTextureFromSource("selected_tile.png"));
         textures.put(Object_Texture.TICK, getTextureFromSource("tick.png"));
 
-
+        textures.put(Object_Texture.BACK_BTN_UP, getTextureFromSource("take_me_back_up.png"));
+        textures.put(Object_Texture.BACK_BTN_DOWN, getTextureFromSource("take_me_back_down.png"));
 
     }
 
