@@ -120,6 +120,8 @@ public class GameController implements ContactListener {
     
     SocketCommunicator player1;
 	SocketCommunicator player2;
+	
+	private int score = 0;
     
     private boolean removeLines = false;
     
@@ -149,6 +151,10 @@ public class GameController implements ContactListener {
         world.setContactListener(this);
     }
 
+    public int getScore() {
+		return this.score;
+	}
+    
 	private void drawStartLine() {
 		this.drawLine(10, 10, 40, 10).setDefinitive();	
 	}
@@ -425,6 +431,7 @@ public class GameController implements ContactListener {
       	removeLines = true;
       	this.inkAmount = 6;
       	this.inkSpentOnLine = 0;
+      	this.score++;
 	}
 
 	private void createInkJars() {
@@ -521,4 +528,6 @@ public class GameController implements ContactListener {
 	private static int getRandomInt(int min, int max) {
 		 return (int) (Math.floor((double)Math.random() * (max - min)) + min);
 	}
+
+	
 }
