@@ -191,7 +191,7 @@ public class GameController implements ContactListener {
             world.step(1/60f, 6, 2);
             accumulator -= 1/60f;
         }
-
+        
         Array<Body> bodies = new Array<Body>();
         world.getBodies(bodies);
 
@@ -201,6 +201,10 @@ public class GameController implements ContactListener {
         }
 
         stickmanBody.update();
+        
+        if(stickmanBody.getY() < 1) {
+        	LpoortalGame.getInstance().setState(STATE.GAME_OVER);
+        }
 
         applyClientInput();
     }

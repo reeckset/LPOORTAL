@@ -36,11 +36,7 @@ public class GameOverScreen extends GUIScreen {
     @Override
     public void render(float delta) {
     	super.render(delta);
-    	controller.update();
-    	
-	
-    	
-    	
+    	controller.update();	
     }
 
 
@@ -61,10 +57,7 @@ public class GameOverScreen extends GUIScreen {
 	}
 
 	private void showScore() {
-		Label label = new Label("Score: " + this.controller.getScore(), textureManager.getLabelStyle());
-		stage.addActor(label);
-		
-		showLabel("Score: " + this.controller.getScore(), 0, 260, 420, 100);
+		showLabel("Score: " + this.controller.getScore(), 0, 0, 420, 100);
     }
     
 
