@@ -201,7 +201,11 @@ public class GameController implements ContactListener {
 
 	private void cleanInkJars() {
 		for(InkJarBody inkJar : inkJars) {
-			((EntityModel)inkJar.getUserData()).setFlaggedForRemoval(true);
+			EntityModel inkJarModel = ((EntityModel)inkJar.getUserData());
+			if(inkJarModel != null) {
+				inkJarModel.setFlaggedForRemoval(true);
+			}
+			
       	}
       	inkJars = new ArrayList<InkJarBody>();
 	}
