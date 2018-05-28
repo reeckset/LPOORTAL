@@ -1,6 +1,7 @@
 package controller;
 
 import com.lpoortal.game.LpoortalGame;
+import com.lpoortal.game.LpoortalGame.CONTROLLER_STATE;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.ServerToClientMsg;
@@ -47,6 +48,12 @@ public class PlayerCustomizationController {
 			NetworkManager.getInstance().getPlayer1().resetLastMessage();
 			NetworkManager.getInstance().getPlayer2().resetLastMessage();
 		} else {
+			
+			if(CONTROLLER_STATE.valueOf(p1.getLastMessage().controllerState) == CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE &&
+			   CONTROLLER_STATE.valueOf(p2.getLastMessage().controllerState) == CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE )
+				
+				
+			
 			p1.setColor(p1Color);
 			p2.setColor(p2Color);
 			

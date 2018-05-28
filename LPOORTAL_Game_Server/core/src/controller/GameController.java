@@ -533,5 +533,14 @@ public class GameController implements ContactListener {
 		 return (int) (Math.floor((double)Math.random() * (max - min)) + min);
 	}
 
+	public void resetGame() {
+		
+		this.nextLevel();
+		this.score = 0;
+		
+		this.updatePlayerVisuals();
+		
+	}
+
 	
 }

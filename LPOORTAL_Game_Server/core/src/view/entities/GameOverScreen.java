@@ -36,7 +36,7 @@ public class GameOverScreen extends GUIScreen {
     @Override
     public void render(float delta) {
     	super.render(delta);
-    	controller.update();	
+    	controller.update();
     }
 
 

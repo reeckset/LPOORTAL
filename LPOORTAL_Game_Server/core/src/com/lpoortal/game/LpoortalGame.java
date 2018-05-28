@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lpoortal.game.network.NetworkManager;
 
+import controller.GameController;
 import view.entities.CountDownScreen;
 import view.entities.GameOverScreen;
 import view.entities.LevelScreen;
@@ -23,7 +24,7 @@ public class LpoortalGame extends Game {
 	private TextureManager textureManager;
 	
 	public enum STATE {WELCOME, PLAYER_CUSTOMIZATION, GAMEPLAY, COUNTDOWN, GAME_OVER}
-	public enum CONTROLLER_STATE {CONNECT_STATE, PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE, READY_STATE}
+	public enum CONTROLLER_STATE {CONNECT_STATE, PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE, READY_STATE, GAME_OVER_STATE}
 		
 	private static LpoortalGame instance;
 	
