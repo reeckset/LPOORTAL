@@ -47,10 +47,8 @@ public class PlayerCustomizationController {
 			p2Ready = false;
 			NetworkManager.getInstance().getPlayer1().resetLastMessage();
 			NetworkManager.getInstance().getPlayer2().resetLastMessage();
-		} else {
-			
-			if(CONTROLLER_STATE.valueOf(p1.getLastMessage().controllerState) == CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE &&
-			   CONTROLLER_STATE.valueOf(p2.getLastMessage().controllerState) == CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE )
+		} else if(CONTROLLER_STATE.valueOf(p1.getLastMessage().controllerState) == CONTROLLER_STATE.READY_STATE &&
+			   CONTROLLER_STATE.valueOf(p2.getLastMessage().controllerState) == CONTROLLER_STATE.READY_STATE ) {
 				
 				
 			
@@ -64,6 +62,7 @@ public class PlayerCustomizationController {
 			p2.changeState(LpoortalGame.CONTROLLER_STATE.MOVEMENT_STATE);
 			
 			game.setState(LpoortalGame.STATE.GAMEPLAY);
+			
 		}
 		
 	}
