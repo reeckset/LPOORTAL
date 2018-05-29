@@ -125,6 +125,8 @@ public class GameController implements ContactListener {
     
     private boolean removeLines = false;
     
+    private boolean resetPlayerPos = false;
+    
     /**
      * Creates a new GameController that controls the physics of a certain GameModel.
      *
@@ -181,7 +183,11 @@ public class GameController implements ContactListener {
         	cleanInkJars();
             createInkJars();
           	currentPreviewLines.clear();
+          	stickmanBody.setTransform(((StickmanModel)stickmanBody.getUserData()).getX(), ((StickmanModel)stickmanBody.getUserData()).getY(), 0);
+          	cursorBody.setTransform(((CursorModel)cursorBody.getUserData()).getX(), ((CursorModel)cursorBody.getUserData()).getY(), 0);
+          	drawStartLine();
         }
+ 
     	
         GameModel.getInstance().update(delta);
         
@@ -225,8 +231,7 @@ public class GameController implements ContactListener {
 			((DrawnLineModel)line.getUserData()).setFlaggedForRemoval(true);
       	}
     	removeLines = false;
-      	linesDrawn = new ArrayList<DrawnLineBody>();
-      	drawStartLine();		
+      	linesDrawn = new ArrayList<DrawnLineBody>();	
 	}
 
 	/**
@@ -419,6 +424,7 @@ public class GameController implements ContactListener {
 
 	private void nextLevel() {
 		switchPlayers();
+		isPlayer1Drawer = !isPlayer1Drawer;
 		resetLevelValues();
 		this.score++;
 	}
@@ -427,7 +433,7 @@ public class GameController implements ContactListener {
 		LpoortalGame.getInstance().setState(STATE.COUNTDOWN);
       	stickmanBody.setLinearVelocity(0, 0);
       	GameModel.getInstance().resetGame();
-      	stickmanBody.setTransform(((StickmanModel)stickmanBody.getUserData()).getX(), ((StickmanModel)stickmanBody.getUserData()).getY(), 0);
+		switchPlayers();
       	updatePlayerVisuals();
       	NetworkManager.getInstance().getPlayer1().resetLastMessage();
       	NetworkManager.getInstance().getPlayer2().resetLastMessage();
@@ -437,7 +443,6 @@ public class GameController implements ContactListener {
 	}
 
 	private void switchPlayers() {
-		isPlayer1Drawer = !isPlayer1Drawer;
 		if(isPlayer1Drawer) {
       		NetworkManager.getInstance().getPlayer1().changeState(CONTROLLER_STATE.DRAWING_STATE);
       		NetworkManager.getInstance().getPlayer2().changeState(CONTROLLER_STATE.MOVEMENT_STATE);
@@ -545,7 +550,6 @@ public class GameController implements ContactListener {
 	public void resetGame() {
 		this.resetLevelValues();
 		this.score = 0;
-		
 		this.updatePlayerVisuals();	
 	}
 

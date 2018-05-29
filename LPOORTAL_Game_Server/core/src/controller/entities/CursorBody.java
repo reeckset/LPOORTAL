@@ -10,6 +10,8 @@ import com.lpoortal.game.network.SocketCommunicator;
 import controller.GameController;
 import model.entities.CursorModel;
 import model.entities.EntityModel;
+import view.entities.CursorView;
+import view.entities.LevelScreen;
 
 public class CursorBody extends EntityBody {
 	
@@ -29,7 +31,7 @@ public class CursorBody extends EntityBody {
 		lastX = inputX;
 		lastY = inputY;
 		float x = GameController.limitBoundsX(this.getX() + dx * GYRO_SENSITIVITY_X);
-		float y = GameController.limitBoundsY(this.getY() + dy * GYRO_SENSITIVITY_Y);
+		float y = GameController.limitBoundsY(this.getY() + dy * GYRO_SENSITIVITY_Y + CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER) - CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER;
 		setTransform(x, y, 0);
  
 	}
