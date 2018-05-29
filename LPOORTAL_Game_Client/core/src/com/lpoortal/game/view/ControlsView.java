@@ -16,6 +16,8 @@ public class ControlsView extends ScreenView{
         super();
         landscapeMode();
         createControls();
+
+        textureManager.refreshTextures();
     }
 
     private void createControls(){

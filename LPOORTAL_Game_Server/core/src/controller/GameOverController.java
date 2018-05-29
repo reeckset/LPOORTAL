@@ -30,11 +30,11 @@ public class GameOverController {
 		if(msg1 != null && msg2 != null) {
 			if(msg1.actionBtn && CONTROLLER_STATE.valueOf(msg1.controllerState) == CONTROLLER_STATE.GAME_OVER_STATE ||
 			   msg2.actionBtn && CONTROLLER_STATE.valueOf(msg2.controllerState) == CONTROLLER_STATE.GAME_OVER_STATE) {
-				LpoortalGame.getInstance().setState(STATE.PLAYER_CUSTOMIZATION);
-				GameController.getInstance().resetGame();
 				
 				NetworkManager.getInstance().getPlayer1().changeState(CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
 				NetworkManager.getInstance().getPlayer2().changeState(CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
+
+				LpoortalGame.getInstance().setState(STATE.PLAYER_CUSTOMIZATION);
 				
 			}
 		}

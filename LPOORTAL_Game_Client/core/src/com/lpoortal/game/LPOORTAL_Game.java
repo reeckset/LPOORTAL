@@ -17,18 +17,23 @@ public class LPOORTAL_Game extends Game {
 	public enum State {PLAYER_CUSTOMIZATION_STATE, DRAWING_STATE, MOVEMENT_STATE, CONNECT_STATE, READY_STATE, GAME_OVER_STATE};
 	private State state;
 
+	private String playerColor;
+	private String playerName;
+	private String playerSkin;
+
 	TextureManager textureManager;
 
 	@Override
 	public void create() {
 		this.instance = this;
-		textureManager = new TextureManager(TextureManager.Player_Color.BLUE);
+		textureManager = new TextureManager();
 		StateController msgReceiver = StateController.getInstance();
 		new Thread(msgReceiver).start();
 		changeState(State.CONNECT_STATE);
 	}
 
 	public void changeState(State controllerState){
+		this.state = controllerState;
 		switch(controllerState){
 			case DRAWING_STATE:
 				this.setScreen(new DrawingView());
@@ -49,7 +54,6 @@ public class LPOORTAL_Game extends Game {
 				this.setScreen(new GameOverView());
 				break;
 		}
-		this.state = controllerState;
 	}
 
 	public static LPOORTAL_Game getInstance() {
@@ -65,4 +69,29 @@ public class LPOORTAL_Game extends Game {
 	public TextureManager getTextureManager() {
 		return textureManager;
 	}
+
+	public String getPlayerColor() {
+		return playerColor;
+	}
+
+	public void setPlayerColor(String playerColor) {
+		this.playerColor = playerColor;
+	}
+
+	public String getPlayerSkin() {
+		return playerSkin;
+	}
+
+	public void setPlayerSkin(String playerSkin) {
+		this.playerSkin = playerSkin;
+	}
+
+	public String getPlayerName() {
+		return playerName;
+	}
+
+	public void setPlayerName(String playerName) {
+		this.playerName = playerName;
+	}
+
 }

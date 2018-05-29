@@ -29,6 +29,7 @@ public class StateController implements Runnable {
                     this.nextState = LPOORTAL_Game.State.valueOf(msg.controllerState);
                     System.out.println(msg.controllerState);
                 }
+
             }
         }
     }

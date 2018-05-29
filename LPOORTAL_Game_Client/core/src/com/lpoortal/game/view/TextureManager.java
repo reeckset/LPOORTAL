@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.TextField;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
+import com.lpoortal.game.LPOORTAL_Game;
 
 import java.util.HashMap;
 
@@ -34,10 +35,7 @@ public class TextureManager {
 
     private TextField.TextFieldStyle textInputStyle;
 
-    public TextureManager(Player_Color color) throws IllegalArgumentException {
-        if (color == null) {
-            throw new IllegalArgumentException("Null player color given to Texture Manager");
-        }
+    public TextureManager(){
 
         createTextInputStyle();
 
@@ -45,11 +43,7 @@ public class TextureManager {
         textures = new HashMap<Object_Texture, Texture>();
 
         populateGeneralTextures();
-        if(color == Player_Color.BLUE) {
-            populateBlueColoredTextures();
-        }else{
-            populateOrangeColoredTextures();
-        }
+        populateBlueColoredTextures();
     }
 
     /**
@@ -128,6 +122,13 @@ public class TextureManager {
         return textInputStyle;
     }
 
+    public void refreshTextures(){
+        if(LPOORTAL_Game.getInstance().getPlayerColor() == "BLUE"){
+            this.populateBlueColoredTextures();
+        }else{
+            this.populateOrangeColoredTextures();
+        }
+    }
 
 
 }

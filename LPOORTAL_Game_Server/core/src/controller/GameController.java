@@ -418,8 +418,26 @@ public class GameController implements ContactListener {
     }
 
 	private void nextLevel() {
-		isPlayer1Drawer = !isPlayer1Drawer;
+		switchPlayers();
+		resetLevelValues();
+		this.score++;
+	}
+	
+	private void resetLevelValues() {
 		LpoortalGame.getInstance().setState(STATE.COUNTDOWN);
+      	stickmanBody.setLinearVelocity(0, 0);
+      	GameModel.getInstance().resetGame();
+      	stickmanBody.setTransform(((StickmanModel)stickmanBody.getUserData()).getX(), ((StickmanModel)stickmanBody.getUserData()).getY(), 0);
+      	updatePlayerVisuals();
+      	NetworkManager.getInstance().getPlayer1().resetLastMessage();
+      	NetworkManager.getInstance().getPlayer2().resetLastMessage();
+      	removeLines = true;
+      	this.inkAmount = 6;
+      	this.inkSpentOnLine = 0;
+	}
+
+	private void switchPlayers() {
+		isPlayer1Drawer = !isPlayer1Drawer;
 		if(isPlayer1Drawer) {
       		NetworkManager.getInstance().getPlayer1().changeState(CONTROLLER_STATE.DRAWING_STATE);
       		NetworkManager.getInstance().getPlayer2().changeState(CONTROLLER_STATE.MOVEMENT_STATE);
@@ -427,15 +445,6 @@ public class GameController implements ContactListener {
       		NetworkManager.getInstance().getPlayer1().changeState(CONTROLLER_STATE.MOVEMENT_STATE);
       		NetworkManager.getInstance().getPlayer2().changeState(CONTROLLER_STATE.DRAWING_STATE);
       	}
-      	stickmanBody.setLinearVelocity(0, 0);
-      	GameModel.getInstance().resetGame();
-      	updatePlayerVisuals();
-      	NetworkManager.getInstance().getPlayer1().resetLastMessage();
-      	NetworkManager.getInstance().getPlayer2().resetLastMessage();
-      	removeLines = true;
-      	this.inkAmount = 6;
-      	this.inkSpentOnLine = 0;
-      	this.score++;
 	}
 
 	private void createInkJars() {
@@ -534,12 +543,10 @@ public class GameController implements ContactListener {
 	}
 
 	public void resetGame() {
-		
-		this.nextLevel();
+		this.resetLevelValues();
 		this.score = 0;
 		
-		this.updatePlayerVisuals();
-		
+		this.updatePlayerVisuals();	
 	}
 
 	

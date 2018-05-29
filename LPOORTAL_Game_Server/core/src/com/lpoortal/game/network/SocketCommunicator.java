@@ -66,10 +66,8 @@ public class SocketCommunicator implements Runnable {
 		
 		
 		if(msg != null && writer != null) {
-			System.out.println("Sending Message...");
 			try {
 				writer.writeObject(msg);
-				System.out.println("Message Sent!");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

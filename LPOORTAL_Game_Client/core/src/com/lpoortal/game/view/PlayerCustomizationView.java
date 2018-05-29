@@ -32,8 +32,11 @@ public class PlayerCustomizationView extends ScreenView{
         }else{
             tick.setPosition(260, TICK_Y);
         }
+        LPOORTAL_Game.getInstance().setPlayerColor(selectedColor.toString());
+        LPOORTAL_Game.getInstance().setPlayerSkin(selectedSkin.toString());
+        LPOORTAL_Game.getInstance().setPlayerName(textField.getText());
         MessageManager.getInstance().getClient().setNextSendingMessage(new ClientToServerMsg(
-                LPOORTAL_Game.getInstance().getState().toString(), selectedColor.toString(), selectedSkin.toString(), textField.getText(), ready
+                LPOORTAL_Game.State.PLAYER_CUSTOMIZATION_STATE.toString(), selectedColor.toString(), selectedSkin.toString(), textField.getText(), ready
         ));
     }
 

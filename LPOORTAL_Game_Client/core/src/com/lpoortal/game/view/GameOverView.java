@@ -36,7 +36,7 @@ public class GameOverView extends ScreenView{
     public void render(float delta) {
         super.render(delta);
         MessageManager.getInstance().getClient().setNextSendingMessage(
-                new ClientToServerMsg(LPOORTAL_Game.getInstance().getState().toString(),
+                new ClientToServerMsg(LPOORTAL_Game.State.GAME_OVER_STATE.toString(),
                         0,0,pressedBackBtn)
         );
     }
