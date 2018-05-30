@@ -21,6 +21,7 @@ public class SocketCommunicator implements Runnable {
 
 	private Socket clientSocket;
 	ClientToServerMsg lastReceivedMessage;
+	private long lastMessageTimestamp;
 	private ObjectOutputStream writer;
 	private ObjectInputStream reader;
 	
@@ -81,7 +82,8 @@ public class SocketCommunicator implements Runnable {
 	}
 
 	private void setLastReceivedMsg(ClientToServerMsg msg) {
-		lastReceivedMessage = msg;		
+		lastReceivedMessage = msg;
+		lastMessageTimestamp = System.currentTimeMillis();
 	}
 
 	public ClientToServerMsg getLastMessage() {
@@ -114,5 +116,9 @@ public class SocketCommunicator implements Runnable {
 
 	public void setSkin(String skin) {
 		this.skin = Stickman_Skin.valueOf(skin);
+	}
+
+	public long getLastMsgTimestamp() {
+		return this.lastMessageTimestamp;
 	}
 }

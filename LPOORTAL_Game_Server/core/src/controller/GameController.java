@@ -107,6 +107,7 @@ public class GameController implements ContactListener {
     //Line draw system
     private float inkAmount = 6;
     private float inkSpentOnLine = 0;
+    private static final int AMOUNT_OF_JARS = 3;
     private static final float MIN_INK_DRAWN = 3.1f;
     private static final float INK_PER_JAR = 5;
     private static final int INK_JAR_MIN_X = 3;
@@ -126,6 +127,8 @@ public class GameController implements ContactListener {
     private boolean removeLines = false;
     
     private boolean resetPlayerPos = false;
+    
+    private static final long ACCEPTABLE_TIME_BETWEEN_MSGS = 100;
     
     /**
      * Creates a new GameController that controls the physics of a certain GameModel.
@@ -241,26 +244,32 @@ public class GameController implements ContactListener {
     private void applyClientInput() {
     	
     	ClientToServerMsg drawerPlayerMsg, stickmanPlayerMsg;
+    	SocketCommunicator stickmanPlayer;
     	
     	if(isPlayer1Drawer) {
     		drawerPlayerMsg = player1.getLastMessage();
     		stickmanPlayerMsg = player2.getLastMessage();
+    		stickmanPlayer = player2;
     	}else {
     		drawerPlayerMsg = player2.getLastMessage();
     		stickmanPlayerMsg = player1.getLastMessage();
+    		stickmanPlayer = player1;
     	}
 	    
     	if(drawerPlayerMsg != null && stickmanPlayerMsg != null) {	
 	    	cursorBody.updatePosition(drawerPlayerMsg.dx, drawerPlayerMsg.dy);
 	    	handleDraw(drawerPlayerMsg.actionBtn);
 	    	
-	    	movePlayer(stickmanPlayerMsg.dx, stickmanPlayerMsg.actionBtn);
+	    	if(System.currentTimeMillis() - stickmanPlayer.getLastMsgTimestamp() < ACCEPTABLE_TIME_BETWEEN_MSGS) {
+	    		movePlayer(stickmanPlayerMsg.dx, stickmanPlayerMsg.actionBtn);
+	    	}else {
+	    		movePlayer(0, false);
+	    	}
     	}
 	}
 
   
     private void movePlayer(float dx, boolean actionBtn) {
-       
         if (actionBtn) {
             GameController.getInstance().jump();
         }
@@ -426,7 +435,10 @@ public class GameController implements ContactListener {
 		switchPlayers();
 		isPlayer1Drawer = !isPlayer1Drawer;
 		resetLevelValues();
-		this.score++;
+		
+		if(this.inkJars.size() == AMOUNT_OF_JARS) {
+			this.score++;
+		}
 	}
 	
 	private void resetLevelValues() {
@@ -453,7 +465,7 @@ public class GameController implements ContactListener {
 	}
 
 	private void createInkJars() {
-		for(int i = 0; i < 2; i++) {
+		for(int i = 0; i < AMOUNT_OF_JARS; i++) {
 			InkJarModel model = new InkJarModel(getRandomInt(INK_JAR_MIN_X, INK_JAR_MAX_X), getRandomInt(INK_JAR_MIN_Y, INK_JAR_MAX_Y));
 	        GameModel.getInstance().addInkJar(model);
 	        InkJarBody body = new InkJarBody(world, model);

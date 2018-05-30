@@ -70,7 +70,7 @@ public class StickmanBody extends EntityBody {
 	private void updateFacingDirection() {
 		if(this.getSpeedX() > FACING_DIRECTION_THRESHOLD) {
 			faceRight();
-		}else if(this.getSpeedX() < FACING_DIRECTION_THRESHOLD) {
+		}else if(this.getSpeedX() < -FACING_DIRECTION_THRESHOLD) {
 			faceLeft();
 		}
 	}
