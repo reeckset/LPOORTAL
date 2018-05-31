@@ -202,31 +202,65 @@ public class TextureManager {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param anim - the type of animation
+	 * @param direction - the facing direction
+	 * @return the animation relative to the given parameters
+	 */
 	public Animation<TextureRegion> getStickmanAnimation(Stickman_Animation anim, Stickman_Facing_Direction direction) {
 		Pair<Stickman_Animation, Stickman_Facing_Direction> animationProps = new Pair<Stickman_Animation, Stickman_Facing_Direction>(anim, direction);
 		return stickmanAnimations.get(animationProps);
 	}
 
+	/**
+	 * 
+	 * @param anim - the type of animation
+	 * @param direction - the facing direction
+	 * @param skin - the desired skin
+	 * @return the animation relative to the given parameters
+	 */
 	public Animation<TextureRegion> getStickmanSkinAnimation(Stickman_Animation anim, Stickman_Facing_Direction direction, Stickman_Skin skin) {
 		return stickmanSkinAnimations.get(new StickmanVisualDetails(anim, direction, skin));
 	}	
 	
+	/**
+	 * 
+	 * @return the game background texture
+	 */
 	public Texture getBackground() {
 		return this.background;
 	}
 
+	/**
+	 * 
+	 * @return the cursor texture
+	 */
 	public Texture getCursor() {
 		return this.cursor;
 	}
 
+	/**
+	 * 
+	 * @return the definitive line texture
+	 */
 	public Texture getLineTexture() {
 		return this.lineTexture;
 	}
 	
+	/**
+	 * 
+	 * @return the preview line texture
+	 */
 	public Texture getLinePreview() {
 		return this.linePreview;
 	}
 	
+	/**
+	 * 
+	 * @param texture the texture type
+	 * @return specified GUI texture
+	 */
 	public Texture getGUITexture(GUI_Texture texture){
 		return guiTextures.get(texture);
 	}
@@ -251,14 +285,27 @@ public class TextureManager {
         subTextStyle.font.getData().setScale(0.2f);
     }
     
+    /**
+     * 
+     * @return the normal label style
+     */
     public LabelStyle getLabelStyle() {
     	return labelStyle;
     }
     
+    /**
+     * 
+     * @return the subtext label style
+     */
     public LabelStyle getSubTextStyle() {
     	return subTextStyle;
     }
     
+    /**
+     * 
+     * @param color the string color descriptor
+     * @return the Color object
+     */
     public static Color getColorFromString(String color) {
     	switch(Player_Color.valueOf(color)) {
     	case BLUE:
@@ -268,10 +315,18 @@ public class TextureManager {
     	}
     }
     
+    /**
+     * 
+     * @return the portal animation
+     */
     public Animation<TextureRegion> getPortalAnimation() {
     	return portal;
     }
     
+    /**
+     * 
+     * @return the ink jar texture
+     */
     public Texture getInkJar() {
     	return inkJar;
     }

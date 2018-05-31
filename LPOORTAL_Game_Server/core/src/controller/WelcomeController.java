@@ -29,10 +29,17 @@ public class WelcomeController {
 		this.gameCode = tmpGameCode.toUpperCase();
 	}
 	
+	/**
+	 * 
+	 * @return the game code necessary for connection 
+	 */
 	public String getGameCode() {
 		return gameCode;
 	}
 	
+	/**
+	 * Advances for next state if the conditions are verified
+	 */
 	public void nextState() {
 		
 		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
@@ -45,15 +52,26 @@ public class WelcomeController {
 		
 		
 	}
-	
+
+	/**
+	 * 
+	 * @return player 1 SocketCommunicator
+	 */
 	public SocketCommunicator getPlayer1() {
 		return NetworkManager.getInstance().getPlayer1();
 	}
-	
+
+	/**
+	 * 
+	 * @return player 2 SocketCommunicator
+	 */
 	public SocketCommunicator getPlayer2() {
 		return NetworkManager.getInstance().getPlayer2();
 	}
 	
+	/**
+	 * Updates the game state. Called every frame
+	 */
 	public void update() {
 
 		if(NetworkManager.getInstance().isPlayer1Connected() && !isPlayer1Ready) {

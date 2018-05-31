@@ -10,20 +10,38 @@ public class StickmanVisualDetails{
 	StickmanModel.Stickman_Facing_Direction direction;
 	Stickman_Skin skin;
 	
+	/**
+	 * 
+	 * @param animation - the animation
+	 * @param direction - the facing direction
+	 * @param skin - the stickman skin
+	 */
 	public StickmanVisualDetails(StickmanModel.Stickman_Animation animation, StickmanModel.Stickman_Facing_Direction direction, Stickman_Skin skin) {
 		this.animation = animation;
 		this.direction = direction;
 		this.skin = skin;
 	}
 
+	/**
+	 * 
+	 * @return the stickman animation
+	 */
 	public StickmanModel.Stickman_Animation getAnimation() {
 		return animation;
 	}
 
+	/**
+	 * 
+	 * @return the stickman facing direction
+	 */
 	public StickmanModel.Stickman_Facing_Direction getDirection() {
 		return direction;
 	}
 
+	/**
+	 * 
+	 * @return the stickman skin
+	 */
 	public Stickman_Skin getSkin() {
 		return skin;
 	}

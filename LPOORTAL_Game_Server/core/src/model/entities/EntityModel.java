@@ -11,6 +11,11 @@ public abstract class EntityModel {
 
 	public enum ModelType {STICKMAN, CURSOR, LINE, PORTAL, INKJAR};
 	
+	/**
+	 * 
+	 * @param x the starting x position
+	 * @param y the starting y position
+	 */
 	public EntityModel(float x, float y) {
 		this.x = x;
 		this.y = y;
@@ -61,5 +66,9 @@ public abstract class EntityModel {
         this.flaggedForRemoval = flaggedForRemoval;
     }
     
+    /**
+     * 
+     * @return The model type
+     */
     public abstract ModelType getType();
 }

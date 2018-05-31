@@ -40,15 +40,28 @@ public abstract class GUIScreen extends ScreenAdapter {
         stage.dispose();
     }
 
+    /**
+     * Clears the screen with the default background color
+     */
     protected void clearScreen(){
         Gdx.gl.glClearColor(backgroundColor.r, backgroundColor.g, backgroundColor.b, backgroundColor.a);
         Gdx.gl.glClear( GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT );
     }
 
+    /**
+     * Rotates the camera so that it looks like landscape mode
+     */
     protected void landscapeMode(){
             stage.getCamera().rotate(90, 0, 0, 1);
     }
 
+    /**
+     * Adds the specified texture to the GUI, centering it horizontally
+     * 
+     * @param guiTextureName the GUI_Texture descriptor
+     * @param widthPercent - width of the texture in relation to the screen width
+     * @param y - y position
+     */
     protected void centerImage(TextureManager.GUI_Texture guiTextureName, int widthPercent, int y){
         Texture texture = textureManager.getGUITexture(guiTextureName);
         Image img = new Image(new TextureRegion(texture));
@@ -60,6 +73,15 @@ public abstract class GUIScreen extends ScreenAdapter {
     }
     
     protected Image showImage(Texture texture, int x, int y, int w, int h){
+    /**
+     * Places the given texture in the given position
+     * @param guiTextureName - the GUI_Texture descriptor
+     * @param y - y position
+     * @param x - x position
+     * @param h - texture height
+     * @param w - texture width
+     * @return the added image
+     */
         Image img = new Image(new TextureRegion(texture));
         img.setSize(w, h);
         img.setPosition(x, y);
@@ -67,6 +89,15 @@ public abstract class GUIScreen extends ScreenAdapter {
         return img;
     }
     
+    /**
+     * Shows a Label with Sub-text formatting
+     * @param text - the text of the label
+     * @param x - x position
+     * @param y - y position
+     * @param w - label width
+     * @param h - label height
+     * @return the label
+     */
     protected Label showSubText(String text, int x, int y, int w, int h) {
     	Label label = new Label(text, textureManager.getSubTextStyle());
         stage.addActor(label);
@@ -75,6 +106,15 @@ public abstract class GUIScreen extends ScreenAdapter {
         return label;
     }
     
+    /**
+     * Shows a Label with normal text formatting
+     * @param text - the text of the label
+     * @param x - x position
+     * @param y - y position
+     * @param w - label width
+     * @param h - label height
+     * @return the label
+     */
     protected Label showLabel(String text, int x, int y, int w, int h) {
     	Label label = new Label(text, textureManager.getLabelStyle());
         stage.addActor(label);

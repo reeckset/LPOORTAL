@@ -24,6 +24,9 @@ public class PlayerCustomizationController {
 		
 	}
 	
+	/**
+	 * Advances to the next state (if the conditions apply)
+	 */
 	public void nextState() {
 		
 		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
@@ -64,15 +67,26 @@ public class PlayerCustomizationController {
 		
 	}
 	
+	/**
+	 * 
+	 * @return player 1 SocketCommunicator
+	 */
 	public SocketCommunicator getPlayer1() {
 		return NetworkManager.getInstance().getPlayer1();
 	}
-	
+
+	/**
+	 * 
+	 * @return player 2 SocketCommunicator
+	 */
 	public SocketCommunicator getPlayer2() {
 		return NetworkManager.getInstance().getPlayer2();
 	}
 
 
+	/**
+	 * Updates the game if applicable, called every frame
+	 */
 	public void update() {
 		ClientToServerMsg player1Msg = NetworkManager.getInstance().getPlayer1().getLastMessage();
 		ClientToServerMsg player2Msg = NetworkManager.getInstance().getPlayer2().getLastMessage();

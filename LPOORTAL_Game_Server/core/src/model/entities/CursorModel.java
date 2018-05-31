@@ -8,6 +8,11 @@ public class CursorModel extends EntityModel {
 	
 	private Color color;
 
+	/**
+	 * 
+	 * @param x - cursor x starting position
+	 * @param y - cursor y starting position
+	 */
 	public CursorModel(float x, float y) {
 		super(x, y);
 	}
@@ -17,15 +22,28 @@ public class CursorModel extends EntityModel {
 		return ModelType.CURSOR;
 	}
 
+	/**
+	 * 
+	 * @param dx - movement on the x axis
+	 * @param dy - movement on the y axis
+	 */
 	public void move(float dx, float dy) {
 		this.x = dx;
 		this.y = dy;
 	}
 
+	/**
+	 * 
+	 * @param color - the cursor color
+	 */
 	public void setColor(Color color) {
 		this.color = color;
 	}
 	
+	/**
+	 * 
+	 * @return the cursor color
+	 */
 	public Color getColor() {
 		return this.color;
 	}

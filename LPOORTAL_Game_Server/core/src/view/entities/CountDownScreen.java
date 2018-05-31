@@ -30,6 +30,7 @@ public class CountDownScreen extends GUIScreen {
 	Integer countDown = 3;
 	Label label;
 	
+	
     public CountDownScreen(LpoortalGame game) {
         super(game);
         createUI();

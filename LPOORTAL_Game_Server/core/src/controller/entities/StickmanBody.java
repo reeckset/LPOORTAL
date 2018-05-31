@@ -21,6 +21,11 @@ public class StickmanBody extends EntityBody {
 	private static final float FACING_DIRECTION_THRESHOLD = 0.2f;
 	private int nbrCollidingObjects = 0;
 
+	/**
+	 * Stickman Body Constructor
+	 * @param world - the game's world
+	 * @param model - the stickman model
+	 */
 	public StickmanBody(World world, EntityModel model) {
 		super(world, model, BodyDef.BodyType.DynamicBody);
 	
@@ -53,6 +58,10 @@ public class StickmanBody extends EntityBody {
 	    body.createFixture(bottomDef);
 	}
 	
+	
+	/**
+	 * Updates the stickman model
+	 */
 	public void update() {
 		StickmanModel model = ((StickmanModel) this.getUserData());
 
@@ -75,23 +84,43 @@ public class StickmanBody extends EntityBody {
 		}
 	}
 
+	
+	/**
+	 * Makes the stickman face left
+	 */
 	public void faceLeft() {
 		StickmanModel model = ((StickmanModel) this.getUserData());
 		model.setFacingDirection(Stickman_Facing_Direction.LEFT);
 	}
 
+
+	/**
+	 * Makes the stickman face right
+	 */
 	public void faceRight() {
 		StickmanModel model = ((StickmanModel) this.getUserData());
 		model.setFacingDirection(Stickman_Facing_Direction.RIGHT);
 	}
 	
+	/**
+	 * Increments the number of colliding objects
+	 */
 	public void increaseNbrCollidedObjs() {
 		nbrCollidingObjects++;
 	}
+	
+
+	/**
+	 * Decrements the number of colliding objects
+	 */
 	public void decreaseNbrCollidedObjs() {
 		nbrCollidingObjects--;
 	}
 	
+	/**
+	 * Returns true if the stickman is colliding, false otherwise
+	 * @return true/false
+	 */
 	public boolean isColliding() {
 		return nbrCollidingObjects > 0;
 	}

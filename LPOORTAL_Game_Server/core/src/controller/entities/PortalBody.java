@@ -20,6 +20,12 @@ public class PortalBody extends EntityBody {
 	public static float WIDTH = 24f;
 	public static float HEIGHT = 4f;
 	
+	
+	/**
+	 * Portal Body Constructor
+	 * @param world - the game's world
+	 * @param model - the portal model
+	 */
 	public PortalBody(World world, EntityModel model) {
 		super(world, model, BodyDef.BodyType.StaticBody);
 	    

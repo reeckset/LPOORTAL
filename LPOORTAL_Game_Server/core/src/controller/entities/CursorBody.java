@@ -21,10 +21,21 @@ public class CursorBody extends EntityBody {
 	private float lastX = 0;
 	private float lastY = 0;
 	
+	
+	/**
+	 * Cursor Body Constructor
+	 * @param world - the game's world
+	 * @param model - the cursor model
+	 */
 	public CursorBody(World world, EntityModel model) {
 		super(world, model, BodyDef.BodyType.StaticBody);
 	}
 	
+	/**
+	 * Updates the cursor position
+	 * @param inputX - the next x position
+	 * @param inputY - the next y position
+	 */
 	public void updatePosition(float inputX, float inputY) {
 		float dx = inputX - lastX;
 		float dy = inputY - lastY;

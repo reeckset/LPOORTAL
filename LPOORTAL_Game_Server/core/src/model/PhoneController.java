@@ -9,6 +9,11 @@ public class PhoneController {
 	
 	protected Functionality_State state;
 	
+	/**
+	 * 
+	 * @param initialState - The starting controller state
+	 * @throws IllegalArgumentException
+	 */
 	public PhoneController(PhoneController.Functionality_State initialState) throws IllegalArgumentException{
 		if(initialState == null) {
 			throw new IllegalArgumentException("null initial state");

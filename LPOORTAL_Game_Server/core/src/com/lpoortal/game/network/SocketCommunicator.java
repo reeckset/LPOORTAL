@@ -31,6 +31,11 @@ public class SocketCommunicator implements Runnable {
 	private static final long READ_FREQUENCY_MILLIS = 100;
 	private long lastReadAttemptMillis = 0;
 	
+	/**
+	 * Creates a communicator to abstract the client/server communication functionalities
+	 * @param clientSocket the socket to communicate with the client
+	 * @throws IOException
+	 */
 	public SocketCommunicator(Socket clientSocket) throws IOException {
 		this.clientSocket = clientSocket;
 		this.writer = new ObjectOutputStream(clientSocket.getOutputStream());
@@ -48,6 +53,9 @@ public class SocketCommunicator implements Runnable {
 		}
 	}
 	
+	/**
+	 * Reads the next available message in the socket
+	 */
 	public void readMsg() {
 		if(reader != null) {
 			while(true) {
@@ -63,6 +71,10 @@ public class SocketCommunicator implements Runnable {
 		}		
 	}
 	
+	/**
+	 * Writes a message to the socket
+	 * @param msg Message Object
+	 */
 	public void writeMsg(ServerToClientMsg msg) {
 		
 		
@@ -86,34 +98,65 @@ public class SocketCommunicator implements Runnable {
 		lastMessageTimestamp = System.currentTimeMillis();
 	}
 
+	/**
+	 * 
+	 * @return the latest message received
+	 */
 	public ClientToServerMsg getLastMessage() {
 		return lastReceivedMessage;
 	}
 	
+	/**
+	 * Sends a message to the client so that it changes state
+	 * @param state new state
+	 */
 	public void changeState(LpoortalGame.CONTROLLER_STATE state) {
 		this.writeMsg(new ServerToClientMsg(state.toString()));
 	}
 
+	/**
+	 * 
+	 * @return the socket
+	 */
 	public Socket getClientSocket() {
 		return this.clientSocket;
 	}
 
+	/**
+	 * Sets the latest message to null
+	 */
 	public void resetLastMessage() {
 		lastReceivedMessage = null;
 	}
 	
+	/**
+	 * Sets the color to the specified one
+	 * @param colorStr color in string format
+	 */
 	public void setColor(String colorStr) {
 		color = TextureManager.getColorFromString(colorStr);
 	}
 	
+	/**
+	 * 
+	 * @return the client color
+	 */
 	public Color getColor() {
 		return color;
 	}
 	
+	/**
+	 * 
+	 * @return the client skin
+	 */
 	public Stickman_Skin getSkin() {
 		return skin;
 	}
 
+	/**
+	 * Sets the skin to the specified one
+	 * @param skin skin in string format
+	 */
 	public void setSkin(String skin) {
 		this.skin = Stickman_Skin.valueOf(skin);
 	}

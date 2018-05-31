@@ -16,6 +16,11 @@ public class InkJarBody extends EntityBody {
 	public static final float WIDTH = 2f;
 	public static final float HEIGHT = 2f;
 	
+	/**
+	 * Ink Jar Body Constructor
+	 * @param world - the game's world
+	 * @param model - the ink jar model
+	 */
 	public InkJarBody(World world, InkJarModel model) {
 		super(world, model,BodyDef.BodyType.StaticBody);
         

@@ -16,6 +16,12 @@ public class ViewFactory {
     private static Map<EntityModel.ModelType, EntityView> cache =
             new HashMap<EntityModel.ModelType, EntityView>();
 
+    /**
+     * Creates or returns the view if already exists
+     * @param game the main game object
+     * @param model - the model of the view to create
+     * @return the view required
+     */
     public static EntityView makeView(LpoortalGame game, EntityModel model) {
         if (!cache.containsKey(model.getType())) {
             if (model.getType() == ModelType.STICKMAN)

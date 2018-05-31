@@ -83,6 +83,9 @@ public class GameModel {
         this.portal = new PortalModel(PORTAL_DEFAULT_X, PORTAL_DEFAULT_Y);
     }
     
+    /**
+     * Resets the game parameters, to be able to restart (either game or level)
+     */
     public void resetGame() {
     	this.cursor.setPosition(CURSOR_DEFAULT_X, CURSOR_DEFAULT_Y);
         this.stickman.setPosition(STICKMAN_DEFAULT_X, STICKMAN_DEFAULT_Y);
@@ -91,18 +94,34 @@ public class GameModel {
         this.portal.setPosition(PORTAL_DEFAULT_X, PORTAL_DEFAULT_Y);
     }
 
+    /**
+     * 
+     * @return the cursor model
+     */
 	public CursorModel getCursor() {
 		return cursor;
 	}
 
+	/**
+	 * 
+	 * @return the stickman model
+	 */
 	public StickmanModel getStickman() {
 		return stickman;
 	}
-
+	
+	/**
+	 * 
+	 * @return the drawn lines models
+	 */
 	public List<DrawnLineModel> getDrawnLines() {
 		return drawnLines;
 	}
 	
+	/**
+	 * 
+	 * @return the portal model
+	 */
 	public PortalModel getPortal() {
 		return portal;
 	}
@@ -130,10 +149,18 @@ public class GameModel {
         drawnLines.add(lineModel);
     }
 
+    /**
+     * Adds the specified ink jar model to the game
+     * @param model - ink jar model
+     */
 	public void addInkJar(InkJarModel model) {
 		inkJars.add(model);
 	}
 
+	/**
+	 * 
+	 * @return the ink jar models
+	 */
 	public List<InkJarModel> getInkJars() {
 		return inkJars;
 	}

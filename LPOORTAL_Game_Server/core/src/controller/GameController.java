@@ -156,6 +156,10 @@ public class GameController implements ContactListener {
         world.setContactListener(this);
     }
 
+    /**
+     * 
+     * @return the curent score
+     */
     public int getScore() {
 		return this.score;
 	}
@@ -498,6 +502,9 @@ public class GameController implements ContactListener {
 
     }
 
+    /**
+     * Removes the bodies flagged in the previous step
+     */
     public void removeFlagged() {
         Array<Body> bodies = new Array<Body>();
         world.getBodies(bodies);
@@ -517,6 +524,11 @@ public class GameController implements ContactListener {
 		return LEVEL_HEIGHT;
 	}
 	
+	/**
+	 * 
+	 * @param x - limits the horizontal position
+	 * @return the x position 
+	 */
 	public static float limitBoundsX(float x) {
 		if (x < 0) { 
 			return 0;
@@ -527,6 +539,11 @@ public class GameController implements ContactListener {
 		return x;
 	}
 	
+	/**
+	 * 
+	 * @param y - limits the vertical position
+	 * @return the y position
+	 */
 	public static float limitBoundsY(float y) {
 		if (y < 0) { 
 			return 0;
@@ -553,6 +570,10 @@ public class GameController implements ContactListener {
 		}
 	}
 	
+	/**
+	 * 
+	 * @return the color of the drawing player
+	 */
 	public Color getDrawerColor() {
 		return isPlayer1Drawer ? player1.getColor() : player2.getColor();
 	}
@@ -561,6 +582,9 @@ public class GameController implements ContactListener {
 		 return (int) (Math.floor((double)Math.random() * (max - min)) + min);
 	}
 
+	/**
+	 * resets the game properties
+	 */
 	public void resetGame() {
 		this.resetLevelValues();
 		this.score = 0;

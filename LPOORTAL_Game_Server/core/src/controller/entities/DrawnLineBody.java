@@ -10,10 +10,17 @@ import com.badlogic.gdx.physics.box2d.World;
 import model.entities.DrawnLineModel;
 import model.entities.EntityModel;
 
+
+
 public class DrawnLineBody extends EntityBody {
 	
 	private FixtureDef def;
 	
+	/**
+	 * Drawn Line Body Constructor
+	 * @param world - the game's world
+	 * @param model - the line model
+	 */
 	public DrawnLineBody(World world, EntityModel model) {
 		super(world, model,BodyDef.BodyType.StaticBody);
 	    
@@ -33,6 +40,9 @@ public class DrawnLineBody extends EntityBody {
 	    
 	}
 	
+	/**
+	 * Sets this line as definitive (activates collisions)
+	 */
 	public void setDefinitive() {
 		if(((DrawnLineModel)getUserData()).isPreview()) {
 		    body.createFixture(def);

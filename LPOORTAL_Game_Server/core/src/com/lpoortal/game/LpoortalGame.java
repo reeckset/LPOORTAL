@@ -15,6 +15,12 @@ import view.entities.PlayerCustomizationScreen;
 import view.entities.TextureManager;
 import view.entities.WelcomeScreen;
 
+
+/**
+ * 
+ * Main Game Class (Entry point of LibGDX)
+ *
+ */
 public class LpoortalGame extends Game {
 	SpriteBatch batch;
 	
@@ -41,9 +47,16 @@ public class LpoortalGame extends Game {
 
 	}
 	
+	
+	/**
+	 * 
+	 * @return LpoortalGame - instance of the game
+	 */
 	public static LpoortalGame getInstance() {
 		return instance;
 	}
+	
+	
 	
 	private void startGame() {
 		setState(STATE.WELCOME);
@@ -55,14 +68,27 @@ public class LpoortalGame extends Game {
 		batch.dispose();
 	}
 	
+	/**
+	 * 
+	 * @return the game's batch to draw on
+	 */
 	public SpriteBatch getBatch() {
 		return batch;
 	}
 
+	/**
+	 * 
+	 * @return the game's texture manager for assets management
+	 */
 	public TextureManager getTextureManager() {
 		return this.textureManager;
 	}
 	
+	/**
+	 * Changes the game's state 
+	 * @param state the new state
+	 * 
+	 */
 	public void setState(STATE state) {
 		switch(state) {
 		case WELCOME:

@@ -42,14 +42,20 @@ public class NetworkManager{
 	   
 	}
 	
+	/**
+	 * 
+	 * @return the instance of the network manager
+	 */
 	public static NetworkManager getInstance() {
 		if (instance == null)
 			instance = new NetworkManager();
 		return instance;
 	}
 	
-	
-	
+	/**
+	 * Creates the communicator for the respective player
+	 * @param playerCommunicator the player SocketCommunicator
+	 */
 	public void addPlayerClient(SocketCommunicator playerCommunicator) {
 		if(!isPlayer1Connected()) {
 			this.player1Communicator = playerCommunicator;
@@ -60,14 +66,27 @@ public class NetworkManager{
 		}
 	}
 	
+	/**
+	 * 
+	 * @return player 1 communicator
+	 */
 	public SocketCommunicator getPlayer1() {
 		return player1Communicator;
 	}
 	
+	/**
+	 * 
+	 * @return player 2 communicator
+	 */
 	public SocketCommunicator getPlayer2() {
 		return player2Communicator;
 	}
    
+	
+	/**
+	 * 
+	 * @return the host machine ip address to connect to
+	 */
 	public String getHostIp() {
 		try {
 			
@@ -90,9 +109,18 @@ public class NetworkManager{
         return null;
 	}
 	
+	/**
+	 * 
+	 * @return true if the player 1 is connected
+	 */
 	public boolean isPlayer1Connected() {
 		return this.player1Communicator != null && this.player1Communicator.getClientSocket() != null;
 	}
+	
+	/**
+	 * 
+	 * @return true if the player 2 is connected
+	 */
 	public boolean isPlayer2Connected() {
 		return this.player2Communicator != null && this.player2Communicator.getClientSocket() != null;
 	}

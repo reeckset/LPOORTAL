@@ -17,6 +17,9 @@ public class GameOverController {
 		NetworkManager.getInstance().getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.GAME_OVER_STATE);
 	}
 
+	/**
+	 * Updates the state of the game if applicable, called every frame
+	 */
 	public void update() {
 		
 		if(NetworkManager.getInstance().getPlayer1() == null || NetworkManager.getInstance().getPlayer2() == null) {
@@ -41,6 +44,10 @@ public class GameOverController {
 		
 	}
 	
+	/**
+	 * 
+	 * @return the final score
+	 */
 	public int getScore() {
 		return this.finalScore;
 	}
