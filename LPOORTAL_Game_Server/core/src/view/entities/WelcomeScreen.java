@@ -75,6 +75,7 @@ public class WelcomeScreen extends GUIScreen {
     	showWelcomeLabel();
     	showGameCodeInstruction();
     	showPlayersConnectionInfo();
+    	showImage(textureManager.getGUITexture(GUI_Texture.INSTRUCTIONS), 320, 0, 290, 290);
     }
  
     private void showPlayersConnectionInfo() {

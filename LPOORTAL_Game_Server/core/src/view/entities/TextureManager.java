@@ -27,7 +27,7 @@ public class TextureManager {
 	private Texture background, cursor, lineTexture, linePreview, inkJar, backgroundCountdown, inkBar;
     private Label.LabelStyle labelStyle, subTextStyle;
     
-    public enum GUI_Texture {LOGO, TICK, CROSS};
+    public enum GUI_Texture {LOGO, TICK, CROSS, INSTRUCTIONS};
     public enum Player_Color {ORANGE, BLUE};
     private HashMap<GUI_Texture, Texture> guiTextures;
     
@@ -269,6 +269,7 @@ public class TextureManager {
         guiTextures.put(GUI_Texture.LOGO, new Texture("logo.png"));
         guiTextures.put(GUI_Texture.CROSS, new Texture("cross.png"));
         guiTextures.put(GUI_Texture.TICK, new Texture("tick.png"));
+        guiTextures.put(GUI_Texture.INSTRUCTIONS, new Texture("instructions.png"));
     }
 	
     private void createLabelStyle(){
