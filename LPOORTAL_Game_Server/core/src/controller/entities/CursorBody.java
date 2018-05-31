@@ -31,7 +31,7 @@ public class CursorBody extends EntityBody {
 		lastX = inputX;
 		lastY = inputY;
 		float x = GameController.limitBoundsX(this.getX() + dx * GYRO_SENSITIVITY_X);
-		float y = GameController.limitBoundsY(this.getY() + dy * GYRO_SENSITIVITY_Y + CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER) - CursorView.CURSOR_SIZE * LevelScreen.PIXEL_TO_METER;
+		float y = GameController.limitBoundsY(this.getY() + dy * GYRO_SENSITIVITY_Y);
 		setTransform(x, y, 0);
  
 	}

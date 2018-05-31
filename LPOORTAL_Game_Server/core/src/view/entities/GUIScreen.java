@@ -59,8 +59,7 @@ public abstract class GUIScreen extends ScreenAdapter {
         stage.addActor(img);
     }
     
-    protected Image showImage(TextureManager.GUI_Texture guiTextureName, int x, int y, int w, int h){
-    	Texture texture = textureManager.getGUITexture(guiTextureName);
+    protected Image showImage(Texture texture, int x, int y, int w, int h){
         Image img = new Image(new TextureRegion(texture));
         img.setSize(w, h);
         img.setPosition(x, y);

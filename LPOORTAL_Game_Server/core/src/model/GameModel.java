@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.badlogic.gdx.graphics.Color;
+
 import controller.GameController;
 import model.entities.CursorModel;
 import model.entities.DrawnLineModel;
@@ -41,10 +43,14 @@ public class GameModel {
      */
     private List<InkJarModel> inkJars;
     
+    private Color drawerColor;
+    
     /**
      * Portal
      */
     private PortalModel portal;
+    
+    private float inkAmount = 0f;
     
     private final int CURSOR_DEFAULT_X = 25;
     private final int CURSOR_DEFAULT_Y = 15;
@@ -124,16 +130,28 @@ public class GameModel {
         drawnLines.add(lineModel);
     }
 
-    public void update(float delta) {
-        
-    }
-
 	public void addInkJar(InkJarModel model) {
 		inkJars.add(model);
 	}
 
 	public List<InkJarModel> getInkJars() {
 		return inkJars;
+	}
+	
+	public void setInkAmount(float inkAmount) {
+		this.inkAmount = inkAmount;
+	}
+	
+	public float getInkAmount() {
+		return this.inkAmount;
+	}
+
+	public Color getDrawerColor() {
+		return drawerColor;
+	}
+
+	public void setDrawerColor(Color drawerColor) {
+		this.drawerColor = drawerColor;
 	}
     
 }

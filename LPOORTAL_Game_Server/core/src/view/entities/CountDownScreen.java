@@ -36,8 +36,8 @@ public class CountDownScreen extends GUIScreen {
     }
     
     private void createUI() {
-		label = showLabel(countDown.toString(), 300, 160, 30, 30);
-		
+		showImage(textureManager.getCountdownBackground(), 0, 0, VP_WIDTH, VP_HEIGHT);
+		label = showLabel(countDown.toString(), VP_WIDTH - 120, 30, 30, 30);
 	}
 
 	@Override

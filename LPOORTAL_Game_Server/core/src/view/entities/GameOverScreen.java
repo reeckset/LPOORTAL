@@ -43,7 +43,7 @@ public class GameOverScreen extends GUIScreen {
 	
 	private void createUI(){
     	
-    	showImage(GUI_Texture.LOGO, 400, 260, 200, 100);
+    	showImage(textureManager.getGUITexture(GUI_Texture.LOGO), 400, 260, 200, 100);
     	showGameOverLabel();
     	
     	showScore();

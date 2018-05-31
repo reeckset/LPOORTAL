@@ -24,7 +24,7 @@ public class TextureManager {
 	private HashMap<Pair<Stickman_Animation, Stickman_Facing_Direction>, Animation<TextureRegion>> stickmanAnimations;
 	private HashMap<StickmanVisualDetails, Animation<TextureRegion>> stickmanSkinAnimations;
 	
-	private Texture background, cursor, lineTexture, linePreview, inkJar;
+	private Texture background, cursor, lineTexture, linePreview, inkJar, backgroundCountdown, inkBar;
     private Label.LabelStyle labelStyle, subTextStyle;
     
     public enum GUI_Texture {LOGO, TICK, CROSS};
@@ -53,6 +53,8 @@ public class TextureManager {
 		this.lineTexture = new Texture("pencil_scratch.png");
 		this.linePreview = new Texture("preview_line.png");
 		this.inkJar = new Texture("ink_jar.png");
+		this.backgroundCountdown = new Texture("between_levels.png");
+		this.inkBar = new Texture("ink_bar.png");
 	}
 
 	private void populateAnimations() {
@@ -272,5 +274,13 @@ public class TextureManager {
     
     public Texture getInkJar() {
     	return inkJar;
+    }
+    
+    public Texture getCountdownBackground() {
+    	return backgroundCountdown;
+    }
+    
+    public Texture getInkBar() {
+    	return inkBar;
     }
 }

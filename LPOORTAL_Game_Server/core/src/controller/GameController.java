@@ -58,7 +58,7 @@ public class GameController implements ContactListener {
 	/**
      * The arena height in meters.
      */
-    public static final int LEVEL_HEIGHT = 70;
+    public static final int LEVEL_HEIGHT = 27;
     
     public static final float GRAVITY = 30;
     
@@ -124,7 +124,7 @@ public class GameController implements ContactListener {
 	
 	private int score = 0;
     
-    private boolean removeLines = false;
+    private boolean resetValues = false;
     
     private boolean resetPlayerPos = false;
     
@@ -181,7 +181,9 @@ public class GameController implements ContactListener {
      * @param delta The size of this physics step in seconds.
      */
     public void update(float delta) {
-    	if(removeLines) {
+    	
+    	if(resetValues) {
+          	GameModel.getInstance().resetGame();
         	resetLines();
         	cleanInkJars();
             createInkJars();
@@ -189,11 +191,9 @@ public class GameController implements ContactListener {
           	stickmanBody.setTransform(((StickmanModel)stickmanBody.getUserData()).getX(), ((StickmanModel)stickmanBody.getUserData()).getY(), 0);
           	cursorBody.setTransform(((CursorModel)cursorBody.getUserData()).getX(), ((CursorModel)cursorBody.getUserData()).getY(), 0);
           	drawStartLine();
+    		resetValues = false;
         }
- 
     	
-        GameModel.getInstance().update(delta);
-        
         float frameTime = Math.min(delta, 0.25f);
         accumulator += frameTime;
         while (accumulator >= 1/60f) {
@@ -214,6 +214,8 @@ public class GameController implements ContactListener {
         if(stickmanBody.getY() < 1) {
         	LpoortalGame.getInstance().setState(STATE.GAME_OVER);
         }
+        
+        GameModel.getInstance().setInkAmount(inkAmount);
 
         applyClientInput();
     }
@@ -233,7 +235,6 @@ public class GameController implements ContactListener {
 		for(DrawnLineBody line : linesDrawn) {
 			((DrawnLineModel)line.getUserData()).setFlaggedForRemoval(true);
       	}
-    	removeLines = false;
       	linesDrawn = new ArrayList<DrawnLineBody>();	
 	}
 
@@ -444,12 +445,11 @@ public class GameController implements ContactListener {
 	private void resetLevelValues() {
 		LpoortalGame.getInstance().setState(STATE.COUNTDOWN);
       	stickmanBody.setLinearVelocity(0, 0);
-      	GameModel.getInstance().resetGame();
 		switchPlayers();
       	updatePlayerVisuals();
       	NetworkManager.getInstance().getPlayer1().resetLastMessage();
       	NetworkManager.getInstance().getPlayer2().resetLastMessage();
-      	removeLines = true;
+		resetValues = true;
       	this.inkAmount = 6;
       	this.inkSpentOnLine = 0;
 	}
@@ -543,11 +543,13 @@ public class GameController implements ContactListener {
 			((StickmanModel)stickmanBody.getUserData()).setColor(player2.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setSkin(player2.getSkin());
 			((PortalModel)portalBody.getUserData()).setColor(player1.getColor());
+			GameModel.getInstance().setDrawerColor(player1.getColor());
 		}else {
 			((CursorModel)cursorBody.getUserData()).setColor(player2.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setColor(player1.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setSkin(player1.getSkin());
 			((PortalModel)portalBody.getUserData()).setColor(player2.getColor());
+			GameModel.getInstance().setDrawerColor(player2.getColor());
 		}
 	}
 	

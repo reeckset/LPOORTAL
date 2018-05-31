@@ -73,7 +73,7 @@ public class PlayerCustomizationScreen extends GUIScreen {
 	}
 
 	private void showHeader() {
-		showImage(GUI_Texture.LOGO, 440, 260, 200, 100);
+		showImage(textureManager.getGUITexture(GUI_Texture.LOGO), 440, 260, 200, 100);
     	Label title = showSubText("Customize your Stickmen!", 20, 265, VP_WIDTH, 80);
     	title.setFontScale(0.4f);
 	}

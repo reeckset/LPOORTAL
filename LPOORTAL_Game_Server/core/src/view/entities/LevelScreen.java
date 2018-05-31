@@ -9,8 +9,14 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
+import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Image;
+import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
+import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
+import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.lpoortal.game.LpoortalGame;
 import com.lpoortal.game.network.NetworkManager;
 
@@ -67,6 +73,14 @@ public class LevelScreen extends ScreenAdapter {
      * A manager for texture assets, responsible for loading the sprites/animations
      */
 	private TextureManager textureManager;
+	
+    private static final int VP_WIDTH = 640;
+    
+    private static final int VP_HEIGHT = 360;
+	
+    private Stage stage = new Stage(new ExtendViewport(VP_WIDTH, VP_HEIGHT));
+    
+    private Sprite inkAmount;
 
     /**
      * Creates this screen.
@@ -99,7 +113,7 @@ public class LevelScreen extends ScreenAdapter {
             debugCamera = camera.combined.cpy();
             debugCamera.scl(1 / PIXEL_TO_METER);
         }
-
+        
         return camera;
     }
 
@@ -116,6 +130,9 @@ public class LevelScreen extends ScreenAdapter {
      */
     private void loadAssets() {
         this.textureManager = this.game.getTextureManager();
+        
+        inkAmount = new Sprite(textureManager.getInkBar());
+        inkAmount.setSize(4 / PIXEL_TO_METER , GameController.getHeight() / PIXEL_TO_METER);
     }
 
     /**
@@ -125,6 +142,7 @@ public class LevelScreen extends ScreenAdapter {
      */
     @Override
     public void render(float delta) {
+         
         GameController.getInstance().removeFlagged();
 
         GameController.getInstance().update(delta);
@@ -143,6 +161,7 @@ public class LevelScreen extends ScreenAdapter {
             debugCamera.scl(1 / PIXEL_TO_METER);
             debugRenderer.render(GameController.getInstance().getWorld(), debugCamera);
         }
+   
     }
 
     /**
@@ -182,6 +201,13 @@ public class LevelScreen extends ScreenAdapter {
         
         view.update(stickmanModel);
         view.draw(game.getBatch());
+        
+        inkAmount.setColor(GameModel.getInstance().getDrawerColor());
+        inkAmount.setScale(1f, GameModel.getInstance().getInkAmount()/15f);
+        inkAmount.setRegion(0, 0, 1f, GameModel.getInstance().getInkAmount()/15f);
+        inkAmount.setCenterY(0f);
+        inkAmount.setPosition(0, - inkAmount.getHeight()/2 - 150);
+        inkAmount.draw(game.getBatch());
 
     }
 
@@ -199,5 +225,10 @@ public class LevelScreen extends ScreenAdapter {
         s.setPosition(0,0);
         s.setSize(getWidthPixels(), getWidthPixels() / getViewportRatio());
         s.draw(game.getBatch());
+    }
+    
+    protected void clearScreen(){
+        Gdx.gl.glClearColor(0, 0, 0, 0);
+        Gdx.gl.glClear( GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT );
     }
 }

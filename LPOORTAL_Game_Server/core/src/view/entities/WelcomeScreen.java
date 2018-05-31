@@ -71,7 +71,7 @@ public class WelcomeScreen extends GUIScreen {
 	
 	private void createUI(){
     	showGameCode();
-    	showImage(GUI_Texture.LOGO, 400, 260, 200, 100);
+    	showImage(textureManager.getGUITexture(GUI_Texture.LOGO), 400, 260, 200, 100);
     	showWelcomeLabel();
     	showGameCodeInstruction();
     	showPlayersConnectionInfo();
@@ -80,8 +80,8 @@ public class WelcomeScreen extends GUIScreen {
     private void showPlayersConnectionInfo() {
 		showSubText("Player 1 Connection Status:", 10, 30, 100, 30);
 		showSubText("Player 2 Connection Status:", 10, 0, 100, 30);
-		player1Connection = showImage(GUI_Texture.CROSS, 230, 30, 25, 25);
-		player2Connection = showImage(GUI_Texture.CROSS, 235, 0, 25, 25);
+		player1Connection = showImage(textureManager.getGUITexture(GUI_Texture.CROSS), 230, 30, 25, 25);
+		player2Connection = showImage(textureManager.getGUITexture(GUI_Texture.CROSS), 235, 0, 25, 25);
 		tickDrawable = new SpriteDrawable(new Sprite(textureManager.getGUITexture(GUI_Texture.TICK)));
 		crossDrawable = new SpriteDrawable(new Sprite(textureManager.getGUITexture(GUI_Texture.CROSS)));
 	}
