@@ -100,10 +100,20 @@ public class TextureManager {
         return assetManager.get(source);
     }
 
+    /**
+     *
+     * @param obj Requested object
+     * @return texture for the object
+     */
     public Texture getTexture(Object_Texture obj){
         return textures.get(obj);
     }
 
+    /**
+     *
+     * @param i key index
+     * @return texture of that key
+     */
     public Texture getKeyboardKeyTexture(int i) {
         return new Texture("keyboard_" + Integer.toHexString(i) + ".png");
     }

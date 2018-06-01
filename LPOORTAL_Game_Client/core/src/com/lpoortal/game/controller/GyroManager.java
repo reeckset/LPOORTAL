@@ -26,14 +26,26 @@ public class GyroManager implements Runnable {
         }
     }
 
+    /**
+     *
+     * @return x cordinate
+     */
     public double getX() {
         return x;
     }
 
+    /**
+     *
+     * @return y coordinate
+     */
     public double getY() {
         return y;
     }
 
+    /**
+     * Set Gyro state (activated/de-activated)
+     * @param active true/false
+     */
     public void setActive(boolean active) {
         isActive = active;
     }

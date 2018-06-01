@@ -232,11 +232,19 @@ public class PlayerCustomizationView extends ScreenView{
         });
     }
 
+    /**
+     *
+     * @param skin stickman skin
+     */
     public void setSelectedSkin(Player_Skin skin){
         selectedSkin = skin;
     }
 
-
+    /**
+     * Sets the tile overlay position
+     * @param x x position
+     * @param y y position
+     */
     public void setSelectedTileOverlayPosition(int x, int y) {
         selectedTileOverlay.setPosition(x,y);
     }

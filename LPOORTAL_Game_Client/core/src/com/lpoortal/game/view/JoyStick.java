@@ -6,6 +6,13 @@ import com.badlogic.gdx.scenes.scene2d.ui.Touchpad;
 public class JoyStick extends Touchpad {
     Point position, size;
 
+    /**
+     *
+     * @param position joystick position
+     * @param size joystick size
+     * @param deadZoneVal deadzone delta
+     * @param textureManager game's texture manager
+     */
     public JoyStick(Point position, Point size, int deadZoneVal, TextureManager textureManager){
         super(deadZoneVal, getTouchpadStyle(textureManager));
         this.position = position;

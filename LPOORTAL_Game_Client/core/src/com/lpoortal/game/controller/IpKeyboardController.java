@@ -12,6 +12,10 @@ public class IpKeyboardController {
         input = "";
     }
 
+    /**
+     * Add a key
+     * @param i - key index
+     */
     public void addKey(int i){
         if(input.length() < 8) {
             ip += i * Math.pow(16, 7-input.length());
@@ -19,6 +23,9 @@ public class IpKeyboardController {
         }
     }
 
+    /**
+     * Erase last character
+     */
     public void erase(){
         if(input.length() > 0) {
             input = input.substring(0, input.length() - 1);
@@ -26,11 +33,17 @@ public class IpKeyboardController {
         }
     }
 
+    /**
+     * Clear the input
+     */
     public void clear(){
         ip = 0;
         input = "";
     }
 
+    /**
+     * Submits the user input and starts the MessageManager
+     */
     public void submit(){
         if(input.length() == 8) {
             String hostname = "";
@@ -47,6 +60,11 @@ public class IpKeyboardController {
         }
     }
 
+    /**
+     *
+     * @param i index
+     * @return value at given index
+     */
     public int getValAt(int i){
         long tmp = ip;
         tmp >>>= (7-i) * 4;
