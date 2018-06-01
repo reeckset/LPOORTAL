@@ -40,7 +40,6 @@ public class SocketCommunicator implements Runnable {
 		this.clientSocket = clientSocket;
 		this.writer = new ObjectOutputStream(clientSocket.getOutputStream());
 		this.reader = new ObjectInputStream(clientSocket.getInputStream());
-		
 	}
 	
 	@Override

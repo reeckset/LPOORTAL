@@ -2,16 +2,9 @@ package controller.entities;
 
 import com.badlogic.gdx.physics.box2d.BodyDef;
 import com.badlogic.gdx.physics.box2d.World;
-import com.lpoortal.game.network.ClientToServerMsg;
-import com.lpoortal.game.network.NetworkManager;
-import com.lpoortal.game.network.PlayerClient;
-import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.GameController;
-import model.entities.CursorModel;
 import model.entities.EntityModel;
-import view.entities.CursorView;
-import view.entities.LevelScreen;
 
 public class CursorBody extends EntityBody {
 	
@@ -20,7 +13,6 @@ public class CursorBody extends EntityBody {
 	
 	private float lastX = 0;
 	private float lastY = 0;
-	
 	
 	/**
 	 * Cursor Body Constructor
