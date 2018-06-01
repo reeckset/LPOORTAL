@@ -1,13 +1,7 @@
 package controller;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
-
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
@@ -22,7 +16,6 @@ import com.lpoortal.game.LpoortalGame.CONTROLLER_STATE;
 import com.lpoortal.game.LpoortalGame.STATE;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
-import com.lpoortal.game.network.PlayerClient;
 import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.entities.CursorBody;
