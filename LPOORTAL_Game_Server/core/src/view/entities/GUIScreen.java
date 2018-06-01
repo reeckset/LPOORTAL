@@ -9,7 +9,6 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.utils.Align;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.lpoortal.game.LpoortalGame;
 
@@ -22,8 +21,11 @@ public abstract class GUIScreen extends ScreenAdapter {
     protected Color backgroundColor = new Color( 1, 1, 1, 1 );
     protected LpoortalGame game;
 
-    public GUIScreen(LpoortalGame game){
-    	this.game = game;
+    /**
+     * Creates a GUI Screen
+     */
+    public GUIScreen(){
+    	this.game = LpoortalGame.getInstance();
         this.textureManager = game.getTextureManager();
         Gdx.input.setInputProcessor(stage);
     }

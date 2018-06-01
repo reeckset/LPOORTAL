@@ -75,12 +75,10 @@ public class LevelScreen extends ScreenAdapter {
     private Sprite inkAmount;
 
     /**
-     * Creates this screen.
-     *
-     * @param game The game this screen belongs to
+     * Creates a Level screen.
      */
-    public LevelScreen(LpoortalGame game) {
-        this.game = game;
+    public LevelScreen() {
+        this.game = LpoortalGame.getInstance();
 
         loadAssets();
 
@@ -162,34 +160,34 @@ public class LevelScreen extends ScreenAdapter {
     private void drawEntities() {
         List<DrawnLineModel> lines = GameModel.getInstance().getDrawnLines();
         for (DrawnLineModel line : lines) {
-            EntityView view = new DrawnLineView(game);
+            EntityView view = new DrawnLineView();
             view.update(line);
             view.draw(game.getBatch());
         }
         
         List<InkJarModel> inkJars = GameModel.getInstance().getInkJars();
         for (InkJarModel model : inkJars) {
-            EntityView view = ViewFactory.makeView(game, model);
+            EntityView view = ViewFactory.makeView(model);
             view.update(model);
             view.draw(game.getBatch());
         }
 
 
         CursorModel cursorModel = GameModel.getInstance().getCursor();
-        EntityView view = ViewFactory.makeView(game, cursorModel);
+        EntityView view = ViewFactory.makeView(cursorModel);
         
 
         view.update(cursorModel);
         view.draw(game.getBatch());
         
         PortalModel portalModel = GameModel.getInstance().getPortal();
-        view = ViewFactory.makeView(game, portalModel);
+        view = ViewFactory.makeView(portalModel);
         
         view.update(portalModel);
         view.draw(game.getBatch());
         
         StickmanModel stickmanModel = GameModel.getInstance().getStickman();
-        view = ViewFactory.makeView(game, stickmanModel);
+        view = ViewFactory.makeView(stickmanModel);
         
         view.update(stickmanModel);
         view.draw(game.getBatch());

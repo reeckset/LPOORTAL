@@ -6,10 +6,8 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.lpoortal.game.LpoortalGame;
 
-import controller.entities.CursorBody;
 import model.entities.CursorModel;
 import model.entities.EntityModel;
-import model.entities.StickmanModel;
 
 public class CursorView extends EntityView {
 
@@ -20,22 +18,18 @@ public class CursorView extends EntityView {
 	/**
      * Constructs a cursor view.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      */
-    public CursorView(LpoortalGame game) {
-        super(game);
+    public CursorView() {
+        super();
     }
 
     /**
      * Creates a sprite representing this cursor.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      * @return the sprite representing this cursor
      */
-    public Sprite createSprite(LpoortalGame game) {
-        Texture texture = game.getTextureManager().getCursor();
+    public Sprite createSprite() {
+        Texture texture = LpoortalGame.getInstance().getTextureManager().getCursor();
 
         return new Sprite(texture);
     }

@@ -14,8 +14,11 @@ public class PlayerCustomizationController {
 	private boolean p1Ready = false;
 	private boolean p2Ready = false;
 	
-	public PlayerCustomizationController(LpoortalGame game) {
-		this.game = game;
+	/**
+	 * Creates a Player Customization Controller
+	 */
+	public PlayerCustomizationController() {
+		this.game = LpoortalGame.getInstance();
 		assignPlayerColors();
 	}
 	

@@ -1,25 +1,15 @@
 package view.entities;
 
-import static view.entities.LevelScreen.PIXEL_TO_METER;
-
-import java.io.File;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.utils.Align;
 import com.lpoortal.game.LpoortalGame;
 import com.lpoortal.game.LpoortalGame.CONTROLLER_STATE;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
-import com.lpoortal.game.network.ServerToClientMsg;
-import com.lpoortal.game.network.SocketCommunicator;
 
 import controller.PlayerCustomizationController;
 import model.entities.StickmanModel.Stickman_Animation;
@@ -44,9 +34,13 @@ public class PlayerCustomizationScreen extends GUIScreen {
 	
 	float time = 0f;
 	
-    public PlayerCustomizationScreen(LpoortalGame game) {
-        super(game);
-        controller = new PlayerCustomizationController(game);
+	
+	/**
+	 * Creates a Player Customization Screen
+	 */
+    public PlayerCustomizationScreen() {
+        super();
+        controller = new PlayerCustomizationController();
         createUI();
     }
     

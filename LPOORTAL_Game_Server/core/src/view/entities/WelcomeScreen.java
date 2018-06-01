@@ -21,10 +21,12 @@ public class WelcomeScreen extends GUIScreen {
 	SpriteDrawable tickDrawable;
 	SpriteDrawable crossDrawable;
 
-	
-    public WelcomeScreen(LpoortalGame game) {
-        super(game);
-        controller = new WelcomeController(game);
+	/**
+	 * Creates a Welcome Screen
+	 */
+    public WelcomeScreen() {
+        super();
+        controller = new WelcomeController(LpoortalGame.getInstance());
         createUI();
     }
     

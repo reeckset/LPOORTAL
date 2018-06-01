@@ -92,19 +92,19 @@ public class LpoortalGame extends Game {
 	public void setState(STATE state) {
 		switch(state) {
 		case WELCOME:
-			setScreen(new WelcomeScreen(this));
+			setScreen(new WelcomeScreen());
 			break;
 		case PLAYER_CUSTOMIZATION:
-			setScreen(new PlayerCustomizationScreen(this));
+			setScreen(new PlayerCustomizationScreen());
 			break;
 		case GAMEPLAY:
-			setScreen(new LevelScreen(this));
+			setScreen(new LevelScreen());
 			break;
 		case COUNTDOWN:
-			setScreen(new CountDownScreen(this));
+			setScreen(new CountDownScreen());
 			break;
 		case GAME_OVER:
-			setScreen(new GameOverScreen(this));
+			setScreen(new GameOverScreen());
 			break;
 		}
 		

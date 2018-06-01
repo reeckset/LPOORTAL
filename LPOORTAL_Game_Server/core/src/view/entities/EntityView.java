@@ -2,10 +2,8 @@ package view.entities;
 
 import static view.entities.LevelScreen.PIXEL_TO_METER;
 
-import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.lpoortal.game.LpoortalGame;
 
 import model.entities.EntityModel;
 
@@ -24,11 +22,9 @@ public abstract class EntityView {
     /**
      * Creates a view belonging to a game.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             asset manager to get textures.
      */
-    EntityView(LpoortalGame game) {
-        sprite = createSprite(game);
+    EntityView() {
+        sprite = createSprite();
     }
 
     /**
@@ -46,11 +42,9 @@ public abstract class EntityView {
      * implementation should extend this method to create their
      * own sprites.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             asset manager to get textures.
      * @return the sprite representing this view.
      */
-    public abstract Sprite createSprite(LpoortalGame game);
+    public abstract Sprite createSprite();
 
     /**
      * Updates this view based on a certain model.
