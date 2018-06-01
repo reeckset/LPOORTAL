@@ -3,22 +3,16 @@ package view.entities;
 import java.util.List;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Image;
-import com.badlogic.gdx.scenes.scene2d.utils.Drawable;
-import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.viewport.ExtendViewport;
 import com.lpoortal.game.LpoortalGame;
-import com.lpoortal.game.network.NetworkManager;
 
 import controller.GameController;
 import model.GameModel;
@@ -28,8 +22,6 @@ import model.entities.InkJarModel;
 import model.entities.PortalModel;
 import model.entities.StickmanModel;
 
-import static controller.GameController.LEVEL_HEIGHT;
-import static controller.GameController.LEVEL_WIDTH;
 
 public class LevelScreen extends ScreenAdapter {
     /**
@@ -217,9 +209,6 @@ public class LevelScreen extends ScreenAdapter {
     private void drawBackground() {
         Texture background = this.textureManager.getBackground();
         background.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-       /* game.getBatch().draw(background, 0, 0, 0, 0, 
-        				(int)(LEVEL_WIDTH / PIXEL_TO_METER),
-        				(int) (LEVEL_HEIGHT / PIXEL_TO_METER));*/
         
         Sprite s = new Sprite(background);
         s.setPosition(0,0);
