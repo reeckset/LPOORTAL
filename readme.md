@@ -46,5 +46,5 @@ To run and play the game, please go through the following steps (see screenshots
 ### (Next level)
 ![Alt text](Screenshots/screen_5.png?raw=true)
 
-## Game Over SCREENSHOTS
+## Game Over
 ![Alt text](Screenshots/screen_6.png?raw=true)
