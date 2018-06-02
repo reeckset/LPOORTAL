@@ -29,4 +29,6 @@ To run and play the game, please go through the following steps (screenshots for
   - To pass a level, the players must work together so **the stickman goes through the portal**. Each level will have the ink jars on different positions. To gain a point, the players have to pickup all ink jars before passing onto the next level.
   - The game **will end when the stickman touches the bottom edge of the screen**. If at any point the players get stuck due to the lack of ink, the stickman can always kill itself by jumping down to the bottom of the screen.
 
+# Game screenshots
+
 
