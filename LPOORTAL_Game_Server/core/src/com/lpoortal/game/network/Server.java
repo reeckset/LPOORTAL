@@ -9,7 +9,7 @@ import java.net.Socket;
 public class Server implements Runnable{
 
 	private ServerSocket socket;
-	private SocketCommunicator socketCommunicator;
+	private PlayerSocket socketCommunicator;
 	
 	public Server(ServerSocket socket) {
 		this.socket = socket;
@@ -22,7 +22,7 @@ public class Server implements Runnable{
 			while(true) {
 				Socket clientSocket = socket.accept();
 		        clientSocket.setTcpNoDelay(true);
-		        socketCommunicator = new SocketCommunicator(clientSocket);
+		        socketCommunicator = new PlayerSocket(clientSocket);
 		        NetworkManager.getInstance().addPlayerClient(socketCommunicator);
 		        new Thread(socketCommunicator).start();
 			}

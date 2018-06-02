@@ -16,7 +16,7 @@ import com.lpoortal.game.LpoortalGame.CONTROLLER_STATE;
 import com.lpoortal.game.LpoortalGame.STATE;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
-import com.lpoortal.game.network.SocketCommunicator;
+import com.lpoortal.game.network.PlayerSocket;
 
 import controller.entities.CursorBody;
 import controller.entities.DrawnLineBody;
@@ -112,8 +112,8 @@ public class GameController implements ContactListener {
     private List<DrawnLineBody> currentPreviewLines = new ArrayList<DrawnLineBody>();
     private List<InkJarBody> inkJars = new ArrayList<InkJarBody>();
     
-    SocketCommunicator player1;
-	SocketCommunicator player2;
+    PlayerSocket player1;
+	PlayerSocket player2;
 	
 	private int score = 0;
     
@@ -242,7 +242,7 @@ public class GameController implements ContactListener {
     private void applyClientInput() {
     	
     	ClientToServerMsg drawerPlayerMsg, stickmanPlayerMsg;
-    	SocketCommunicator stickmanPlayer;
+    	PlayerSocket stickmanPlayer;
     	
     	if(isPlayer1Drawer) {
     		drawerPlayerMsg = player1.getLastMessage();

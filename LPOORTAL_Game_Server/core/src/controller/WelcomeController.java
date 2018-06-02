@@ -3,7 +3,7 @@ package controller;
 import com.lpoortal.game.LpoortalGame;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.ServerToClientMsg;
-import com.lpoortal.game.network.SocketCommunicator;
+import com.lpoortal.game.network.PlayerSocket;
 
 public class WelcomeController {
 	
@@ -42,8 +42,8 @@ public class WelcomeController {
 	 */
 	public void nextState() {
 		
-		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
-		SocketCommunicator p2 = NetworkManager.getInstance().getPlayer2();
+		PlayerSocket p1 = NetworkManager.getInstance().getPlayer1();
+		PlayerSocket p2 = NetworkManager.getInstance().getPlayer2();
 		
 		p1.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
 		p2.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
@@ -57,7 +57,7 @@ public class WelcomeController {
 	 * 
 	 * @return player 1 SocketCommunicator
 	 */
-	public SocketCommunicator getPlayer1() {
+	public PlayerSocket getPlayer1() {
 		return NetworkManager.getInstance().getPlayer1();
 	}
 
@@ -65,7 +65,7 @@ public class WelcomeController {
 	 * 
 	 * @return player 2 SocketCommunicator
 	 */
-	public SocketCommunicator getPlayer2() {
+	public PlayerSocket getPlayer2() {
 		return NetworkManager.getInstance().getPlayer2();
 	}
 	

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"com.lpoortal.game"},{"l":"com.lpoortal.game.network"},{"l":"controller"},{"l":"controller.entities"},{"l":"model"},{"l":"model.entities"},{"l":"utilities"},{"l":"view.entities"}]

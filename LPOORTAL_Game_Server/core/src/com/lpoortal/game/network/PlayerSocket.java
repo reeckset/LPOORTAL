@@ -11,7 +11,7 @@ import com.lpoortal.game.LpoortalGame;
 import view.entities.StickmanVisualDetails.Stickman_Skin;
 import view.entities.TextureManager;
 
-public class SocketCommunicator implements Runnable {
+public class PlayerSocket implements Runnable {
 
 	private Socket clientSocket;
 	ClientToServerMsg lastReceivedMessage;
@@ -31,7 +31,7 @@ public class SocketCommunicator implements Runnable {
 	 * @param clientSocket the socket to communicate with the client
 	 * @throws IOException
 	 */
-	public SocketCommunicator(Socket clientSocket) throws IOException {
+	public PlayerSocket(Socket clientSocket) throws IOException {
 		this.clientSocket = clientSocket;
 		this.writer = new ObjectOutputStream(clientSocket.getOutputStream());
 		this.reader = new ObjectInputStream(clientSocket.getInputStream());

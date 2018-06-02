@@ -5,7 +5,7 @@ import com.lpoortal.game.LpoortalGame.CONTROLLER_STATE;
 import com.lpoortal.game.network.ClientToServerMsg;
 import com.lpoortal.game.network.NetworkManager;
 import com.lpoortal.game.network.ServerToClientMsg;
-import com.lpoortal.game.network.SocketCommunicator;
+import com.lpoortal.game.network.PlayerSocket;
 
 public class PlayerCustomizationController {
 
@@ -32,8 +32,8 @@ public class PlayerCustomizationController {
 	 */
 	public void nextState() {
 		
-		SocketCommunicator p1 = NetworkManager.getInstance().getPlayer1();
-		SocketCommunicator p2 = NetworkManager.getInstance().getPlayer2();
+		PlayerSocket p1 = NetworkManager.getInstance().getPlayer1();
+		PlayerSocket p2 = NetworkManager.getInstance().getPlayer2();
 		
 		String p2Color = p2.getLastMessage().playerColor;
 		String p1Color = p1.getLastMessage().playerColor;
@@ -80,7 +80,7 @@ public class PlayerCustomizationController {
 	 * 
 	 * @return player 1 SocketCommunicator
 	 */
-	public SocketCommunicator getPlayer1() {
+	public PlayerSocket getPlayer1() {
 		return NetworkManager.getInstance().getPlayer1();
 	}
 
@@ -88,7 +88,7 @@ public class PlayerCustomizationController {
 	 * 
 	 * @return player 2 SocketCommunicator
 	 */
-	public SocketCommunicator getPlayer2() {
+	public PlayerSocket getPlayer2() {
 		return NetworkManager.getInstance().getPlayer2();
 	}
 

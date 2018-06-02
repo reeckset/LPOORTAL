@@ -1,0 +1,8 @@
+com.lpoortal.game
+com.lpoortal.game.network
+controller
+controller.entities
+model
+model.entities
+utilities
+view.entities

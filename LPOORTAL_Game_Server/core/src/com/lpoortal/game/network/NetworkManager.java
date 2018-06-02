@@ -21,8 +21,8 @@ public class NetworkManager{
 	
 	public static NetworkManager instance;
 	
-	SocketCommunicator player1Communicator;
-	SocketCommunicator player2Communicator;
+	PlayerSocket player1Communicator;
+	PlayerSocket player2Communicator;
 	
 	
 
@@ -56,7 +56,7 @@ public class NetworkManager{
 	 * Creates the communicator for the respective player
 	 * @param playerCommunicator the player SocketCommunicator
 	 */
-	public void addPlayerClient(SocketCommunicator playerCommunicator) {
+	public void addPlayerClient(PlayerSocket playerCommunicator) {
 		if(!isPlayer1Connected()) {
 			this.player1Communicator = playerCommunicator;
 			System.out.println("Player 1 connected");
@@ -70,7 +70,7 @@ public class NetworkManager{
 	 * 
 	 * @return player 1 communicator
 	 */
-	public SocketCommunicator getPlayer1() {
+	public PlayerSocket getPlayer1() {
 		return player1Communicator;
 	}
 	
@@ -78,7 +78,7 @@ public class NetworkManager{
 	 * 
 	 * @return player 2 communicator
 	 */
-	public SocketCommunicator getPlayer2() {
+	public PlayerSocket getPlayer2() {
 		return player2Communicator;
 	}
    
