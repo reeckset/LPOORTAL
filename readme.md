@@ -19,7 +19,7 @@ After downloading both of the files, you should install the **.apk** on the andr
 
 # Run and play the game
 
-To run and play the game, please go through the following steps (screenshots for each step are available below):
+To run and play the game, please go through the following steps (see screenshots below):
   - Make sure the android devices and the desktop are all on the same LAN (Local Area Network).
   - Launch the **.jar** file on the desktop and a window will appear. There, you will see the instructions for the gameplay itself and a gamecode for you to insert on each of the client devices' installed app.
   - **After both clients have connected**, the game (shown on the desktop window) will move on to a **player customization screen**, where each of the players/clients **can change their color** (beware as the player colors must be different or the game will not move on to the actual gameplay), **their name** and **the skin for their character** respectively.
@@ -31,4 +31,19 @@ To run and play the game, please go through the following steps (screenshots for
 
 # Game screenshots
 
+## Welcome Screen
+![Alt text](Screenshots/screen1.jpg?raw=true)
 
+## Player Customization Screen
+![Alt text](Screenshots/screen2.jpg?raw=true)
+
+## Level Transition Screen
+![Alt text](Screenshots/screen3.jpg?raw=true)
+
+## Level Screen
+![Alt text](Screenshots/screen4.jpg?raw=true)
+
+![Alt text](Screenshots/screen5.jpg?raw=true)
+
+## Game Over SCREENSHOTS
+![Alt text](Screenshots/screen6.jpg?raw=true)
