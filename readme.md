@@ -32,18 +32,18 @@ To run and play the game, please go through the following steps (see screenshots
 # Game screenshots
 
 ## Welcome Screen
-![Alt text](Screenshots/screen1.jpg?raw=true)
+![Alt text](Screenshots/screen_1.png?raw=true)
 
 ## Player Customization Screen
-![Alt text](Screenshots/screen2.jpg?raw=true)
+![Alt text](Screenshots/screen_2.png?raw=true)
 
 ## Level Transition Screen
-![Alt text](Screenshots/screen3.jpg?raw=true)
+![Alt text](Screenshots/screen_3.png?raw=true)
 
 ## Level Screen
-![Alt text](Screenshots/screen4.jpg?raw=true)
+![Alt text](Screenshots/screen_4.png?raw=true)
 
-![Alt text](Screenshots/screen5.jpg?raw=true)
+![Alt text](Screenshots/screen_5.png?raw=true)
 
 ## Game Over SCREENSHOTS
-![Alt text](Screenshots/screen6.jpg?raw=true)
+![Alt text](Screenshots/screen_6.png?raw=true)
