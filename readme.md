@@ -43,6 +43,7 @@ To run and play the game, please go through the following steps (see screenshots
 ## Level Screen
 ![Alt text](Screenshots/screen_4.png?raw=true)
 
+### (Next level)
 ![Alt text](Screenshots/screen_5.png?raw=true)
 
 ## Game Over SCREENSHOTS
