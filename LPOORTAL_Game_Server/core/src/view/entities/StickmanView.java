@@ -3,7 +3,9 @@ package view.entities;
 import static view.entities.LevelScreen.PIXEL_TO_METER;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.lpoortal.game.LpoortalGame;
 
@@ -58,6 +60,9 @@ public class StickmanView extends EntityView {
 	
 	private Sprite skinSprite;
 	private Stickman_Skin skin;
+	private String name;
+	
+	private BitmapFont font;
     
     
     /**
@@ -71,7 +76,9 @@ public class StickmanView extends EntityView {
         this.game = game;
         stickmanState = stickmanState.IDLE;
         stickmanFacingDirection = stickmanFacingDirection.RIGHT;
-        
+        font = new BitmapFont(Gdx.files.internal("purisa.fnt"));
+        font.setColor(Color.BLACK);
+        font.getData().setScale(0.5f);
     }
 
     /**
@@ -116,6 +123,7 @@ public class StickmanView extends EntityView {
         }
         
         this.skin = ((StickmanModel)model).getSkin();
+        this.name = ((StickmanModel)model).getName();
         
         								
     }
@@ -139,9 +147,13 @@ public class StickmanView extends EntityView {
         sprite.draw(batch);
         
         if(skinSprite != null) {
-        skinSprite.setRegion(game.getTextureManager().getStickmanSkinAnimation(stickmanState, stickmanFacingDirection, skin).getKeyFrame(stateTime, true));
-        skinSprite.setCenter(x / PIXEL_TO_METER, y / PIXEL_TO_METER);
-        skinSprite.draw(batch);
+	        skinSprite.setRegion(game.getTextureManager().getStickmanSkinAnimation(stickmanState, stickmanFacingDirection, skin).getKeyFrame(stateTime, true));
+	        skinSprite.setCenter(x / PIXEL_TO_METER, y / PIXEL_TO_METER);
+	        skinSprite.draw(batch);
+        }
+        
+        if(name != null) {
+        	font.draw(batch, this.name, x / PIXEL_TO_METER, (y + StickmanBody.HEIGHT) / PIXEL_TO_METER, 1f, 1, false);
         }
     }
 

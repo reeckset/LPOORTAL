@@ -16,6 +16,7 @@ public class StickmanModel extends EntityModel {
 	
 	private Color color;
 	private Stickman_Skin skin;
+	private String name;
 
 	/**
 	 * 
@@ -118,6 +119,22 @@ public class StickmanModel extends EntityModel {
 	 */
 	public void setSkin(Stickman_Skin skin) {
 		this.skin = skin;
+	}
+	
+	/**
+	 * 
+	 * @param name - the stickman name
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	/**
+	 * 
+	 * @return the stickman name
+	 */
+	public String getName() {
+		return name;
 	}
 	
 	

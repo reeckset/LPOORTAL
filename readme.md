@@ -1,3 +1,5 @@
+#TODO PLACE LINKS FOR THE FILES ON THE INSTRUCTIONS SETTINGS AND PLACE SCREENSHOTS ON THE SCREENSHOTS SETTINGS
+
 # LPOORTAL
 A 2-player Co-Op based game for desktop with android smartphones as controllers!
 
@@ -6,75 +8,25 @@ Final Project made for the unit course of *Laboratory of Object Oriented Program
   - Angelo Teixeira - up201606516 - up201606516@fe.up.pt
   - Henrique Lima - up201606525 - up201606525@fe.up.pt
 
-# Game Mockups
 
-The game will have three main screens, as presented below.
+# Installation Instructions
 
-## Welcome Screen
+The game needs two executable files:
+  - one **.jar** to run the **desktop** server and display the actual game
+  - one **.apk** that should be installed on **two android devices** that have **accelerometer** and **gyroscope** support
 
-![Alt text](Mockups/screen0.jpg?raw=true)
+After downloading both of the files, you should install the **.apk** on the android devices and move the **.jar** onto the machine you will be using as desktop. You should also have java run-time environment installed on that machine.
 
-## Player Customization Screen
-![Alt text](Mockups/screen1.jpg?raw=true)
+# Run and play the game
 
-## Level Screen
-![Alt text](Mockups/screen2.jpg?raw=true)
+To run and play the game, please go through the following steps (screenshots for each step are available below):
+  - Make sure the android devices and the desktop are all on the same LAN (Local Area Network).
+  - Launch the **.jar** file on the desktop and a window will appear. There, you will see the instructions for the gameplay itself and a gamecode for you to insert on each of the client devices' installed app.
+  - **After both clients have connected**, the game (shown on the desktop window) will move on to a **player customization screen**, where each of the players/clients **can change their color** (beware as the player colors must be different or the game will not move on to the actual gameplay), **their name** and **the skin for their character** respectively.
+  - When a player has finished customizing their character, they can now **press the "ready" tile**, so the game knows it can move on to the next stage.
+  - When both players are ready, the desktop application generates a level and picks a player for **drawing** and another one for **controlling the stickman on screen**. The stickman will be colored and have the skin according to the choices on the previous stage, so each player can identify their job with ease.
+  - The **drawer** can now control the pen by tilting their phone and pointing it directly at the screen (note that it can be calibrated at any point by dragging it against the borders of the window). The pen has a certain **amount of ink** that will decrease proportionally to the length of the lines drawn. To gain ink, the **stickman must pick up ink jars**. You can see how much ink you have left by looking at the bar on the left of the screen (the bar will have the color of the drawer).
+  - To pass a level, the players must work together so **the stickman goes through the portal**. Each level will have the ink jars on different positions. To gain a point, the players have to pickup all ink jars before passing onto the next level.
+  - The game **will end when the stickman touches the bottom edge of the screen**. If at any point the players get stuck due to the lack of ink, the stickman can always kill itself by jumping down to the bottom of the screen.
 
-![Alt text](Mockups/screen3.jpg?raw=true)
-
-## Gyroscope Controller Explanation
-![Alt text](Mockups/screen4.jpg?raw=true)
-
-# Architecture Design
-
-## Design Patterns
-
-**MVC - Model View Controller** Used to separate the concerns of the state of the elements (Model), their evolution over time (Controller) and their representation to the user (View)
-
-**Singleton** on the LpoortalGame (Main Game Class), GameModel, GameView, GameController and NetworkManager classes, because at every moment, there will only be one instance of them, and therefore, can be accessed more easily.
-
-**Observer** On the controller, the GameController itself will be a listener (ContactListener) for collisions of the physical world (Embedded in the LibGDX library)
-
-**Flyweight** Used in the View Package (Desktop) [ViewFactory class] to keep a cache of views being used, and allow for their reutilization
-
-**State** Both desktop and mobile apps will have a state, that can be changed based on received events (i.e. when the server sends the message to the client so that it changes from PlayerCustomization State to Playing State (Drawing/Moving controller))
-
-
-
-Desktop
-======
-
-## Packages Diagram
-![Alt text](UMLDiagrams/Lpoortal_Server_PackageDiagram.png?raw=true)
-
-## Model Diagram
-![Alt text](UMLDiagrams/Lpoortal_Server_ModelDiagram.png?raw=true)
-
-## View Diagram
-![Alt text](UMLDiagrams/Lpoortal_Server_ViewDiagram.png?raw=true)
-
-## Controller Diagram
-![Alt text](UMLDiagrams/Lpoortal_Server_ControllerDiagram.png?raw=true)
-
-## Network Diagram
-![Alt text](UMLDiagrams/Lpoortal_Server_NetworkDiagram.png?raw=true)
-
-Mobile
-======
-
-## Class Diagram
-![Alt text](UMLDiagrams/Lpoortal_Client_Diagram.png?raw=true)
-
-
-# Test Design
-
-To test the game, we will focus on the Models, as well as the network packages.
-
-We can test if the stickman moves to the desired position, if he doesn't walk out of the map, and if he collides with the lines/obstacles. We can also test if the level progresses after we crosses the portal
-
-We can also test the drawings, by giving a start and end position, and testing the actual line that is produced.
-
-To test the cursor, we can check that it moves according to the given parameters, and that it stays within bounds.
-
-To test the network package, we can send malformed packets and assure that it deals correctly with them.
 

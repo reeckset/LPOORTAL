@@ -38,6 +38,9 @@ public class PlayerCustomizationController {
 		String p2Skin = p2.getLastMessage().playerSkin;
 		String p1Skin = p1.getLastMessage().playerSkin;
 		
+		String p2Name = p2.getLastMessage().playerName;
+		String p1Name = p1.getLastMessage().playerName;
+		
 		if (p1Color.equals(p2Color)){
 			p1.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
 			p2.changeState(LpoortalGame.CONTROLLER_STATE.PLAYER_CUSTOMIZATION_STATE);
@@ -55,6 +58,9 @@ public class PlayerCustomizationController {
 			
 			p1.setSkin(p1Skin);
 			p2.setSkin(p2Skin);
+			
+			p1.setName(p1Name);
+			p2.setName(p2Name);
 			
 			p1Ready = false;
 			p2Ready = false;

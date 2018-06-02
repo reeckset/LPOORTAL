@@ -108,5 +108,16 @@ public class StickmanTest {
 		
 		assertEquals(ModelType.STICKMAN, stickman.getType());
 	}
+	
+	@Test
+	public void nameTest() {
+		StickmanModel stickman = new StickmanModel(0, 0);
+		
+		String testName = "TestName";
+		
+		stickman.setName(testName);
+		
+		assertEquals(testName, stickman.getName());
+	}
 
 }

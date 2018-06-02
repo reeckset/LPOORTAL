@@ -551,12 +551,14 @@ public class GameController implements ContactListener {
 		if(isPlayer1Drawer) {
 			((CursorModel)cursorBody.getUserData()).setColor(player1.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setColor(player2.getColor());
+			((StickmanModel)stickmanBody.getUserData()).setName(player2.getName());
 			((StickmanModel)stickmanBody.getUserData()).setSkin(player2.getSkin());
 			((PortalModel)portalBody.getUserData()).setColor(player1.getColor());
 			GameModel.getInstance().setDrawerColor(player1.getColor());
 		}else {
 			((CursorModel)cursorBody.getUserData()).setColor(player2.getColor());
 			((StickmanModel)stickmanBody.getUserData()).setColor(player1.getColor());
+			((StickmanModel)stickmanBody.getUserData()).setName(player1.getName());
 			((StickmanModel)stickmanBody.getUserData()).setSkin(player1.getSkin());
 			((PortalModel)portalBody.getUserData()).setColor(player2.getColor());
 			GameModel.getInstance().setDrawerColor(player2.getColor());

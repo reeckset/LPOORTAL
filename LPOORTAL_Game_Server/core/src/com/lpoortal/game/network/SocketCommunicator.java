@@ -1,17 +1,11 @@
 package com.lpoortal.game.network;
 
-import java.io.BufferedReader;
-import java.io.DataInputStream;
-import java.io.EOFException;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.PrintWriter;
 import java.net.Socket;
 
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.utils.Disposable;
 import com.lpoortal.game.LpoortalGame;
 
 import view.entities.StickmanVisualDetails.Stickman_Skin;
@@ -27,6 +21,7 @@ public class SocketCommunicator implements Runnable {
 	
 	private Color color;
 	private Stickman_Skin skin;
+	private String name;
 
 	private static final long READ_FREQUENCY_MILLIS = 100;
 	private long lastReadAttemptMillis = 0;
@@ -160,7 +155,27 @@ public class SocketCommunicator implements Runnable {
 		this.skin = Stickman_Skin.valueOf(skin);
 	}
 
+	/**
+	 * 
+	 * @return the timestamp of the last received message
+	 */
 	public long getLastMsgTimestamp() {
 		return this.lastMessageTimestamp;
+	}
+
+	/**
+	 * Sets the name to the specified one
+	 * @param name name in string format
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	/**
+	 * 
+	 * @return the name of the player
+	 */
+	public String getName() {
+		return this.name;
 	}
 }
