@@ -23,6 +23,10 @@ public class Client implements Disposable, Runnable {
 
     private boolean isRunning = true;
 
+    /**
+     * Starts the client, connecting to the server socket
+     * @param ip connection ip address
+     */
     public Client(String ip) {
         try {
             socket = new Socket();
@@ -44,6 +48,10 @@ public class Client implements Disposable, Runnable {
         }
     }
 
+    /**
+     * Sends specified message to Server
+     * @param msg message to send
+     */
     public void sendMessage(ClientToServerMsg msg){
         if(msg != null && output != null){
             try {
@@ -56,6 +64,10 @@ public class Client implements Disposable, Runnable {
         }
     }
 
+    /**
+     * Reads the latest available message, if there is one, or waits for one
+     * @return read message
+     */
     public ServerToClientMsg readMessage() {
         while(input != null) {
             try {
@@ -86,6 +98,10 @@ public class Client implements Disposable, Runnable {
         }
     }
 
+    /**
+     * Sets the next message to be sent
+     * @param nextSendingMessage Messsage to send
+     */
     public void setNextSendingMessage(ClientToServerMsg nextSendingMessage){
         this.nextSendingMessage = nextSendingMessage;
     }

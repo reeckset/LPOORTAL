@@ -1,12 +1,8 @@
 package view.entities;
 
-import javax.swing.GroupLayout.Alignment;
-
-import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.scenes.scene2d.ui.Image;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
-import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
 import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 import com.badlogic.gdx.utils.Align;
 import com.lpoortal.game.LpoortalGame;
@@ -25,10 +21,12 @@ public class WelcomeScreen extends GUIScreen {
 	SpriteDrawable tickDrawable;
 	SpriteDrawable crossDrawable;
 
-	
-    public WelcomeScreen(LpoortalGame game) {
-        super(game);
-        controller = new WelcomeController(game);
+	/**
+	 * Creates a Welcome Screen
+	 */
+    public WelcomeScreen() {
+        super();
+        controller = new WelcomeController(LpoortalGame.getInstance());
         createUI();
     }
     

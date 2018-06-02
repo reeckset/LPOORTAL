@@ -7,12 +7,9 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.ui.Label;
 import com.badlogic.gdx.scenes.scene2d.ui.Label.LabelStyle;
-import com.badlogic.gdx.scenes.scene2d.ui.TextField;
-import com.badlogic.gdx.scenes.scene2d.utils.SpriteDrawable;
 
 import utilities.Pair;
 import view.entities.StickmanVisualDetails.Stickman_Skin;
@@ -33,6 +30,9 @@ public class TextureManager {
     
     private Animation<TextureRegion> portal;
 	
+    /**
+     * Creates a Texture Manager for game texture/assets management
+     */
 	public TextureManager(){
 		stickmanAnimations = new HashMap<Pair<Stickman_Animation,Stickman_Facing_Direction>, Animation<TextureRegion>>();
 		stickmanSkinAnimations = new HashMap<StickmanVisualDetails, Animation<TextureRegion>>();
@@ -58,7 +58,6 @@ public class TextureManager {
 	}
 
 	private void populateAnimations() {
-		//TODO THIS CAN BE REFACTORED SO THAT THE addPlayerAnimation FUNCTION ADDS THE ANIMATION FOR EACH SKIN
 		
 		addPlayerAnimation("Idle.png", Stickman_Animation.IDLE, 4f/30f);
 		addPlayerAnimation("Lift_Off.png", Stickman_Animation.LIFT_OFF, 2f/30f);
@@ -332,10 +331,18 @@ public class TextureManager {
     	return inkJar;
     }
     
+    /**
+     * 
+     * @return the countdown screen background texture
+     */
     public Texture getCountdownBackground() {
     	return backgroundCountdown;
     }
     
+    /**
+     * 
+     * @return the ink level bar texture
+     */
     public Texture getInkBar() {
     	return inkBar;
     }

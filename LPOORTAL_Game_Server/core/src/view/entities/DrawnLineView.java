@@ -14,22 +14,18 @@ public class DrawnLineView extends EntityView {
 	/**
      * Constructs a drawn line view.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      */
-    public DrawnLineView(LpoortalGame game) {
-        super(game);
+    public DrawnLineView() {
+        super();
     }
 
     /**
      * Creates a sprite representing this cursor.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      * @return the sprite representing this cursor
      */
-    public Sprite createSprite(LpoortalGame game) {
-        Texture texture = game.getTextureManager().getLinePreview();
+    public Sprite createSprite() {
+        Texture texture = LpoortalGame.getInstance().getTextureManager().getLinePreview();
         return new Sprite(texture, texture.getWidth(), texture.getHeight());
     }
     
@@ -40,7 +36,7 @@ public class DrawnLineView extends EntityView {
     		this.sprite = new Sprite(LpoortalGame.getInstance().getTextureManager().getLineTexture());
     	}
         sprite.setCenter(line.getX() / PIXEL_TO_METER, line.getY() / PIXEL_TO_METER);
-        sprite.setScale(line.getLength() / PIXEL_TO_METER / this.sprite.getWidth(), line.THICKNESS / PIXEL_TO_METER / this.sprite.getHeight());
+        sprite.setScale(line.getLength() / PIXEL_TO_METER / this.sprite.getWidth(), DrawnLineModel.THICKNESS / PIXEL_TO_METER / this.sprite.getHeight());
         sprite.setRotation((float) (line.getAngle()*180/Math.PI));
     }
 

@@ -34,10 +34,18 @@ public class StateController implements Runnable {
         }
     }
 
+    /**
+     *
+     * @return next state
+     */
     public LPOORTAL_Game.State getNextState() {
         return nextState;
     }
 
+    /**
+     *
+     * @return this instance
+     */
     public static StateController getInstance(){
         if(instance == null){
             StateController.instance = new StateController();
@@ -45,6 +53,10 @@ public class StateController implements Runnable {
         return instance;
     }
 
+    /**
+     * Sets the next state
+     * @param nextState state to be set on state update
+     */
     public void setNextState(LPOORTAL_Game.State nextState) {
         this.nextState = nextState;
     }

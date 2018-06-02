@@ -37,14 +37,12 @@ public class PortalView extends EntityView {
     
     
     /**
-     * Constructs a portal model.
+     * Constructs a portal view.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      */
-    public PortalView(LpoortalGame game) {
-    	super(game);
-        this.game = game;     
+    public PortalView() {
+    	super();
+        this.game = LpoortalGame.getInstance();     
     }
 
     /**
@@ -55,7 +53,7 @@ public class PortalView extends EntityView {
      * @return the sprite representing this portal
      */
     @Override
-    public Sprite createSprite(LpoortalGame game) {
+    public Sprite createSprite() {
         
         Sprite sprite = new Sprite(game.getTextureManager().getPortalAnimation()
         					  .getKeyFrame(stateTime));

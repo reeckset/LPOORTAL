@@ -6,6 +6,10 @@ public class MessageManager {
     private Client client;
     private Thread clientThread;
 
+    /**
+     *
+     * @return this manager instance
+     */
     public static MessageManager getInstance() {
         if (instance == null)
             MessageManager.instance = new MessageManager();
@@ -16,6 +20,10 @@ public class MessageManager {
         instance = this;
     }
 
+    /**
+     * Starts the manager with specified ip
+     * @param ip game server address
+     */
     public void start(String ip){
         if(this.clientThread != null) {
             try {
@@ -29,6 +37,10 @@ public class MessageManager {
         clientThread.start();
     }
 
+    /**
+     *
+     * @return client
+     */
     public Client getClient() {
         return client;
     }

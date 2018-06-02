@@ -66,14 +66,12 @@ public class StickmanView extends EntityView {
     
     
     /**
-     * Constructs a stickman model.
+     * Constructs a stickman view.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      */
-    public StickmanView(LpoortalGame game) {
-    	super(game);
-        this.game = game;
+    public StickmanView() {
+    	super();
+        this.game = LpoortalGame.getInstance();
         stickmanState = stickmanState.IDLE;
         stickmanFacingDirection = stickmanFacingDirection.RIGHT;
         font = new BitmapFont(Gdx.files.internal("purisa.fnt"));
@@ -89,7 +87,7 @@ public class StickmanView extends EntityView {
      * @return the sprite representing this stickman
      */
     @Override
-    public Sprite createSprite(LpoortalGame game) {
+    public Sprite createSprite() {
         
         Sprite sprite = new Sprite(game.getTextureManager()
         					  .getStickmanAnimation(Stickman_Animation.IDLE, stickmanFacingDirection.RIGHT)

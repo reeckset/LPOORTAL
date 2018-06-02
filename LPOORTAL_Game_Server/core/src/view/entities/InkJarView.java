@@ -1,17 +1,12 @@
 package view.entities;
 
-import static view.entities.LevelScreen.PIXEL_TO_METER;
-
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.lpoortal.game.LpoortalGame;
 
 import controller.GameController;
 import controller.entities.InkJarBody;
-import controller.entities.PortalBody;
 import model.entities.EntityModel;
-import model.entities.InkJarModel;
 
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
@@ -31,23 +26,19 @@ public class InkJarView extends EntityView {
     /**
      * Constructs an ink jar model.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      */
-    public InkJarView(LpoortalGame game) {
-    	super(game);
-        this.game = game;     
+    public InkJarView() {
+    	super();
+        this.game = LpoortalGame.getInstance();     
     }
 
     /**
      * Creates a sprite representing this ink jar.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      * @return the sprite representing this portal
      */
     @Override
-    public Sprite createSprite(LpoortalGame game) {
+    public Sprite createSprite() {
         
         Sprite sprite = new Sprite(game.getTextureManager().getInkJar());
         sprite.setSize(InkJarBody.WIDTH / LevelScreen.PIXEL_TO_METER,
@@ -57,7 +48,7 @@ public class InkJarView extends EntityView {
     
 
     /**
-     * Updates this ink jar model.
+     * Updates this ink jar view.
      *
      * @param model the model used to update this view
      */

@@ -10,8 +10,8 @@ public class GameOverController {
 	private LpoortalGame game;
 	private int finalScore;
 	
-	public GameOverController(LpoortalGame game) {
-		this.game = game;
+	public GameOverController() {
+		this.game = LpoortalGame.getInstance();
 		this.finalScore = GameController.getInstance().getScore();
 		NetworkManager.getInstance().getPlayer1().changeState(LpoortalGame.CONTROLLER_STATE.GAME_OVER_STATE);
 		NetworkManager.getInstance().getPlayer2().changeState(LpoortalGame.CONTROLLER_STATE.GAME_OVER_STATE);
