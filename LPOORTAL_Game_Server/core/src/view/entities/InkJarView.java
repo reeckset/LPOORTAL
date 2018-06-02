@@ -14,11 +14,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
  * A view representing a portal
  */
 public class InkJarView extends EntityView {
-    
-    /**
-     * game object this portal view corresponds to
-     **/
-	private LpoortalGame game;
 	
 	private Color color;
     
@@ -29,7 +24,6 @@ public class InkJarView extends EntityView {
      */
     public InkJarView() {
     	super();
-        this.game = LpoortalGame.getInstance();     
     }
 
     /**
@@ -40,7 +34,7 @@ public class InkJarView extends EntityView {
     @Override
     public Sprite createSprite() {
         
-        Sprite sprite = new Sprite(game.getTextureManager().getInkJar());
+        Sprite sprite = new Sprite(LpoortalGame.getInstance().getTextureManager().getInkJar());
         sprite.setSize(InkJarBody.WIDTH / LevelScreen.PIXEL_TO_METER,
         		InkJarBody.HEIGHT / LevelScreen.PIXEL_TO_METER);
         return sprite;

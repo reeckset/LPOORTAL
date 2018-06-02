@@ -366,10 +366,8 @@ public class GameController implements ContactListener {
 
 
     /**
-     * Makes the stickman jump. The acceleration takes into consideration the
-     * constant acceleration force and the delta for this simulation step.
+     * Makes the stickman jump
      *
-     * @param delta Duration of the rotation in seconds.
      */
     public void jump() {
     	if(!( ((StickmanModel)stickmanBody.getUserData()).isJumping())) {

@@ -24,11 +24,6 @@ public class PortalView extends EntityView {
      */
     private float stateTime = 0;
     
-    /**
-     * game object this portal view corresponds to
-     **/
-	private LpoortalGame game;
-	
 	private Color color;
 	
 	private int WIDTH = 150;
@@ -41,21 +36,18 @@ public class PortalView extends EntityView {
      *
      */
     public PortalView() {
-    	super();
-        this.game = LpoortalGame.getInstance();     
+    	super();   
     }
 
     /**
      * Creates a sprite representing this portal.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      * @return the sprite representing this portal
      */
     @Override
     public Sprite createSprite() {
         
-        Sprite sprite = new Sprite(game.getTextureManager().getPortalAnimation()
+        Sprite sprite = new Sprite(LpoortalGame.getInstance().getTextureManager().getPortalAnimation()
         					  .getKeyFrame(stateTime));
         sprite.setSize(PortalBody.WIDTH / LevelScreen.PIXEL_TO_METER,
         					  PortalBody.HEIGHT / LevelScreen.PIXEL_TO_METER);
@@ -86,7 +78,7 @@ public class PortalView extends EntityView {
     public void draw(SpriteBatch batch) {
         stateTime += Gdx.graphics.getDeltaTime();
 
-        sprite.setRegion(game.getTextureManager().getPortalAnimation().getKeyFrame(stateTime, true));
+        sprite.setRegion(LpoortalGame.getInstance().getTextureManager().getPortalAnimation().getKeyFrame(stateTime, true));
         sprite.setColor(color); 
         sprite.draw(batch);
     }

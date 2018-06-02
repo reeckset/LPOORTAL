@@ -50,11 +50,6 @@ public class StickmanView extends EntityView {
      * Stickman y position
      */
     private float y;
-
-    /**
-     * game object this stickman view corresponds to
-     **/
-	private LpoortalGame game;
 	
 	private Color color;
 	
@@ -71,7 +66,6 @@ public class StickmanView extends EntityView {
      */
     public StickmanView() {
     	super();
-        this.game = LpoortalGame.getInstance();
         stickmanState = stickmanState.IDLE;
         stickmanFacingDirection = stickmanFacingDirection.RIGHT;
         font = new BitmapFont(Gdx.files.internal("purisa.fnt"));
@@ -82,14 +76,12 @@ public class StickmanView extends EntityView {
     /**
      * Creates a sprite representing this stickman.
      *
-     * @param game the game this view belongs to. Needed to access the
-     *             texture manager to get textures.
      * @return the sprite representing this stickman
      */
     @Override
     public Sprite createSprite() {
         
-        Sprite sprite = new Sprite(game.getTextureManager()
+        Sprite sprite = new Sprite(LpoortalGame.getInstance().getTextureManager()
         					  .getStickmanAnimation(Stickman_Animation.IDLE, stickmanFacingDirection.RIGHT)
         					  .getKeyFrame(stateTime));
         sprite.setSize(StickmanBody.WIDTH / LevelScreen.PIXEL_TO_METER,
@@ -115,7 +107,7 @@ public class StickmanView extends EntityView {
         this.color = ((StickmanModel)model).getColor();
         
         if(this.skinSprite == null) {
-        	this.skinSprite = new Sprite(game.getTextureManager().getStickmanSkinAnimation(
+        	this.skinSprite = new Sprite(LpoortalGame.getInstance().getTextureManager().getStickmanSkinAnimation(
         			stickmanState, stickmanFacingDirection, ((StickmanModel)model).getSkin())
         			.getKeyFrame(stateTime)) ;
         }
@@ -137,7 +129,7 @@ public class StickmanView extends EntityView {
     public void draw(SpriteBatch batch) {
         stateTime += Gdx.graphics.getDeltaTime();
 
-        sprite.setRegion(game.getTextureManager().getStickmanAnimation(
+        sprite.setRegion(LpoortalGame.getInstance().getTextureManager().getStickmanAnimation(
 						stickmanState, 
 						stickmanFacingDirection).getKeyFrame(stateTime, true));
 
@@ -145,7 +137,7 @@ public class StickmanView extends EntityView {
         sprite.draw(batch);
         
         if(skinSprite != null) {
-	        skinSprite.setRegion(game.getTextureManager().getStickmanSkinAnimation(stickmanState, stickmanFacingDirection, skin).getKeyFrame(stateTime, true));
+	        skinSprite.setRegion(LpoortalGame.getInstance().getTextureManager().getStickmanSkinAnimation(stickmanState, stickmanFacingDirection, skin).getKeyFrame(stateTime, true));
 	        skinSprite.setCenter(x / PIXEL_TO_METER, y / PIXEL_TO_METER);
 	        skinSprite.draw(batch);
         }
