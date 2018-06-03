@@ -10,7 +10,7 @@ The Documentation can be found [here](https://web.fe.up.pt/~up201606516/LPOO/LPO
 
 # Installation Instructions
 
-Desktop Application - [Download](https://web.fe.up.pt/~up201606516/LPOO/LPOORTAL/Lpoortal_Desktop.jar)
+Desktop Application - [Download](https://web.fe.up.pt/~up201606516/LPOO/LPOORTAL/Lpoortal_Desktop.jar)\
 Mobile Application - [Download](https://web.fe.up.pt/~up201606516/LPOO/LPOORTAL/LPOORTAL_Client.apk)
 
 The game needs two executable files:
