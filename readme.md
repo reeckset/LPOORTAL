@@ -65,7 +65,7 @@ To run and play the game, please go through the following steps (see screenshots
 
 # Editing the code
 
-To edit/view the code, import [Lpoortal_Game_Server] folder on Eclipse and open [Lpoortal_Game_Client] folder on Android Studio
+To edit/view the code, import **"Lpoortal_Game_Server"** folder on Eclipse and open **"Lpoortal_Game_Client"** folder on Android Studio
 
 
 # Time invested on the project
