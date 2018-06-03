@@ -1,5 +1,3 @@
-#TODO PLACE LINKS FOR THE FILES ON THE INSTRUCTIONS SETTINGS AND PLACE SCREENSHOTS ON THE SCREENSHOTS SETTINGS
-
 # LPOORTAL
 A 2-player Co-Op based game for desktop with android smartphones as controllers!
 
@@ -74,5 +72,5 @@ Estimating the time spent on the project, including classes, weekly work and som
 
 # Major difficulties
 
-During the development period, we found particularly hard to choose the appropriate design patterns, as well as anylise their effectiveness for each task. We also felt challenged when choosing the selected MVC arquitecture, as there exist many different implementations available and we wanted to pick the one that best suited the project. Finally, the remaining difficulties were based on libGDX's implementation of certain features and its behaviour.
+During the development period, we found particularly hard to choose the appropriate design patterns, as well as anylise their effectiveness for each task. We also felt challenged when choosing the selected MVC arquitecture, as there exist many different implementations available and we wanted to pick the one that best suited the project. In addition, we spent some time working on networking, as to decrease lag and lattency, having to compromise other intentions on our part to make for a better user experience. Finally, the remaining difficulties were based on libGDX's implementation of certain features and its behaviour.
 
