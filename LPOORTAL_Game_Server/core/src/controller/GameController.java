@@ -383,10 +383,15 @@ public class GameController implements ContactListener {
 	public void moveRight(float delta) {
 		stickmanBody.setLinearVelocity(STICKMAN_SPEED * delta, stickmanBody.getSpeedY());
 	}
-
-    /**
-     * Draws a Line on Level
-     */
+	
+	/**
+	 * Draws a Line on Level
+	 * @param xi - start x
+	 * @param yi - start y
+	 * @param xf - end x
+	 * @param yf - end y
+     * @return A line Body
+	 */
     public DrawnLineBody drawLine(float xi, float yi, float xf, float yf) {
         DrawnLineModel line = new DrawnLineModel(xi, yi, xf, yf);
         GameModel.getInstance().addLine(line);

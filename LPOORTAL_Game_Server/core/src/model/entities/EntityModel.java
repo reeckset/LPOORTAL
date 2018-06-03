@@ -53,7 +53,7 @@ public abstract class EntityModel {
     /**
      * Returns if this entity has been flagged for removal
      *
-     * @return
+     * @return true if flagged to be removed
      */
     public boolean isFlaggedToBeRemoved() {
         return flaggedForRemoval;
@@ -61,6 +61,7 @@ public abstract class EntityModel {
 
     /**
      * Makes this model flagged for removal on next step
+     * @param flaggedForRemoval true/false
      */
     public void setFlaggedForRemoval(boolean flaggedForRemoval) {
         this.flaggedForRemoval = flaggedForRemoval;

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
-  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  realizations="true" associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
   <enumeration id="1" language="java" name="model.entities.EntityModel.ModelType" project="LPOORTAL_Desktop-core" 
     file="/LPOORTAL_Desktop-core/src/model/entities/EntityModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1717" y="916"/>    
+    <position height="-1" width="-1" x="168" y="763"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -12,213 +12,175 @@
   </enumeration>  
   <class id="2" language="java" name="model.GameModel" project="LPOORTAL_Desktop-core" 
     file="/LPOORTAL_Desktop-core/src/model/GameModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="861" y="160"/>    
+    <position height="-1" width="-1" x="1331" y="261"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="3" language="java" name="model.PhoneController.Functionality_State" project="LPOORTAL_Desktop-core" 
-    file="/LPOORTAL_Desktop-core/src/model/PhoneController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="327" y="159"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </enumeration>  
-  <enumeration id="4" language="java" name="model.entities.StickmanModel.Stickman_Facing_Direction" 
+  <enumeration id="3" language="java" name="model.entities.StickmanModel.Stickman_Facing_Direction" 
     project="LPOORTAL_Desktop-core" file="/LPOORTAL_Desktop-core/src/model/entities/StickmanModel.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="530" y="1384"/>    
+    <position height="-1" width="-1" x="315" y="1231"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="5" language="java" name="model.PhoneController" project="LPOORTAL_Desktop-core" 
-    file="/LPOORTAL_Desktop-core/src/model/PhoneController.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="77" width="204" x="233" y="-74"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="6" language="java" name="model.entities.InkJarModel" project="LPOORTAL_Desktop-core" 
+  <class id="4" language="java" name="model.entities.InkJarModel" project="LPOORTAL_Desktop-core" 
     file="/LPOORTAL_Desktop-core/src/model/entities/InkJarModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1363" y="880"/>    
+    <position height="-1" width="-1" x="1078" y="727"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <enumeration id="7" language="java" name="model.entities.StickmanModel.Stickman_Animation" 
+  <enumeration id="5" language="java" name="model.entities.StickmanModel.Stickman_Animation" 
     project="LPOORTAL_Desktop-core" file="/LPOORTAL_Desktop-core/src/model/entities/StickmanModel.java" binary="false" 
     corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="761" y="1411"/>    
+    <position height="-1" width="-1" x="546" y="1258"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="8" language="java" name="model.entities.CursorModel" project="LPOORTAL_Desktop-core" 
+  <class id="6" language="java" name="model.entities.CursorModel" project="LPOORTAL_Desktop-core" 
     file="/LPOORTAL_Desktop-core/src/model/entities/CursorModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="941" y="925"/>    
+    <position height="-1" width="-1" x="726" y="772"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="9" language="java" name="model.entities.DrawnLineModel" project="LPOORTAL_Desktop-core" 
+  <class id="7" language="java" name="model.entities.DrawnLineModel" project="LPOORTAL_Desktop-core" 
     file="/LPOORTAL_Desktop-core/src/model/entities/DrawnLineModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1153" y="1060"/>    
+    <position height="-1" width="-1" x="1289" y="907"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="10" language="java" name="model.entities.StickmanModel" project="LPOORTAL_Desktop-core" 
+  <class id="8" language="java" name="model.entities.StickmanModel" project="LPOORTAL_Desktop-core" 
     file="/LPOORTAL_Desktop-core/src/model/entities/StickmanModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="690" y="988"/>    
+    <position height="-1" width="-1" x="475" y="862"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="model.entities.EntityModel" project="LPOORTAL_Desktop-core" 
+  <class id="9" language="java" name="model.entities.EntityModel" project="LPOORTAL_Desktop-core" 
     file="/LPOORTAL_Desktop-core/src/model/entities/EntityModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="239" width="209" x="1287" y="-74"/>    
+    <position height="239" width="209" x="544" y="37"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="12" language="java" name="model.entities.PortalModel" project="LPOORTAL_Desktop-core" 
+  <class id="10" language="java" name="model.entities.PortalModel" project="LPOORTAL_Desktop-core" 
     file="/LPOORTAL_Desktop-core/src/model/entities/PortalModel.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="1539" y="907"/>    
+    <position height="-1" width="-1" x="903" y="754"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <association id="13">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="14" name="cursor"/>      
-      <multiplicity id="15" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="8" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="16">    
-    <end type="SOURCE" refId="6"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <association id="17">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="18" name="stickman"/>      
-      <multiplicity id="19" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="20">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="21" name="stickmanState"/>      
-      <multiplicity id="22" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="7" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="23">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="4"/>  
-  </nesting>  
-  <generalization id="24">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <nesting id="25">    
-    <end type="SOURCE" refId="10"/>    
-    <end type="TARGET" refId="7"/>  
-  </nesting>  
-  <nesting id="26">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="3"/>  
-  </nesting>  
-  <association id="27">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="28" name="portal"/>      
-      <multiplicity id="29" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="30">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="31" name="instance"/>      
-      <multiplicity id="32" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="2" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <nesting id="33">    
-    <end type="SOURCE" refId="11"/>    
+  <nesting id="11">    
+    <end type="SOURCE" refId="9"/>    
     <end type="TARGET" refId="1"/>  
   </nesting>  
-  <association id="34">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="35" name="drawnLines"/>      
-      <multiplicity id="36" minimum="0" maximum="2147483647"/>    
-    </end>    
-    <end type="TARGET" refId="9" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="37">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="38" name="state"/>      
-      <multiplicity id="39" minimum="0" maximum="1"/>    
+  <association id="12">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="13" name="stickmanFacingDirection"/>      
+      <multiplicity id="14" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="40">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="41" name="stickmanFacingDirection"/>      
-      <multiplicity id="42" minimum="0" maximum="1"/>    
+  <association id="15">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="16" name="inkJars"/>      
+      <multiplicity id="17" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="43">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <generalization id="44">    
-    <end type="SOURCE" refId="12"/>    
-    <end type="TARGET" refId="11"/>  
-  </generalization>  
-  <association id="45">    
+  <association id="18">    
     <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="46" name="inkJars"/>      
-      <multiplicity id="47" minimum="0" maximum="2147483647"/>    
+      <attribute id="19" name="cursor"/>      
+      <multiplicity id="20" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="6" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="48">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="11"/>  
+  <association id="21">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="22" name="drawnLines"/>      
+      <multiplicity id="23" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="24">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="25" name="stickmanState"/>      
+      <multiplicity id="26" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="27">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="9"/>  
   </generalization>  
+  <association id="28">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="29" name="stickman"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="32" name="instance"/>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="34">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="35">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="36">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <generalization id="37">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="9"/>  
+  </generalization>  
+  <association id="38">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="39" name="portal"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

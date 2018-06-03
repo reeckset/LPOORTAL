@@ -145,6 +145,7 @@ public abstract class EntityBody {
     
     /**
      * Returns the current linear speed on the Y axis
+     * @return the body's vertical speed
      */
 	public float getSpeedY() {
 		return body.getLinearVelocity().y;
@@ -152,6 +153,7 @@ public abstract class EntityBody {
 	
     /**
      * Returns the current linear speed on the X axis
+     * @return the body's horizontal speed
      */
 	public float getSpeedX() {
 		return body.getLinearVelocity().x;
