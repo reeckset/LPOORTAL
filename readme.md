@@ -6,7 +6,7 @@ Final Project made for the unit course of *Laboratory of Object Oriented Program
   - Angelo Teixeira - up201606516 - up201606516@fe.up.pt
   - Henrique Lima - up201606525 - up201606525@fe.up.pt
 
-The Documentation can be found [here](https://web.fe.up.pt/~up201606516/LPOO/LPOORTAL/).
+### The Documentation can be found [here](https://web.fe.up.pt/~up201606516/LPOO/LPOORTAL/).
 
 # Installation Instructions
 
