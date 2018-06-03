@@ -6,8 +6,12 @@ Final Project made for the unit course of *Laboratory of Object Oriented Program
   - Angelo Teixeira - up201606516 - up201606516@fe.up.pt
   - Henrique Lima - up201606525 - up201606525@fe.up.pt
 
+The Documentation can be found [here](https://web.fe.up.pt/~up201606516/LPOO/LPOORTAL/).
 
 # Installation Instructions
+
+Desktop Application - [Dwonload](https://web.fe.up.pt/~up201606516/LPOO/LPOORTAL/Lpoortal_Desktop.jar)
+Mobile Application - [Dwonload](https://web.fe.up.pt/~up201606516/LPOO/LPOORTAL/LPOORTAL_Client.apk)
 
 The game needs two executable files:
   - one **.jar** to run the **desktop** server and display the actual game
