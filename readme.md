@@ -1,5 +1,3 @@
-#TODO PLACE LINKS FOR THE FILES ON THE INSTRUCTIONS SETTINGS AND PLACE SCREENSHOTS ON THE SCREENSHOTS SETTINGS
-
 # LPOORTAL
 A 2-player Co-Op based game for desktop with android smartphones as controllers!
 
@@ -21,7 +19,7 @@ After downloading both of the files, you should install the **.apk** on the andr
 
 To run and play the game, please go through the following steps (see screenshots below):
   - Make sure the android devices and the desktop are all on the same LAN (Local Area Network).
-  - Launch the **.jar** file on the desktop and a window will appear. There, you will see the instructions for the gameplay itself and a gamecode for you to insert on each of the client devices' installed app.
+  - Launch the **.jar** file on the desktop (using the command java -jar [name_of_the_file]) and a window will appear. There, you will see the instructions for the gameplay itself and a gamecode for you to insert on each of the client devices' installed app.
   - **After both clients have connected**, the game (shown on the desktop window) will move on to a **player customization screen**, where each of the players/clients **can change their color** (beware as the player colors must be different or the game will not move on to the actual gameplay), **their name** and **the skin for their character** respectively.
   - When a player has finished customizing their character, they can now **press the "ready" tile**, so the game knows it can move on to the next stage.
   - When both players are ready, the desktop application generates a level and picks a player for **drawing** and another one for **controlling the stickman on screen**. The stickman will be colored and have the skin according to the choices on the previous stage, so each player can identify their job with ease.
@@ -48,3 +46,31 @@ To run and play the game, please go through the following steps (see screenshots
 
 ## Game Over
 ![Alt text](Screenshots/screen_6.png?raw=true)
+
+
+# Design Patterns
+
+**MVC - Model View Controller** Used to separate the concerns of the state of the elements (Model), their evolution over time (Controller) and their representation to the user (View)
+
+**Singleton** on the LpoortalGame (Main Game Class), GameModel, GameView, GameController and NetworkManager classes, because at every moment, there will only be one instance of them, and therefore, can be accessed more easily.
+
+**Observer** On the controller, the GameController itself will be a listener (ContactListener) for collisions of the physical world (Embedded in the LibGDX library)
+
+**Flyweight** Used in the View Package (Desktop) [ViewFactory class] to keep a cache of views being used, and allow for their reutilization
+
+**State** Both desktop and mobile apps will have a state, that can be changed based on received events (i.e. when the server sends the message to the client so that it changes from PlayerCustomization State to Playing State (Drawing/Moving controller))
+
+
+# Editing the code
+
+To edit/view the code, import **"Lpoortal_Game_Server"** folder on Eclipse and open **"Lpoortal_Game_Client"** folder on Android Studio
+
+
+# Time invested on the project
+
+Estimating the time spent on the project, including classes, weekly work and some extra time in the beggining of the project and near the delivery date, we concluded that about **150 hours were spent in total** (around 75 hours each). A big part of the progress was achieved through pair programming, having the remaining code been developed by both parties upon agreement on the distribution of tasks.
+
+# Major difficulties
+
+During the development period, we found particularly hard to choose the appropriate design patterns, as well as anylise their effectiveness for each task. We also felt challenged when choosing the selected MVC arquitecture, as there exist many different implementations available and we wanted to pick the one that best suited the project. In addition, we spent some time working on networking, as to decrease lag and lattency, having to compromise other intentions on our part to make for a better user experience. Finally, the remaining difficulties were based on libGDX's implementation of certain features and its behaviour.
+
