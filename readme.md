@@ -64,6 +64,36 @@ To run and play the game, please go through the following steps (see screenshots
 
 **State** Both desktop and mobile apps will have a state, that can be changed based on received events (i.e. when the server sends the message to the client so that it changes from PlayerCustomization State to Playing State (Drawing/Moving controller))
 
+# Application Architecture Design
+
+## Desktop
+
+### Packages Diagram
+![Alt text](UMLDiagrams/Lpoortal_Server_PackageDiagram.png?raw=true)
+
+### Model Diagram
+![Alt text](LPOORTAL_Game_Server/core/model_uml.png?raw=true)
+
+### View Diagram
+![Alt text](LPOORTAL_Game_Server/core/view_uml.png?raw=true)
+
+### Controller Diagram
+![Alt text](LPOORTAL_Game_Server/core/controller_uml.png?raw=true)
+
+### Network Diagram
+![Alt text](LPOORTAL_Game_Server/core/network_uml.png?raw=true)
+
+## Mobile
+
+### Controller Diagram
+![Alt text](LPOORTAL_Game_Client/uml/controller_uml.png?raw=true)
+
+### View Diagram
+![Alt text](LPOORTAL_Game_Client/uml/view_uml.png?raw=true)
+
+### Network Diagram
+![Alt text](LPOORTAL_Game_Client/uml/network_uml.png?raw=true)
+
 
 # Editing the code
 
